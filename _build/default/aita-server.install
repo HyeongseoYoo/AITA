@@ -1,0 +1,8 @@
+lib: [
+  "_build/install/default/lib/aita-server/META"
+  "_build/install/default/lib/aita-server/dune-package"
+  "_build/install/default/lib/aita-server/opam"
+]
+bin: [
+  "_build/install/default/bin/aita-server"
+]

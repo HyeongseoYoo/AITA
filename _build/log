@@ -1,0 +1,16 @@
+# dune exec _build/default/bin/main.exe
+# OCAMLPARAM: unset
+# Shared cache: enabled-except-user-rules
+# Shared cache location: /home/hyeongseo/.cache/dune/db
+# Workspace root: /mnt/c/Workspace/AITA/project/aita-server
+# Auto-detected concurrency: 22
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Dev
+#  ; merlin = true
+#  ; fdo_target_exe = None
+#  ; build_dir = In_build_dir "default"
+#  ; instrument_with = []
+#  }
+$ /mnt/c/Workspace/AITA/project/_opam/bin/ocamlc.opt -config > /tmp/dune_aeacb4_output

@@ -1,0 +1,4 @@
+(executable
+ (public_name aita-server)
+ (name main)
+ (libraries dream aita_server))
