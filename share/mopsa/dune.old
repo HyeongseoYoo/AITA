@@ -1,0 +1,5 @@
+(install
+ (files
+  (glob_files_rec configs/**)
+  (glob_files_rec stubs/**))
+ (section share))

@@ -1,0 +1,91 @@
+{
+  "language": "c",
+  "domain": {
+    // Partitioning
+    "apply": "universal.partitioning.tail-markers",
+    "on": {
+      "semantic": "C",
+      "switch": [
+        // C iterators
+        "c.iterators.program",
+        "c.iterators.interproc",
+        "c.iterators.goto",
+        "c.iterators.switch",
+        "c.iterators.loops",
+        "c.iterators.intraproc",
+        // Stubs
+        "stubs.iterators.body",
+        // C Libraries
+        "c.libs.compiler",
+        "c.libs.mopsalib",
+        "c.libs.clib.file_descriptor",
+        "c.libs.clib.formatted_io.fprint",
+        "c.libs.clib.formatted_io.fscanf",
+        "c.libs.variadic",
+        // C stubs
+        "c.cstubs.assigns",
+        "c.cstubs.builtins",
+        "c.cstubs.resources",
+        // C aggregates
+        "c.memory.variable_length_array",
+        "c.memory.aggregates",
+        "c.memory.protection",
+        // Universal iterators
+        {
+          "semantic": "Universal",
+          "switch": [
+            "universal.iterators.unittest",
+            "universal.iterators.interproc.inlining",
+            "universal.iterators.intraproc",
+            "universal.iterators.loops"
+          ]
+        },
+        {
+          "apply": {
+            // C environment
+            "compose": [
+              "universal.heap.recency",
+              {
+                "product": [
+                  "c.memory.lowlevel.cells",
+                  "c.memory.lowlevel.string_length"
+                ],
+                "reductions": [
+                  "universal.numeric.reductions.numeric_eval",
+                  "c.memory.reductions.pointer_eval"
+                ]
+              },
+              {
+                "semantic": "C/Scalar",
+                "switch": [
+                  "c.memory.scalars.pointer",
+                  "c.memory.scalars.machine_numbers"
+                ]
+              }
+            ]
+          },
+          "on": {
+            // Numeric environment
+            "semantic": "Universal",
+            "nonrel": {
+              "union": [
+                "universal.numeric.values.intervals.float",
+                {
+                  "product": [
+                    "universal.numeric.values.intervals.integer",
+                    "universal.numeric.values.congruences"
+                  ],
+                  "reductions": [
+                    "universal.numeric.reductions.intervals_congruences"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        // Fallbacks
+        "stubs.iterators.fallback"
+      ]
+    }
+  }
+}

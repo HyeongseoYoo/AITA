@@ -1,0 +1,3 @@
+(library
+ (name analysis)
+ (libraries mopsa.mopsa_analyzer mopsa.mopsa_py_parser))

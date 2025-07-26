@@ -1,0 +1,24 @@
+{
+    "language": "cfg",
+    "domain": {
+	"switch": [
+	    // Iterators
+	    "universal.iterators.program",
+	    "cfg.iterators.intraproc",
+	    "universal.iterators.intraproc",
+            "universal.iterators.interproc.inlining",
+            "universal.iterators.unittest",
+
+	    // Numeric abstraction
+            {
+                "nonrel": {
+		    "union": [
+			"universal.numeric.values.intervals.integer",
+			"universal.numeric.values.intervals.float",
+			"universal.strings.powerset"
+		    ]
+		}
+            }
+	]
+    }
+}
