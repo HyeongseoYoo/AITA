@@ -1,4 +1,5 @@
 (executable
  (public_name aita-server)
  (name main)
- (libraries dream aita_server))
+ (libraries dream aita_server analysis llm utils cohttp-lwt-unix yojson lwt.unix)
+ (preprocess (pps lwt_ppx)))

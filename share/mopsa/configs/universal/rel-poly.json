@@ -1,0 +1,32 @@
+{
+    "language": "universal",
+    "domain": {
+	"switch": [
+	    // Iterators
+	    "universal.iterators.program",
+	    "universal.iterators.intraproc",
+	    "universal.iterators.loops",
+            "universal.iterators.interproc.inlining",
+            "universal.iterators.unittest",
+
+	    // Numeric abstraction
+            {
+                "product": [
+                    "universal.numeric.relational",
+                    {
+                        "nonrel": {
+		            "union": [
+		                "universal.numeric.values.intervals.float",
+		                "universal.numeric.values.intervals.integer",
+			        "universal.strings.powerset"
+		            ]
+		        }
+                    }
+                ],
+                "reductions": [
+                    "universal.numeric.reductions.intervals_rel"
+                ]
+            }
+        ]
+    }
+}

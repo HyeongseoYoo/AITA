@@ -1,0 +1,3 @@
+(library
+ (name llm)
+ (libraries cohttp-lwt-unix yojson lwt.unix))

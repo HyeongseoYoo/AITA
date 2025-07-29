@@ -1,0 +1,139 @@
+{
+    "language": "python",
+    "domain": {
+      "apply": "universal.partitioning.tail-markers",
+      "on": {
+        "switch": [
+          "cpython.cmodule",
+          {
+            "apply": {
+              "switch": [
+                {
+                  "semantic": "Python",
+                  "switch": [
+                    "python.program",
+
+                    "python.desugar.bool",
+                    "python.desugar.import",
+                    "python.desugar.assert",
+                    "python.desugar.if",
+                    "python.desugar.iterable_assign",
+                    "python.desugar.with",
+                    "python.desugar.comprehensions",
+                    "python.desugar.loops",
+
+                    "python.flows.exceptions",
+                    "python.flows.generators",
+
+                    "python.libs.mopsa",
+                    "python.libs.stdlib",
+                    "python.libs.math",
+                    "python.libs.unittest",
+                    "python.libs.typing",
+
+                    "python.objects.class",
+                    "python.objects.lambda",
+                    "python.objects.function",
+                    "python.objects.range",
+                    "python.objects.object",
+
+                    "python.data_model.attribute",
+                    "python.data_model.subscript",
+                    "python.data_model.arith_ops",
+                    "python.data_model.compare_ops",
+                    "python.data_model.aug_assign",
+                    "python.data_model.callable",
+
+                    "python.types.t_string",
+                    "python.types.t_int",
+                    "python.types.t_float",
+                    "python.types.t_complex",
+
+                    "python.objects.list",
+                    "python.objects.tuple",
+                    // "python.objects.dict",
+                    "python.objects.constant_dict",
+                    "python.objects.set",
+                    "python.objects.iterable",
+                    "python.types.addr_env",
+                    "python.types.nominal_types",
+                    "python.types.structural_types",
+                    "python.types.type_annot"
+                  ]
+                },
+                {
+                  "semantic": "C",
+                  "switch": [
+                    // C iterators
+                    "c.iterators.program",
+                    "c.iterators.interproc",
+                    "c.iterators.goto",
+                    "c.iterators.switch",
+                    "c.iterators.loops",
+                    "c.iterators.intraproc",
+                    // CPython
+                    "cpython.callstack_tracking",
+                    // Stubs
+                    "stubs.iterators.body",
+                    // C Libraries
+                    "c.libs.compiler",
+                    "c.libs.mopsalib",
+                    "c.libs.clib.file_descriptor",
+                    "c.libs.clib.formatted_io.fprint",
+                    "c.libs.clib.formatted_io.fscanf",
+                    "c.libs.variadic",
+                    // C stubs
+                    "c.cstubs.assigns",
+                    "c.cstubs.builtins",
+                    "c.cstubs.resources",
+                    // C memory model
+                    "c.memory.variable_length_array",
+                    "c.memory.aggregates",
+                    "c.memory.protection",
+                    {
+                      "compose": [
+                        "c.memory.lowlevel.cells",
+                        {
+                          "semantic": "C/Scalar",
+                          "switch": [
+                            "c.memory.scalars.pointer",
+                            "c.memory.scalars.machine_numbers"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "semantic": "Universal",
+                  "switch": [
+                    "universal.iterators.intraproc",
+                    "universal.iterators.loops",
+                    "universal.iterators.interproc.inlining",
+                    "universal.iterators.unittest"
+                  ]
+                }
+              ]
+            },
+            "on": {
+              "semantic": "Universal",
+              "switch": [
+                "universal.heap.recency",
+                {
+                  "nonrel": {
+                    "union": [
+                      "universal.numeric.values.intervals.integer",
+                      "universal.numeric.values.intervals.float",
+                      "universal.strings.powerset"
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          // Fallbacks
+          "stubs.iterators.fallback"
+        ]
+      }
+    }
+}
