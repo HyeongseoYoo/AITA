@@ -19,7 +19,12 @@
  (name aita-server)
  (synopsis "A short synopsis")
  (description "A longer description")
- (depends ocaml)
+ (depends
+   ocaml
+   dream
+   mopsa
+   cohttp-lwt-unix
+   )
  (tags
   ("add topics" "to describe" your project)))
 

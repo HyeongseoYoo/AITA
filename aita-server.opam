@@ -12,6 +12,9 @@ bug-reports: "https://github.com/username/reponame/issues"
 depends: [
   "dune" {>= "3.7"}
   "ocaml"
+  "dream"
+  "mopsa"
+  "cohttp-lwt-unix"
   "odoc" {with-doc}
 ]
 build: [

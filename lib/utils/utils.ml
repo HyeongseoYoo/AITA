@@ -30,3 +30,19 @@ let error = {|
                                         ^^^^^^^
 TypeError: '>=' not supported between instances of 'str' and 'int'
   |}
+
+ let extract (json_str : string) : string =
+  try
+    let json = Yojson.Safe.from_string json_str in
+    match json with
+    | `Assoc fields ->
+        begin match List.assoc_opt "content" fields with
+        | Some (`List (`Assoc item :: _)) ->  (* content[0] 항목 *)
+            begin match List.assoc_opt "text" item with
+            | Some (`String text) -> text
+            | _ -> "분석 실패"
+            end
+        | _ -> "분석 실패"
+        end
+    | _ -> "분석 실패"
+  with _ -> "분석 실패"
