@@ -5,27 +5,28 @@
 (generate_opam_files true)
 
 (source
- (github username/reponame))
+ (github HyeongseoYoo/AITA))
 
-(authors "Author Name <author@example.com>")
+(authors
+  "Hyeongseo Yoo <hsyoo@ropas.snu.ac.kr>"
+  "Jay Lee <jhlee@ropas.snu.ac.kr>")
 
-(maintainers "Maintainer Name <maintainer@example.com>")
-
-(license LICENSE)
-
-(documentation https://url/to/documentation)
+(maintainers
+  "Hyeongseo Yoo <hsyoo@ropas.snu.ac.kr>"
+  "Jay Lee <jhlee@ropas.snu.ac.kr>")
 
 (package
  (name aita-server)
- (synopsis "A short synopsis")
- (description "A longer description")
+ (synopsis "AI TA server")
+ (description "AI Teaching Assistant server for the AITA project.")
  (depends
    ocaml
+   (ocaml-base-compiler
+    (= 4.14.0))
+   dune
    dream
-   mopsa
-   cohttp-lwt-unix
-   )
+   cohttp-lwt-unix)
  (tags
-  ("add topics" "to describe" your project)))
+  ("static analysis" LLM)))
 
 ; See the complete stanza docs at https://dune.readthedocs.io/en/stable/reference/dune-project/index.html

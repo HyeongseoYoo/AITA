@@ -1,0 +1,2393 @@
+# flyctl launch added from .gitignore
+# Created by https://www.toptal.com/developers/gitignore/api/vim,windows,macos,visualstudiocode,ocaml,direnv,linux
+# Edit at https://www.toptal.com/developers/gitignore?templates=vim,windows,macos,visualstudiocode,ocaml,direnv,linux
+
+### direnv ###
+**/.direnv
+**/.envrc
+
+### Linux ###
+**/*~
+
+# temporary files which can be created if a process still has a handle open of a deleted file
+**/.fuse_hidden*
+
+# KDE directory preferences
+**/.directory
+
+# Linux trash folder which might appear on any partition or disk
+**/.Trash-*
+
+# .nfs files are created when an open file is removed but is still being accessed
+**/.nfs*
+
+### macOS ###
+# General
+**/.DS_Store
+**/.AppleDouble
+**/.LSOverride
+
+# Icon must end with two \r
+**/Icon
+
+# Thumbnails
+**/._*
+
+# Files that might appear in the root of a volume
+**/.DocumentRevisions-V100
+**/.fseventsd
+**/.Spotlight-V100
+**/.TemporaryItems
+**/.Trashes
+**/.VolumeIcon.icns
+**/.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+**/.AppleDB
+**/.AppleDesktop
+**/Network Trash Folder
+**/Temporary Items
+**/.apdisk
+
+### macOS Patch ###
+# iCloud generated files
+**/*.icloud
+
+### OCaml ###
+**/*.annot
+**/*.cmo
+**/*.cma
+**/*.cmi
+**/*.a
+**/*.o
+**/*.cmx
+**/*.cmxs
+**/*.cmxa
+
+# ocamlbuild working directory
+**/_build
+
+# ocamlbuild targets
+**/*.byte
+**/*.native
+
+# oasis generated files
+**/setup.data
+**/setup.log
+
+# Merlin configuring file for Vim and Emacs
+**/.merlin
+
+# Dune generated files
+**/*.install
+
+# Local OPAM switch
+**/_opam
+
+### Vim ###
+# Swap
+**/[._]*.s[a-v][a-z]
+!**/*.svg  # comment out if you don't need vector files
+**/[._]*.sw[a-p]
+**/[._]s[a-rt-v][a-z]
+**/[._]ss[a-gi-z]
+**/[._]sw[a-p]
+
+# Session
+**/Session.vim
+**/Sessionx.vim
+
+# Temporary
+**/.netrwhist
+# Auto-generated tag files
+**/tags
+# Persistent undo
+**/[._]*.un~
+
+### VisualStudioCode ###
+**/.vscode/*
+!**/.vscode/settings.json
+!**/.vscode/tasks.json
+!**/.vscode/launch.json
+!**/.vscode/extensions.json
+!**/.vscode/*.code-snippets
+
+# Local History for Visual Studio Code
+**/.history
+
+# Built Visual Studio Code Extensions
+**/*.vsix
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+**/.history
+**/.ionide
+
+### Windows ###
+# Windows thumbnail cache files
+**/Thumbs.db
+**/Thumbs.db:encryptable
+**/ehthumbs.db
+**/ehthumbs_vista.db
+
+# Dump file
+**/*.stackdump
+
+# Folder config file
+**/[Dd]esktop.ini
+
+# Recycle Bin used on file shares
+**/$RECYCLE.BIN
+
+# Windows Installer files
+**/*.cab
+**/*.msi
+**/*.msix
+**/*.msm
+**/*.msp
+
+# Windows shortcuts
+**/*.lnk
+
+# End of https://www.toptal.com/developers/gitignore/api/vim,windows,macos,visualstudiocode,ocaml,direnv,linux
+
+# flyctl launch added from _opam/.opam-switch/build/mopsa.1.2/.gitignore
+_opam/.opam-switch/build/mopsa.1.2/**/_opam
+_opam/.opam-switch/build/mopsa.1.2/**/_build
+_opam/.opam-switch/build/mopsa.1.2/**/*.install
+_opam/.opam-switch/build/mopsa.1.2/autom4te.cache/**
+_opam/.opam-switch/build/mopsa.1.2/config.log
+_opam/.opam-switch/build/mopsa.1.2/config.status
+_opam/.opam-switch/build/mopsa.1.2/META
+_opam/.opam-switch/build/mopsa.1.2/utils/core/version.ml
+_opam/.opam-switch/build/mopsa.1.2/parsers/c/lib/parser/dune
+
+_opam/.opam-switch/build/mopsa.1.2/**/*.native
+_opam/.opam-switch/build/mopsa.1.2/**/*.byte
+_opam/.opam-switch/build/mopsa.1.2/**/*.merlin
+_opam/.opam-switch/build/mopsa.1.2/**/*~
+_opam/.opam-switch/build/mopsa.1.2/**/*#
+
+# flyctl launch added from _opam/.opam-switch/build/mopsa.1.2/doc/.gitignore
+_opam/.opam-switch/build/mopsa.1.2/doc/**/**/_build/**
+_opam/.opam-switch/build/mopsa.1.2/doc/**/*~
+_opam/.opam-switch/build/mopsa.1.2/doc/**/*.org
+
+# flyctl launch added from _opam/.opam-switch/sources/angstrom.0.16.1/.gitignore
+_opam/.opam-switch/sources/angstrom.0.16.1/**/.*.sw[a-z]
+_opam/.opam-switch/sources/angstrom.0.16.1/**/*~
+_opam/.opam-switch/sources/angstrom.0.16.1/**/_build
+_opam/.opam-switch/sources/angstrom.0.16.1/**/_tests
+_opam/.opam-switch/sources/angstrom.0.16.1/**/lib_test/tests_
+_opam/.opam-switch/sources/angstrom.0.16.1/**/setup.log
+_opam/.opam-switch/sources/angstrom.0.16.1/**/setup.data
+_opam/.opam-switch/sources/angstrom.0.16.1/**/*.native
+_opam/.opam-switch/sources/angstrom.0.16.1/**/*.byte
+_opam/.opam-switch/sources/angstrom.0.16.1/**/*.docdir
+_opam/.opam-switch/sources/angstrom.0.16.1/**/*.install
+_opam/.opam-switch/sources/angstrom.0.16.1/**/.merlin
+
+# flyctl launch added from _opam/.opam-switch/sources/apron.v0.9.15/.gitignore
+_opam/.opam-switch/sources/apron.v0.9.15/**/*.o
+_opam/.opam-switch/sources/apron.v0.9.15/**/*.a
+_opam/.opam-switch/sources/apron.v0.9.15/**/*.exe
+_opam/.opam-switch/sources/apron.v0.9.15/**/*.so
+_opam/.opam-switch/sources/apron.v0.9.15/**/*.class
+_opam/.opam-switch/sources/apron.v0.9.15/**/*.jar
+
+_opam/.opam-switch/sources/apron.v0.9.15/**/Makefile.config
+_opam/.opam-switch/sources/apron.v0.9.15/**/*.cm?
+_opam/.opam-switch/sources/apron.v0.9.15/**/*.cmx?
+_opam/.opam-switch/sources/apron.v0.9.15/**/*~
+_opam/.opam-switch/sources/apron.v0.9.15/**/*#
+_opam/.opam-switch/sources/apron.v0.9.15/**/**/depend
+_opam/.opam-switch/sources/apron.v0.9.15/**/**/tmp
+_opam/.opam-switch/sources/apron.v0.9.15/**/apronxx/apronxx_test
+_opam/.opam-switch/sources/apron.v0.9.15/**/box/box.ml
+_opam/.opam-switch/sources/apron.v0.9.15/**/box/box.mli
+_opam/.opam-switch/sources/apron.v0.9.15/**/box/box_caml.c
+_opam/.opam-switch/sources/apron.v0.9.15/**/japron/apron/apron_*.h
+_opam/.opam-switch/sources/apron.v0.9.15/**/japron/gmp/gmp_*.h
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/abstract0.ml
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/abstract0.mli
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/abstract0_caml.c
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/abstract1.ml
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/abstract1.mli
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/abstract1_caml.c
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/apron_lexer.ml
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/apron_ocamldoc.mli
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/apron_parser.ml
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/apron_parser.mli
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/coeff.ml
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/coeff.mli
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/coeff_caml.c
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/dim.ml
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/dim.mli
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/dim_caml.c
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/disjunction.ml
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/disjunction.mli
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/disjunction_caml.c
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/environment.ml
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/environment.mli
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/environment_caml.c
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/generator0.ml
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/generator0.mli
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/generator0_caml.c
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/generator1.ml
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/generator1.mli
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/generator1_caml.c
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/interval.ml
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/interval.mli
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/interval_caml.c
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/lincons0.ml
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/lincons0.mli
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/lincons0_caml.c
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/lincons1.ml
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/lincons1.mli
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/lincons1_caml.c
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/linexpr0.ml
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/linexpr0.mli
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/linexpr0_caml.c
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/linexpr1.ml
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/linexpr1.mli
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/linexpr1_caml.c
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/manager.ml
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/manager.mli
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/manager_caml.c
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/policy.ml
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/policy.mli
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/policy_caml.c
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/scalar.ml
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/scalar.mli
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/scalar_caml.c
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/tcons0.ml
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/tcons0.mli
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/tcons0_caml.c
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/tcons1.ml
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/tcons1.mli
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/tcons1_caml.c
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/texpr0.ml
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/texpr0.mli
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/texpr0_caml.c
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/texpr1.ml
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/texpr1.mli
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/texpr1_caml.c
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/var.ml
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/var.mli
+_opam/.opam-switch/sources/apron.v0.9.15/**/mlapronidl/var_caml.c
+_opam/.opam-switch/sources/apron.v0.9.15/**/newpolka/polka.ml
+_opam/.opam-switch/sources/apron.v0.9.15/**/newpolka/polka.mli
+_opam/.opam-switch/sources/apron.v0.9.15/**/newpolka/polka_caml.c
+_opam/.opam-switch/sources/apron.v0.9.15/**/octagons/oct.ml
+_opam/.opam-switch/sources/apron.v0.9.15/**/octagons/oct.mli
+_opam/.opam-switch/sources/apron.v0.9.15/**/octagons/oct_caml.c
+_opam/.opam-switch/sources/apron.v0.9.15/**/octagons/oct*
+_opam/.opam-switch/sources/apron.v0.9.15/**/ppl/ap_ppl_caml.c
+_opam/.opam-switch/sources/apron.v0.9.15/**/ppl/ap_ppl_test
+_opam/.opam-switch/sources/apron.v0.9.15/**/ppl/ppl.ml
+_opam/.opam-switch/sources/apron.v0.9.15/**/ppl/ppl.mli
+_opam/.opam-switch/sources/apron.v0.9.15/**/products/polkaGrid.ml
+_opam/.opam-switch/sources/apron.v0.9.15/**/products/polkaGrid.mli
+_opam/.opam-switch/sources/apron.v0.9.15/**/products/polkaGrid_caml.c
+_opam/.opam-switch/sources/apron.v0.9.15/**/taylor1plus/t1p.ml
+_opam/.opam-switch/sources/apron.v0.9.15/**/taylor1plus/t1p.mli
+_opam/.opam-switch/sources/apron.v0.9.15/**/taylor1plus/t1p_caml.c
+
+
+# flyctl launch added from _opam/.opam-switch/sources/arg-complete.0.2.1/.gitignore
+_opam/.opam-switch/sources/arg-complete.0.2.1/**/*.annot
+_opam/.opam-switch/sources/arg-complete.0.2.1/**/*.cmo
+_opam/.opam-switch/sources/arg-complete.0.2.1/**/*.cma
+_opam/.opam-switch/sources/arg-complete.0.2.1/**/*.cmi
+_opam/.opam-switch/sources/arg-complete.0.2.1/**/*.a
+_opam/.opam-switch/sources/arg-complete.0.2.1/**/*.o
+_opam/.opam-switch/sources/arg-complete.0.2.1/**/*.cmx
+_opam/.opam-switch/sources/arg-complete.0.2.1/**/*.cmxs
+_opam/.opam-switch/sources/arg-complete.0.2.1/**/*.cmxa
+
+# ocamlbuild working directory
+_opam/.opam-switch/sources/arg-complete.0.2.1/**/_build
+
+# ocamlbuild targets
+_opam/.opam-switch/sources/arg-complete.0.2.1/**/*.byte
+_opam/.opam-switch/sources/arg-complete.0.2.1/**/*.native
+
+# oasis generated files
+_opam/.opam-switch/sources/arg-complete.0.2.1/**/setup.data
+_opam/.opam-switch/sources/arg-complete.0.2.1/**/setup.log
+
+# Merlin configuring file for Vim and Emacs
+_opam/.opam-switch/sources/arg-complete.0.2.1/**/.merlin
+
+# Dune generated files
+_opam/.opam-switch/sources/arg-complete.0.2.1/**/*.install
+
+# Local OPAM switch
+_opam/.opam-switch/sources/arg-complete.0.2.1/**/_opam
+
+
+# VSCode
+_opam/.opam-switch/sources/arg-complete.0.2.1/**/.vscode
+
+# flyctl launch added from _opam/.opam-switch/sources/asn1-combinators.0.3.2/.gitignore
+_opam/.opam-switch/sources/asn1-combinators.0.3.2/**/_build
+_opam/.opam-switch/sources/asn1-combinators.0.3.2/**/tmp
+_opam/.opam-switch/sources/asn1-combinators.0.3.2/**/*~
+_opam/.opam-switch/sources/asn1-combinators.0.3.2/**/\.\#*
+_opam/.opam-switch/sources/asn1-combinators.0.3.2/**/\#*#
+_opam/.opam-switch/sources/asn1-combinators.0.3.2/**/*.install
+_opam/.opam-switch/sources/asn1-combinators.0.3.2/**/*.native
+_opam/.opam-switch/sources/asn1-combinators.0.3.2/**/*.byte
+_opam/.opam-switch/sources/asn1-combinators.0.3.2/**/.merlin
+
+_opam/.opam-switch/sources/asn1-combinators.0.3.2/**/gmon.out
+_opam/.opam-switch/sources/asn1-combinators.0.3.2/**/rondom
+_opam/.opam-switch/sources/asn1-combinators.0.3.2/**/lambda
+
+# flyctl launch added from _opam/.opam-switch/sources/base.v0.17.3/.gitignore
+_opam/.opam-switch/sources/base.v0.17.3/**/_build
+_opam/.opam-switch/sources/base.v0.17.3/**/*.install
+_opam/.opam-switch/sources/base.v0.17.3/**/*.merlin
+_opam/.opam-switch/sources/base.v0.17.3/**/_opam
+
+
+# flyctl launch added from _opam/.opam-switch/sources/base64.3.5.1/.gitignore
+_opam/.opam-switch/sources/base64.3.5.1/**/_build
+_opam/.opam-switch/sources/base64.3.5.1/**/_tests
+_opam/.opam-switch/sources/base64.3.5.1/**/tmp
+_opam/.opam-switch/sources/base64.3.5.1/**/*~
+_opam/.opam-switch/sources/base64.3.5.1/**/\.\#*
+_opam/.opam-switch/sources/base64.3.5.1/**/\#*#
+_opam/.opam-switch/sources/base64.3.5.1/**/*.install
+_opam/.opam-switch/sources/base64.3.5.1/**/*.native
+_opam/.opam-switch/sources/base64.3.5.1/**/*.byte
+_opam/.opam-switch/sources/base64.3.5.1/**/.merlin
+
+# flyctl launch added from _opam/.opam-switch/sources/bigarray-compat.1.1.0/.gitignore
+_opam/.opam-switch/sources/bigarray-compat.1.1.0/**/_build
+_opam/.opam-switch/sources/bigarray-compat.1.1.0/**/*.install
+_opam/.opam-switch/sources/bigarray-compat.1.1.0/**/.merlin
+
+# flyctl launch added from _opam/.opam-switch/sources/bigarray-overlap.0.2.1/.gitignore
+_opam/.opam-switch/sources/bigarray-overlap.0.2.1/**/_build
+_opam/.opam-switch/sources/bigarray-overlap.0.2.1/**/setup.data
+_opam/.opam-switch/sources/bigarray-overlap.0.2.1/**/setup.log
+_opam/.opam-switch/sources/bigarray-overlap.0.2.1/**/doc/*.html
+_opam/.opam-switch/sources/bigarray-overlap.0.2.1/**/*.native
+_opam/.opam-switch/sources/bigarray-overlap.0.2.1/**/*.byte
+_opam/.opam-switch/sources/bigarray-overlap.0.2.1/**/*.so
+_opam/.opam-switch/sources/bigarray-overlap.0.2.1/**/lib/decompress_conf.ml
+_opam/.opam-switch/sources/bigarray-overlap.0.2.1/**/*.tar.gz
+_opam/.opam-switch/sources/bigarray-overlap.0.2.1/**/_tests
+_opam/.opam-switch/sources/bigarray-overlap.0.2.1/**/lib_test/files
+_opam/.opam-switch/sources/bigarray-overlap.0.2.1/**/zpipe
+_opam/.opam-switch/sources/bigarray-overlap.0.2.1/**/c/dpipe
+_opam/.opam-switch/sources/bigarray-overlap.0.2.1/**/*.merlin
+_opam/.opam-switch/sources/bigarray-overlap.0.2.1/**/*.install
+
+# flyctl launch added from _opam/.opam-switch/sources/bigstringaf.0.10.0/.gitignore
+_opam/.opam-switch/sources/bigstringaf.0.10.0/**/.*.sw[a-z]
+_opam/.opam-switch/sources/bigstringaf.0.10.0/**/*~
+_opam/.opam-switch/sources/bigstringaf.0.10.0/**/_build
+_opam/.opam-switch/sources/bigstringaf.0.10.0/**/_opam
+_opam/.opam-switch/sources/bigstringaf.0.10.0/**/*.install
+
+# flyctl launch added from _opam/.opam-switch/sources/ca-certs.1.0.1/.gitignore
+_opam/.opam-switch/sources/ca-certs.1.0.1/**/_build
+_opam/.opam-switch/sources/ca-certs.1.0.1/**/_opam
+_opam/.opam-switch/sources/ca-certs.1.0.1/**/.merlin
+
+# flyctl launch added from _opam/.opam-switch/sources/camlidl.1.13/.gitignore
+_opam/.opam-switch/sources/camlidl.1.13/**/*.cm[ioxa]
+_opam/.opam-switch/sources/camlidl.1.13/**/*.cmx[as]
+_opam/.opam-switch/sources/camlidl.1.13/**/*.[oa]
+_opam/.opam-switch/sources/camlidl.1.13/**/*.so
+_opam/.opam-switch/sources/camlidl.1.13/**/*.annot
+_opam/.opam-switch/sources/camlidl.1.13/**/config/Makefile
+_opam/.opam-switch/sources/camlidl.1.13/compiler/camlidl
+_opam/.opam-switch/sources/camlidl.1.13/compiler/config.ml
+_opam/.opam-switch/sources/camlidl.1.13/compiler/lexer_midl.ml
+_opam/.opam-switch/sources/camlidl.1.13/compiler/linenum.ml
+_opam/.opam-switch/sources/camlidl.1.13/compiler/parser_midl.ml
+_opam/.opam-switch/sources/camlidl.1.13/compiler/parser_midl.mli
+_opam/.opam-switch/sources/camlidl.1.13/compiler/parser_midl.output
+
+# flyctl launch added from _opam/.opam-switch/sources/camlidl.1.13/doc/.gitignore
+_opam/.opam-switch/sources/camlidl.1.13/doc/**/*~
+_opam/.opam-switch/sources/camlidl.1.13/doc/**/manual.tex
+_opam/.opam-switch/sources/camlidl.1.13/doc/**/tools/texquote2
+_opam/.opam-switch/sources/camlidl.1.13/doc/**/tools/transf
+_opam/.opam-switch/sources/camlidl.1.13/doc/**/tools/transf.ml
+
+# flyctl launch added from _opam/.opam-switch/sources/camlidl.1.13/tests/.gitignore
+!_opam/.opam-switch/sources/camlidl.1.13/tests/**/comcomp.h
+!_opam/.opam-switch/sources/camlidl.1.13/tests/**/component.h
+_opam/.opam-switch/sources/camlidl.1.13/tests/**/*.h
+_opam/.opam-switch/sources/camlidl.1.13/tests/**/*_stubs.c
+_opam/.opam-switch/sources/camlidl.1.13/tests/**/*.ml
+_opam/.opam-switch/sources/camlidl.1.13/tests/**/*.mli
+
+# flyctl launch added from _opam/.opam-switch/sources/camlp-streams.5.0.1/.gitignore
+_opam/.opam-switch/sources/camlp-streams.5.0.1/**/_build
+_opam/.opam-switch/sources/camlp-streams.5.0.1/**/camlpstreams.opam
+_opam/.opam-switch/sources/camlp-streams.5.0.1/**/*~
+_opam/.opam-switch/sources/camlp-streams.5.0.1/**/dune-workspace
+
+# flyctl launch added from _opam/.opam-switch/sources/caqti-lwt.2.2.4/.gitignore
+_opam/.opam-switch/sources/caqti-lwt.2.2.4/**/.merlin
+_opam/.opam-switch/sources/caqti-lwt.2.2.4/_build
+_opam/.opam-switch/sources/caqti-lwt.2.2.4/_test.db
+_opam/.opam-switch/sources/caqti-lwt.2.2.4/caqti.install
+_opam/.opam-switch/sources/caqti-lwt.2.2.4/caqti-async.install
+_opam/.opam-switch/sources/caqti-lwt.2.2.4/caqti-driver-*.install
+_opam/.opam-switch/sources/caqti-lwt.2.2.4/caqti-dynload.install
+_opam/.opam-switch/sources/caqti-lwt.2.2.4/caqti-lwt.install
+_opam/.opam-switch/sources/caqti-lwt.2.2.4/caqti-mirage/unikernel/Makefile
+_opam/.opam-switch/sources/caqti-lwt.2.2.4/caqti-mirage/unikernel/_build
+_opam/.opam-switch/sources/caqti-lwt.2.2.4/caqti-mirage/unikernel/dist
+_opam/.opam-switch/sources/caqti-lwt.2.2.4/caqti-mirage/unikernel/dune
+_opam/.opam-switch/sources/caqti-lwt.2.2.4/caqti-mirage/unikernel/dune-project
+_opam/.opam-switch/sources/caqti-lwt.2.2.4/caqti-mirage/unikernel/dune-workspace
+_opam/.opam-switch/sources/caqti-lwt.2.2.4/caqti-mirage/unikernel/dune.build
+_opam/.opam-switch/sources/caqti-lwt.2.2.4/caqti-mirage/unikernel/dune.config
+_opam/.opam-switch/sources/caqti-lwt.2.2.4/caqti-mirage/unikernel/mirage
+_opam/.opam-switch/sources/caqti-lwt.2.2.4/caqti-type-*.install
+_opam/.opam-switch/sources/caqti-lwt.2.2.4/testsuite/uris.conf
+
+# flyctl launch added from _opam/.opam-switch/sources/caqti.2.2.4/.gitignore
+_opam/.opam-switch/sources/caqti.2.2.4/**/.merlin
+_opam/.opam-switch/sources/caqti.2.2.4/_build
+_opam/.opam-switch/sources/caqti.2.2.4/_test.db
+_opam/.opam-switch/sources/caqti.2.2.4/caqti.install
+_opam/.opam-switch/sources/caqti.2.2.4/caqti-async.install
+_opam/.opam-switch/sources/caqti.2.2.4/caqti-driver-*.install
+_opam/.opam-switch/sources/caqti.2.2.4/caqti-dynload.install
+_opam/.opam-switch/sources/caqti.2.2.4/caqti-lwt.install
+_opam/.opam-switch/sources/caqti.2.2.4/caqti-mirage/unikernel/Makefile
+_opam/.opam-switch/sources/caqti.2.2.4/caqti-mirage/unikernel/_build
+_opam/.opam-switch/sources/caqti.2.2.4/caqti-mirage/unikernel/dist
+_opam/.opam-switch/sources/caqti.2.2.4/caqti-mirage/unikernel/dune
+_opam/.opam-switch/sources/caqti.2.2.4/caqti-mirage/unikernel/dune-project
+_opam/.opam-switch/sources/caqti.2.2.4/caqti-mirage/unikernel/dune-workspace
+_opam/.opam-switch/sources/caqti.2.2.4/caqti-mirage/unikernel/dune.build
+_opam/.opam-switch/sources/caqti.2.2.4/caqti-mirage/unikernel/dune.config
+_opam/.opam-switch/sources/caqti.2.2.4/caqti-mirage/unikernel/mirage
+_opam/.opam-switch/sources/caqti.2.2.4/caqti-type-*.install
+_opam/.opam-switch/sources/caqti.2.2.4/testsuite/uris.conf
+
+# flyctl launch added from _opam/.opam-switch/sources/cohttp-lwt-unix.6.1.1/.gitignore
+_opam/.opam-switch/sources/cohttp-lwt-unix.6.1.1/**/.*.swp
+_opam/.opam-switch/sources/cohttp-lwt-unix.6.1.1/**/_build
+_opam/.opam-switch/sources/cohttp-lwt-unix.6.1.1/**/*.install
+_opam/.opam-switch/sources/cohttp-lwt-unix.6.1.1/**/.merlin
+_opam/.opam-switch/sources/cohttp-lwt-unix.6.1.1/**/_opam
+_opam/.opam-switch/sources/cohttp-lwt-unix.6.1.1/**/node_modules
+_opam/.opam-switch/sources/cohttp-lwt-unix.6.1.1/**/dune.lock
+
+# flyctl launch added from _opam/.opam-switch/sources/cohttp-lwt.6.1.1/.gitignore
+_opam/.opam-switch/sources/cohttp-lwt.6.1.1/**/.*.swp
+_opam/.opam-switch/sources/cohttp-lwt.6.1.1/**/_build
+_opam/.opam-switch/sources/cohttp-lwt.6.1.1/**/*.install
+_opam/.opam-switch/sources/cohttp-lwt.6.1.1/**/.merlin
+_opam/.opam-switch/sources/cohttp-lwt.6.1.1/**/_opam
+_opam/.opam-switch/sources/cohttp-lwt.6.1.1/**/node_modules
+_opam/.opam-switch/sources/cohttp-lwt.6.1.1/**/dune.lock
+
+# flyctl launch added from _opam/.opam-switch/sources/cohttp.6.1.1/.gitignore
+_opam/.opam-switch/sources/cohttp.6.1.1/**/.*.swp
+_opam/.opam-switch/sources/cohttp.6.1.1/**/_build
+_opam/.opam-switch/sources/cohttp.6.1.1/**/*.install
+_opam/.opam-switch/sources/cohttp.6.1.1/**/.merlin
+_opam/.opam-switch/sources/cohttp.6.1.1/**/_opam
+_opam/.opam-switch/sources/cohttp.6.1.1/**/node_modules
+_opam/.opam-switch/sources/cohttp.6.1.1/**/dune.lock
+
+# flyctl launch added from _opam/.opam-switch/sources/conduit-lwt-unix.8.0.0/.gitignore
+_opam/.opam-switch/sources/conduit-lwt-unix.8.0.0/**/_build
+_opam/.opam-switch/sources/conduit-lwt-unix.8.0.0/**/_opam
+_opam/.opam-switch/sources/conduit-lwt-unix.8.0.0/**/.*.swp
+_opam/.opam-switch/sources/conduit-lwt-unix.8.0.0/**/*.install
+_opam/.opam-switch/sources/conduit-lwt-unix.8.0.0/**/.merlin
+
+# flyctl launch added from _opam/.opam-switch/sources/conduit-lwt-unix.8.0.0/tests/conduit-lwt-unix/.gitignore
+_opam/.opam-switch/sources/conduit-lwt-unix.8.0.0/tests/conduit-lwt-unix/**/server.conf
+_opam/.opam-switch/sources/conduit-lwt-unix.8.0.0/tests/conduit-lwt-unix/**/server.key
+_opam/.opam-switch/sources/conduit-lwt-unix.8.0.0/tests/conduit-lwt-unix/**/server.pem
+
+# flyctl launch added from _opam/.opam-switch/sources/conduit-lwt-unix.8.0.0/tests/conduit-mirage/http-fetch/.gitignore
+_opam/.opam-switch/sources/conduit-lwt-unix.8.0.0/tests/conduit-mirage/http-fetch/**/Makefile
+_opam/.opam-switch/sources/conduit-lwt-unix.8.0.0/tests/conduit-mirage/http-fetch/**/*.xe
+_opam/.opam-switch/sources/conduit-lwt-unix.8.0.0/tests/conduit-mirage/http-fetch/**/*.xl
+_opam/.opam-switch/sources/conduit-lwt-unix.8.0.0/tests/conduit-mirage/http-fetch/**/_build
+_opam/.opam-switch/sources/conduit-lwt-unix.8.0.0/tests/conduit-mirage/http-fetch/**/main.ml
+_opam/.opam-switch/sources/conduit-lwt-unix.8.0.0/tests/conduit-mirage/http-fetch/**/mir-conduit-client
+_opam/.opam-switch/sources/conduit-lwt-unix.8.0.0/tests/conduit-mirage/http-fetch/**/log
+_opam/.opam-switch/sources/conduit-lwt-unix.8.0.0/tests/conduit-mirage/http-fetch/**/*.xen
+
+# flyctl launch added from _opam/.opam-switch/sources/conduit-lwt-unix.8.0.0/tests/conduit-mirage/http-server/.gitignore
+_opam/.opam-switch/sources/conduit-lwt-unix.8.0.0/tests/conduit-mirage/http-server/**/Makefile
+_opam/.opam-switch/sources/conduit-lwt-unix.8.0.0/tests/conduit-mirage/http-server/**/*.xe
+_opam/.opam-switch/sources/conduit-lwt-unix.8.0.0/tests/conduit-mirage/http-server/**/*.xl
+_opam/.opam-switch/sources/conduit-lwt-unix.8.0.0/tests/conduit-mirage/http-server/**/_build
+_opam/.opam-switch/sources/conduit-lwt-unix.8.0.0/tests/conduit-mirage/http-server/**/main.ml
+_opam/.opam-switch/sources/conduit-lwt-unix.8.0.0/tests/conduit-mirage/http-server/**/mir-http-server
+_opam/.opam-switch/sources/conduit-lwt-unix.8.0.0/tests/conduit-mirage/http-server/**/log
+_opam/.opam-switch/sources/conduit-lwt-unix.8.0.0/tests/conduit-mirage/http-server/**/*.xen
+
+# flyctl launch added from _opam/.opam-switch/sources/conduit-lwt.8.0.0/.gitignore
+_opam/.opam-switch/sources/conduit-lwt.8.0.0/**/_build
+_opam/.opam-switch/sources/conduit-lwt.8.0.0/**/_opam
+_opam/.opam-switch/sources/conduit-lwt.8.0.0/**/.*.swp
+_opam/.opam-switch/sources/conduit-lwt.8.0.0/**/*.install
+_opam/.opam-switch/sources/conduit-lwt.8.0.0/**/.merlin
+
+# flyctl launch added from _opam/.opam-switch/sources/conduit-lwt.8.0.0/tests/conduit-lwt-unix/.gitignore
+_opam/.opam-switch/sources/conduit-lwt.8.0.0/tests/conduit-lwt-unix/**/server.conf
+_opam/.opam-switch/sources/conduit-lwt.8.0.0/tests/conduit-lwt-unix/**/server.key
+_opam/.opam-switch/sources/conduit-lwt.8.0.0/tests/conduit-lwt-unix/**/server.pem
+
+# flyctl launch added from _opam/.opam-switch/sources/conduit-lwt.8.0.0/tests/conduit-mirage/http-fetch/.gitignore
+_opam/.opam-switch/sources/conduit-lwt.8.0.0/tests/conduit-mirage/http-fetch/**/Makefile
+_opam/.opam-switch/sources/conduit-lwt.8.0.0/tests/conduit-mirage/http-fetch/**/*.xe
+_opam/.opam-switch/sources/conduit-lwt.8.0.0/tests/conduit-mirage/http-fetch/**/*.xl
+_opam/.opam-switch/sources/conduit-lwt.8.0.0/tests/conduit-mirage/http-fetch/**/_build
+_opam/.opam-switch/sources/conduit-lwt.8.0.0/tests/conduit-mirage/http-fetch/**/main.ml
+_opam/.opam-switch/sources/conduit-lwt.8.0.0/tests/conduit-mirage/http-fetch/**/mir-conduit-client
+_opam/.opam-switch/sources/conduit-lwt.8.0.0/tests/conduit-mirage/http-fetch/**/log
+_opam/.opam-switch/sources/conduit-lwt.8.0.0/tests/conduit-mirage/http-fetch/**/*.xen
+
+# flyctl launch added from _opam/.opam-switch/sources/conduit-lwt.8.0.0/tests/conduit-mirage/http-server/.gitignore
+_opam/.opam-switch/sources/conduit-lwt.8.0.0/tests/conduit-mirage/http-server/**/Makefile
+_opam/.opam-switch/sources/conduit-lwt.8.0.0/tests/conduit-mirage/http-server/**/*.xe
+_opam/.opam-switch/sources/conduit-lwt.8.0.0/tests/conduit-mirage/http-server/**/*.xl
+_opam/.opam-switch/sources/conduit-lwt.8.0.0/tests/conduit-mirage/http-server/**/_build
+_opam/.opam-switch/sources/conduit-lwt.8.0.0/tests/conduit-mirage/http-server/**/main.ml
+_opam/.opam-switch/sources/conduit-lwt.8.0.0/tests/conduit-mirage/http-server/**/mir-http-server
+_opam/.opam-switch/sources/conduit-lwt.8.0.0/tests/conduit-mirage/http-server/**/log
+_opam/.opam-switch/sources/conduit-lwt.8.0.0/tests/conduit-mirage/http-server/**/*.xen
+
+# flyctl launch added from _opam/.opam-switch/sources/conduit.8.0.0/.gitignore
+_opam/.opam-switch/sources/conduit.8.0.0/**/_build
+_opam/.opam-switch/sources/conduit.8.0.0/**/_opam
+_opam/.opam-switch/sources/conduit.8.0.0/**/.*.swp
+_opam/.opam-switch/sources/conduit.8.0.0/**/*.install
+_opam/.opam-switch/sources/conduit.8.0.0/**/.merlin
+
+# flyctl launch added from _opam/.opam-switch/sources/conduit.8.0.0/tests/conduit-lwt-unix/.gitignore
+_opam/.opam-switch/sources/conduit.8.0.0/tests/conduit-lwt-unix/**/server.conf
+_opam/.opam-switch/sources/conduit.8.0.0/tests/conduit-lwt-unix/**/server.key
+_opam/.opam-switch/sources/conduit.8.0.0/tests/conduit-lwt-unix/**/server.pem
+
+# flyctl launch added from _opam/.opam-switch/sources/conduit.8.0.0/tests/conduit-mirage/http-fetch/.gitignore
+_opam/.opam-switch/sources/conduit.8.0.0/tests/conduit-mirage/http-fetch/**/Makefile
+_opam/.opam-switch/sources/conduit.8.0.0/tests/conduit-mirage/http-fetch/**/*.xe
+_opam/.opam-switch/sources/conduit.8.0.0/tests/conduit-mirage/http-fetch/**/*.xl
+_opam/.opam-switch/sources/conduit.8.0.0/tests/conduit-mirage/http-fetch/**/_build
+_opam/.opam-switch/sources/conduit.8.0.0/tests/conduit-mirage/http-fetch/**/main.ml
+_opam/.opam-switch/sources/conduit.8.0.0/tests/conduit-mirage/http-fetch/**/mir-conduit-client
+_opam/.opam-switch/sources/conduit.8.0.0/tests/conduit-mirage/http-fetch/**/log
+_opam/.opam-switch/sources/conduit.8.0.0/tests/conduit-mirage/http-fetch/**/*.xen
+
+# flyctl launch added from _opam/.opam-switch/sources/conduit.8.0.0/tests/conduit-mirage/http-server/.gitignore
+_opam/.opam-switch/sources/conduit.8.0.0/tests/conduit-mirage/http-server/**/Makefile
+_opam/.opam-switch/sources/conduit.8.0.0/tests/conduit-mirage/http-server/**/*.xe
+_opam/.opam-switch/sources/conduit.8.0.0/tests/conduit-mirage/http-server/**/*.xl
+_opam/.opam-switch/sources/conduit.8.0.0/tests/conduit-mirage/http-server/**/_build
+_opam/.opam-switch/sources/conduit.8.0.0/tests/conduit-mirage/http-server/**/main.ml
+_opam/.opam-switch/sources/conduit.8.0.0/tests/conduit-mirage/http-server/**/mir-http-server
+_opam/.opam-switch/sources/conduit.8.0.0/tests/conduit-mirage/http-server/**/log
+_opam/.opam-switch/sources/conduit.8.0.0/tests/conduit-mirage/http-server/**/*.xen
+
+# flyctl launch added from _opam/.opam-switch/sources/cppo.1.8.0/.gitignore
+_opam/.opam-switch/sources/cppo.1.8.0/**/*~
+_opam/.opam-switch/sources/cppo.1.8.0/**/_build
+_opam/.opam-switch/sources/cppo.1.8.0/**/.merlin
+_opam/.opam-switch/sources/cppo.1.8.0/**/*.install
+_opam/.opam-switch/sources/cppo.1.8.0/**/.*.swp
+_opam/.opam-switch/sources/cppo.1.8.0/**/*.opam
+
+# flyctl launch added from _opam/.opam-switch/sources/csexp.1.5.2/.gitignore
+_opam/.opam-switch/sources/csexp.1.5.2/**/_opam
+_opam/.opam-switch/sources/csexp.1.5.2/**/_build
+_opam/.opam-switch/sources/csexp.1.5.2/**/*.install
+_opam/.opam-switch/sources/csexp.1.5.2/**/.merlin
+
+# flyctl launch added from _opam/.opam-switch/sources/cstruct.6.2.0/.gitignore
+_opam/.opam-switch/sources/cstruct.6.2.0/**/_build
+_opam/.opam-switch/sources/cstruct.6.2.0/**/.merlin
+_opam/.opam-switch/sources/cstruct.6.2.0/**/*.install
+_opam/.opam-switch/sources/cstruct.6.2.0/**/.*.swp
+_opam/.opam-switch/sources/cstruct.6.2.0/**/_opam
+
+# flyctl launch added from _opam/.opam-switch/sources/digestif.1.3.0/.gitignore
+_opam/.opam-switch/sources/digestif.1.3.0/**/_build
+_opam/.opam-switch/sources/digestif.1.3.0/**/setup.data
+_opam/.opam-switch/sources/digestif.1.3.0/**/setup.log
+_opam/.opam-switch/sources/digestif.1.3.0/**/doc/*.html
+_opam/.opam-switch/sources/digestif.1.3.0/**/*.native
+_opam/.opam-switch/sources/digestif.1.3.0/**/*.byte
+_opam/.opam-switch/sources/digestif.1.3.0/**/*.so
+_opam/.opam-switch/sources/digestif.1.3.0/**/lib/decompress_conf.ml
+_opam/.opam-switch/sources/digestif.1.3.0/**/*.tar.gz
+_opam/.opam-switch/sources/digestif.1.3.0/**/_tests
+_opam/.opam-switch/sources/digestif.1.3.0/**/lib_test/files
+_opam/.opam-switch/sources/digestif.1.3.0/**/zpipe
+_opam/.opam-switch/sources/digestif.1.3.0/**/c/dpipe
+_opam/.opam-switch/sources/digestif.1.3.0/**/*.install
+_opam/.opam-switch/sources/digestif.1.3.0/**/*~
+_opam/.opam-switch/sources/digestif.1.3.0/**/.merlin
+_opam/.opam-switch/sources/digestif.1.3.0/**/_opam
+
+# flyctl launch added from _opam/.opam-switch/sources/domain-name.0.4.1/.gitignore
+_opam/.opam-switch/sources/domain-name.0.4.1/**/_build
+_opam/.opam-switch/sources/domain-name.0.4.1/**/*.install
+_opam/.opam-switch/sources/domain-name.0.4.1/**/.merlin
+
+# flyctl launch added from _opam/.opam-switch/sources/dream-httpaf.1.0.0~alpha4/src/graphiql/.gitignore
+_opam/.opam-switch/sources/dream-httpaf.1.0.0~alpha4/src/graphiql/**/node_modules
+
+# flyctl launch added from _opam/.opam-switch/sources/dream-pure.1.0.0~alpha2/src/graphiql/.gitignore
+_opam/.opam-switch/sources/dream-pure.1.0.0~alpha2/src/graphiql/**/node_modules
+
+# flyctl launch added from _opam/.opam-switch/sources/dream-pure.1.0.0~alpha2/src/vendor/gluten/.gitignore
+_opam/.opam-switch/sources/dream-pure.1.0.0~alpha2/src/vendor/gluten/**/_build
+_opam/.opam-switch/sources/dream-pure.1.0.0~alpha2/src/vendor/gluten/**/.merlin
+_opam/.opam-switch/sources/dream-pure.1.0.0~alpha2/src/vendor/gluten/**/*.install
+
+# flyctl launch added from _opam/.opam-switch/sources/dream-pure.1.0.0~alpha2/src/vendor/h2/.gitignore
+_opam/.opam-switch/sources/dream-pure.1.0.0~alpha2/src/vendor/h2/**/_esy
+_opam/.opam-switch/sources/dream-pure.1.0.0~alpha2/src/vendor/h2/**/_build
+_opam/.opam-switch/sources/dream-pure.1.0.0~alpha2/src/vendor/h2/**/*.install
+_opam/.opam-switch/sources/dream-pure.1.0.0~alpha2/src/vendor/h2/**/*.merlin
+
+# flyctl launch added from _opam/.opam-switch/sources/dream-pure.1.0.0~alpha2/src/vendor/httpaf/.gitignore
+_opam/.opam-switch/sources/dream-pure.1.0.0~alpha2/src/vendor/httpaf/**/.*.sw[po]
+_opam/.opam-switch/sources/dream-pure.1.0.0~alpha2/src/vendor/httpaf/**/_build
+_opam/.opam-switch/sources/dream-pure.1.0.0~alpha2/src/vendor/httpaf/**/_tests
+_opam/.opam-switch/sources/dream-pure.1.0.0~alpha2/src/vendor/httpaf/**/lib_test/tests_
+_opam/.opam-switch/sources/dream-pure.1.0.0~alpha2/src/vendor/httpaf/**/*.native
+_opam/.opam-switch/sources/dream-pure.1.0.0~alpha2/src/vendor/httpaf/**/*.byte
+_opam/.opam-switch/sources/dream-pure.1.0.0~alpha2/src/vendor/httpaf/**/*.docdir
+_opam/.opam-switch/sources/dream-pure.1.0.0~alpha2/src/vendor/httpaf/**/.merlin
+_opam/.opam-switch/sources/dream-pure.1.0.0~alpha2/src/vendor/httpaf/**/*.install
+
+# flyctl launch added from _opam/.opam-switch/sources/dream-pure.1.0.0~alpha2/src/vendor/paf/.gitignore
+_opam/.opam-switch/sources/dream-pure.1.0.0~alpha2/src/vendor/paf/**/_build
+_opam/.opam-switch/sources/dream-pure.1.0.0~alpha2/src/vendor/paf/**/setup.data
+_opam/.opam-switch/sources/dream-pure.1.0.0~alpha2/src/vendor/paf/**/setup.log
+_opam/.opam-switch/sources/dream-pure.1.0.0~alpha2/src/vendor/paf/**/doc/*.html
+_opam/.opam-switch/sources/dream-pure.1.0.0~alpha2/src/vendor/paf/**/*.native
+_opam/.opam-switch/sources/dream-pure.1.0.0~alpha2/src/vendor/paf/**/*.byte
+_opam/.opam-switch/sources/dream-pure.1.0.0~alpha2/src/vendor/paf/**/*.so
+_opam/.opam-switch/sources/dream-pure.1.0.0~alpha2/src/vendor/paf/**/lib/decompress_conf.ml
+_opam/.opam-switch/sources/dream-pure.1.0.0~alpha2/src/vendor/paf/**/*.tar.gz
+_opam/.opam-switch/sources/dream-pure.1.0.0~alpha2/src/vendor/paf/**/_tests
+_opam/.opam-switch/sources/dream-pure.1.0.0~alpha2/src/vendor/paf/**/lib_test/files
+_opam/.opam-switch/sources/dream-pure.1.0.0~alpha2/src/vendor/paf/**/zpipe
+_opam/.opam-switch/sources/dream-pure.1.0.0~alpha2/src/vendor/paf/**/c/dpipe
+_opam/.opam-switch/sources/dream-pure.1.0.0~alpha2/src/vendor/paf/**/*.merlin
+_opam/.opam-switch/sources/dream-pure.1.0.0~alpha2/src/vendor/paf/**/*.install
+
+# flyctl launch added from _opam/.opam-switch/sources/dream-pure.1.0.0~alpha2/src/vendor/websocketaf/.gitignore
+_opam/.opam-switch/sources/dream-pure.1.0.0~alpha2/src/vendor/websocketaf/**/.*.sw[po]
+_opam/.opam-switch/sources/dream-pure.1.0.0~alpha2/src/vendor/websocketaf/**/_build
+_opam/.opam-switch/sources/dream-pure.1.0.0~alpha2/src/vendor/websocketaf/**/_tests
+_opam/.opam-switch/sources/dream-pure.1.0.0~alpha2/src/vendor/websocketaf/**/lib_test/tests_
+_opam/.opam-switch/sources/dream-pure.1.0.0~alpha2/src/vendor/websocketaf/**/*.native
+_opam/.opam-switch/sources/dream-pure.1.0.0~alpha2/src/vendor/websocketaf/**/*.byte
+_opam/.opam-switch/sources/dream-pure.1.0.0~alpha2/src/vendor/websocketaf/**/*.docdir
+_opam/.opam-switch/sources/dream-pure.1.0.0~alpha2/src/vendor/websocketaf/**/.merlin
+_opam/.opam-switch/sources/dream-pure.1.0.0~alpha2/src/vendor/websocketaf/**/*.install
+_opam/.opam-switch/sources/dream-pure.1.0.0~alpha2/src/vendor/websocketaf/**/node_modules
+_opam/.opam-switch/sources/dream-pure.1.0.0~alpha2/src/vendor/websocketaf/**/_esy
+
+# flyctl launch added from _opam/.opam-switch/sources/dream.1.0.0~alpha8/src/graphiql/.gitignore
+_opam/.opam-switch/sources/dream.1.0.0~alpha8/src/graphiql/**/node_modules
+
+# flyctl launch added from _opam/.opam-switch/sources/dune-configurator.3.19.1/.gitignore
+_opam/.opam-switch/sources/dune-configurator.3.19.1/**/_opam
+_opam/.opam-switch/sources/dune-configurator.3.19.1/**/_build
+_opam/.opam-switch/sources/dune-configurator.3.19.1/**/_boot
+_opam/.opam-switch/sources/dune-configurator.3.19.1/**/_test_boot
+_opam/.opam-switch/sources/dune-configurator.3.19.1/**/_perf
+_opam/.opam-switch/sources/dune-configurator.3.19.1/**/_coverage
+_opam/.opam-switch/sources/dune-configurator.3.19.1/**/__pycache__
+_opam/.opam-switch/sources/dune-configurator.3.19.1/**/*.install
+
+# vim swap files
+_opam/.opam-switch/sources/dune-configurator.3.19.1/**/*.swp
+_opam/.opam-switch/sources/dune-configurator.3.19.1/**/*.swo
+
+# emacs lock files
+_opam/.opam-switch/sources/dune-configurator.3.19.1/**/.#*
+
+# vscode settings
+_opam/.opam-switch/sources/dune-configurator.3.19.1/**/.vscode
+
+# git-ps hooks
+_opam/.opam-switch/sources/dune-configurator.3.19.1/**/.git-ps
+
+_opam/.opam-switch/sources/dune-configurator.3.19.1/**/.duneboot.*
+_opam/.opam-switch/sources/dune-configurator.3.19.1/**/Makefile.dev
+_opam/.opam-switch/sources/dune-configurator.3.19.1/**/src/dune_rules/setup.ml
+_opam/.opam-switch/sources/dune-configurator.3.19.1/**/result
+
+_opam/.opam-switch/sources/dune-configurator.3.19.1/**/.DS_Store
+_opam/.opam-switch/sources/dune-configurator.3.19.1/**/nix/profiles
+
+# flyctl launch added from _opam/.opam-switch/sources/dune-configurator.3.19.1/doc/papers/.gitignore
+_opam/.opam-switch/sources/dune-configurator.3.19.1/doc/papers/**/*.pdf
+
+# flyctl launch added from _opam/.opam-switch/sources/dune-configurator.3.19.1/example/with-configure-step.t/.gitignore
+_opam/.opam-switch/sources/dune-configurator.3.19.1/example/with-configure-step.t/**/config
+_opam/.opam-switch/sources/dune-configurator.3.19.1/example/with-configure-step.t/**/config.full
+
+# flyctl launch added from _opam/.opam-switch/sources/dune-private-libs.3.19.1/.gitignore
+_opam/.opam-switch/sources/dune-private-libs.3.19.1/**/_opam
+_opam/.opam-switch/sources/dune-private-libs.3.19.1/**/_build
+_opam/.opam-switch/sources/dune-private-libs.3.19.1/**/_boot
+_opam/.opam-switch/sources/dune-private-libs.3.19.1/**/_test_boot
+_opam/.opam-switch/sources/dune-private-libs.3.19.1/**/_perf
+_opam/.opam-switch/sources/dune-private-libs.3.19.1/**/_coverage
+_opam/.opam-switch/sources/dune-private-libs.3.19.1/**/__pycache__
+_opam/.opam-switch/sources/dune-private-libs.3.19.1/**/*.install
+
+# vim swap files
+_opam/.opam-switch/sources/dune-private-libs.3.19.1/**/*.swp
+_opam/.opam-switch/sources/dune-private-libs.3.19.1/**/*.swo
+
+# emacs lock files
+_opam/.opam-switch/sources/dune-private-libs.3.19.1/**/.#*
+
+# vscode settings
+_opam/.opam-switch/sources/dune-private-libs.3.19.1/**/.vscode
+
+# git-ps hooks
+_opam/.opam-switch/sources/dune-private-libs.3.19.1/**/.git-ps
+
+_opam/.opam-switch/sources/dune-private-libs.3.19.1/**/.duneboot.*
+_opam/.opam-switch/sources/dune-private-libs.3.19.1/**/Makefile.dev
+_opam/.opam-switch/sources/dune-private-libs.3.19.1/**/src/dune_rules/setup.ml
+_opam/.opam-switch/sources/dune-private-libs.3.19.1/**/result
+
+_opam/.opam-switch/sources/dune-private-libs.3.19.1/**/.DS_Store
+_opam/.opam-switch/sources/dune-private-libs.3.19.1/**/nix/profiles
+
+# flyctl launch added from _opam/.opam-switch/sources/dune-private-libs.3.19.1/doc/papers/.gitignore
+_opam/.opam-switch/sources/dune-private-libs.3.19.1/doc/papers/**/*.pdf
+
+# flyctl launch added from _opam/.opam-switch/sources/dune-private-libs.3.19.1/example/with-configure-step.t/.gitignore
+_opam/.opam-switch/sources/dune-private-libs.3.19.1/example/with-configure-step.t/**/config
+_opam/.opam-switch/sources/dune-private-libs.3.19.1/example/with-configure-step.t/**/config.full
+
+# flyctl launch added from _opam/.opam-switch/sources/dune-site.3.19.1/.gitignore
+_opam/.opam-switch/sources/dune-site.3.19.1/**/_opam
+_opam/.opam-switch/sources/dune-site.3.19.1/**/_build
+_opam/.opam-switch/sources/dune-site.3.19.1/**/_boot
+_opam/.opam-switch/sources/dune-site.3.19.1/**/_test_boot
+_opam/.opam-switch/sources/dune-site.3.19.1/**/_perf
+_opam/.opam-switch/sources/dune-site.3.19.1/**/_coverage
+_opam/.opam-switch/sources/dune-site.3.19.1/**/__pycache__
+_opam/.opam-switch/sources/dune-site.3.19.1/**/*.install
+
+# vim swap files
+_opam/.opam-switch/sources/dune-site.3.19.1/**/*.swp
+_opam/.opam-switch/sources/dune-site.3.19.1/**/*.swo
+
+# emacs lock files
+_opam/.opam-switch/sources/dune-site.3.19.1/**/.#*
+
+# vscode settings
+_opam/.opam-switch/sources/dune-site.3.19.1/**/.vscode
+
+# git-ps hooks
+_opam/.opam-switch/sources/dune-site.3.19.1/**/.git-ps
+
+_opam/.opam-switch/sources/dune-site.3.19.1/**/.duneboot.*
+_opam/.opam-switch/sources/dune-site.3.19.1/**/Makefile.dev
+_opam/.opam-switch/sources/dune-site.3.19.1/**/src/dune_rules/setup.ml
+_opam/.opam-switch/sources/dune-site.3.19.1/**/result
+
+_opam/.opam-switch/sources/dune-site.3.19.1/**/.DS_Store
+_opam/.opam-switch/sources/dune-site.3.19.1/**/nix/profiles
+
+# flyctl launch added from _opam/.opam-switch/sources/dune-site.3.19.1/doc/papers/.gitignore
+_opam/.opam-switch/sources/dune-site.3.19.1/doc/papers/**/*.pdf
+
+# flyctl launch added from _opam/.opam-switch/sources/dune-site.3.19.1/example/with-configure-step.t/.gitignore
+_opam/.opam-switch/sources/dune-site.3.19.1/example/with-configure-step.t/**/config
+_opam/.opam-switch/sources/dune-site.3.19.1/example/with-configure-step.t/**/config.full
+
+# flyctl launch added from _opam/.opam-switch/sources/dune.3.19.1/.gitignore
+_opam/.opam-switch/sources/dune.3.19.1/**/_opam
+_opam/.opam-switch/sources/dune.3.19.1/**/_build
+_opam/.opam-switch/sources/dune.3.19.1/**/_boot
+_opam/.opam-switch/sources/dune.3.19.1/**/_test_boot
+_opam/.opam-switch/sources/dune.3.19.1/**/_perf
+_opam/.opam-switch/sources/dune.3.19.1/**/_coverage
+_opam/.opam-switch/sources/dune.3.19.1/**/__pycache__
+_opam/.opam-switch/sources/dune.3.19.1/**/*.install
+
+# vim swap files
+_opam/.opam-switch/sources/dune.3.19.1/**/*.swp
+_opam/.opam-switch/sources/dune.3.19.1/**/*.swo
+
+# emacs lock files
+_opam/.opam-switch/sources/dune.3.19.1/**/.#*
+
+# vscode settings
+_opam/.opam-switch/sources/dune.3.19.1/**/.vscode
+
+# git-ps hooks
+_opam/.opam-switch/sources/dune.3.19.1/**/.git-ps
+
+_opam/.opam-switch/sources/dune.3.19.1/**/.duneboot.*
+_opam/.opam-switch/sources/dune.3.19.1/**/Makefile.dev
+_opam/.opam-switch/sources/dune.3.19.1/**/src/dune_rules/setup.ml
+_opam/.opam-switch/sources/dune.3.19.1/**/result
+
+_opam/.opam-switch/sources/dune.3.19.1/**/.DS_Store
+_opam/.opam-switch/sources/dune.3.19.1/**/nix/profiles
+
+# flyctl launch added from _opam/.opam-switch/sources/dune.3.19.1/doc/papers/.gitignore
+_opam/.opam-switch/sources/dune.3.19.1/doc/papers/**/*.pdf
+
+# flyctl launch added from _opam/.opam-switch/sources/dune.3.19.1/example/with-configure-step.t/.gitignore
+_opam/.opam-switch/sources/dune.3.19.1/example/with-configure-step.t/**/config
+_opam/.opam-switch/sources/dune.3.19.1/example/with-configure-step.t/**/config.full
+
+# flyctl launch added from _opam/.opam-switch/sources/duration.0.2.1/.gitignore
+_opam/.opam-switch/sources/duration.0.2.1/**/_build
+_opam/.opam-switch/sources/duration.0.2.1/**/*.native
+_opam/.opam-switch/sources/duration.0.2.1/**/*.byte
+_opam/.opam-switch/sources/duration.0.2.1/**/*.install
+_opam/.opam-switch/sources/duration.0.2.1/**/.merlin
+
+# flyctl launch added from _opam/.opam-switch/sources/dyn.3.19.1/.gitignore
+_opam/.opam-switch/sources/dyn.3.19.1/**/_opam
+_opam/.opam-switch/sources/dyn.3.19.1/**/_build
+_opam/.opam-switch/sources/dyn.3.19.1/**/_boot
+_opam/.opam-switch/sources/dyn.3.19.1/**/_test_boot
+_opam/.opam-switch/sources/dyn.3.19.1/**/_perf
+_opam/.opam-switch/sources/dyn.3.19.1/**/_coverage
+_opam/.opam-switch/sources/dyn.3.19.1/**/__pycache__
+_opam/.opam-switch/sources/dyn.3.19.1/**/*.install
+
+# vim swap files
+_opam/.opam-switch/sources/dyn.3.19.1/**/*.swp
+_opam/.opam-switch/sources/dyn.3.19.1/**/*.swo
+
+# emacs lock files
+_opam/.opam-switch/sources/dyn.3.19.1/**/.#*
+
+# vscode settings
+_opam/.opam-switch/sources/dyn.3.19.1/**/.vscode
+
+# git-ps hooks
+_opam/.opam-switch/sources/dyn.3.19.1/**/.git-ps
+
+_opam/.opam-switch/sources/dyn.3.19.1/**/.duneboot.*
+_opam/.opam-switch/sources/dyn.3.19.1/**/Makefile.dev
+_opam/.opam-switch/sources/dyn.3.19.1/**/src/dune_rules/setup.ml
+_opam/.opam-switch/sources/dyn.3.19.1/**/result
+
+_opam/.opam-switch/sources/dyn.3.19.1/**/.DS_Store
+_opam/.opam-switch/sources/dyn.3.19.1/**/nix/profiles
+
+# flyctl launch added from _opam/.opam-switch/sources/dyn.3.19.1/doc/papers/.gitignore
+_opam/.opam-switch/sources/dyn.3.19.1/doc/papers/**/*.pdf
+
+# flyctl launch added from _opam/.opam-switch/sources/dyn.3.19.1/example/with-configure-step.t/.gitignore
+_opam/.opam-switch/sources/dyn.3.19.1/example/with-configure-step.t/**/config
+_opam/.opam-switch/sources/dyn.3.19.1/example/with-configure-step.t/**/config.full
+
+# flyctl launch added from _opam/.opam-switch/sources/eqaf.0.10/.gitignore
+_opam/.opam-switch/sources/eqaf.0.10/**/_build
+_opam/.opam-switch/sources/eqaf.0.10/**/setup.data
+_opam/.opam-switch/sources/eqaf.0.10/**/setup.log
+_opam/.opam-switch/sources/eqaf.0.10/**/doc/*.html
+_opam/.opam-switch/sources/eqaf.0.10/**/*.native
+_opam/.opam-switch/sources/eqaf.0.10/**/*.byte
+_opam/.opam-switch/sources/eqaf.0.10/**/*.so
+_opam/.opam-switch/sources/eqaf.0.10/**/lib/decompress_conf.ml
+_opam/.opam-switch/sources/eqaf.0.10/**/*.tar.gz
+_opam/.opam-switch/sources/eqaf.0.10/**/_tests
+_opam/.opam-switch/sources/eqaf.0.10/**/lib_test/files
+_opam/.opam-switch/sources/eqaf.0.10/**/zpipe
+_opam/.opam-switch/sources/eqaf.0.10/**/c/dpipe
+_opam/.opam-switch/sources/eqaf.0.10/**/*.install
+_opam/.opam-switch/sources/eqaf.0.10/**/*~
+_opam/.opam-switch/sources/eqaf.0.10/**/.merlin
+
+# flyctl launch added from _opam/.opam-switch/sources/faraday-lwt-unix.0.8.2/.gitignore
+_opam/.opam-switch/sources/faraday-lwt-unix.0.8.2/**/.*.sw[a-z]
+_opam/.opam-switch/sources/faraday-lwt-unix.0.8.2/**/*~
+_opam/.opam-switch/sources/faraday-lwt-unix.0.8.2/**/_build
+_opam/.opam-switch/sources/faraday-lwt-unix.0.8.2/**/_tests
+_opam/.opam-switch/sources/faraday-lwt-unix.0.8.2/**/lib_test/tests_
+_opam/.opam-switch/sources/faraday-lwt-unix.0.8.2/**/setup.log
+_opam/.opam-switch/sources/faraday-lwt-unix.0.8.2/**/setup.data
+_opam/.opam-switch/sources/faraday-lwt-unix.0.8.2/**/*.native
+_opam/.opam-switch/sources/faraday-lwt-unix.0.8.2/**/*.byte
+_opam/.opam-switch/sources/faraday-lwt-unix.0.8.2/**/*.docdir
+_opam/.opam-switch/sources/faraday-lwt-unix.0.8.2/**/*.install
+_opam/.opam-switch/sources/faraday-lwt-unix.0.8.2/**/.merlin
+
+# flyctl launch added from _opam/.opam-switch/sources/faraday-lwt.0.8.2/.gitignore
+_opam/.opam-switch/sources/faraday-lwt.0.8.2/**/.*.sw[a-z]
+_opam/.opam-switch/sources/faraday-lwt.0.8.2/**/*~
+_opam/.opam-switch/sources/faraday-lwt.0.8.2/**/_build
+_opam/.opam-switch/sources/faraday-lwt.0.8.2/**/_tests
+_opam/.opam-switch/sources/faraday-lwt.0.8.2/**/lib_test/tests_
+_opam/.opam-switch/sources/faraday-lwt.0.8.2/**/setup.log
+_opam/.opam-switch/sources/faraday-lwt.0.8.2/**/setup.data
+_opam/.opam-switch/sources/faraday-lwt.0.8.2/**/*.native
+_opam/.opam-switch/sources/faraday-lwt.0.8.2/**/*.byte
+_opam/.opam-switch/sources/faraday-lwt.0.8.2/**/*.docdir
+_opam/.opam-switch/sources/faraday-lwt.0.8.2/**/*.install
+_opam/.opam-switch/sources/faraday-lwt.0.8.2/**/.merlin
+
+# flyctl launch added from _opam/.opam-switch/sources/faraday.0.8.2/.gitignore
+_opam/.opam-switch/sources/faraday.0.8.2/**/.*.sw[a-z]
+_opam/.opam-switch/sources/faraday.0.8.2/**/*~
+_opam/.opam-switch/sources/faraday.0.8.2/**/_build
+_opam/.opam-switch/sources/faraday.0.8.2/**/_tests
+_opam/.opam-switch/sources/faraday.0.8.2/**/lib_test/tests_
+_opam/.opam-switch/sources/faraday.0.8.2/**/setup.log
+_opam/.opam-switch/sources/faraday.0.8.2/**/setup.data
+_opam/.opam-switch/sources/faraday.0.8.2/**/*.native
+_opam/.opam-switch/sources/faraday.0.8.2/**/*.byte
+_opam/.opam-switch/sources/faraday.0.8.2/**/*.docdir
+_opam/.opam-switch/sources/faraday.0.8.2/**/*.install
+_opam/.opam-switch/sources/faraday.0.8.2/**/.merlin
+
+# flyctl launch added from _opam/.opam-switch/sources/gluten-lwt-unix.0.5.2/.gitignore
+_opam/.opam-switch/sources/gluten-lwt-unix.0.5.2/**/_build
+_opam/.opam-switch/sources/gluten-lwt-unix.0.5.2/**/.merlin
+_opam/.opam-switch/sources/gluten-lwt-unix.0.5.2/**/*.install
+
+# flyctl launch added from _opam/.opam-switch/sources/gluten-lwt.0.5.2/.gitignore
+_opam/.opam-switch/sources/gluten-lwt.0.5.2/**/_build
+_opam/.opam-switch/sources/gluten-lwt.0.5.2/**/.merlin
+_opam/.opam-switch/sources/gluten-lwt.0.5.2/**/*.install
+
+# flyctl launch added from _opam/.opam-switch/sources/gluten.0.5.2/.gitignore
+_opam/.opam-switch/sources/gluten.0.5.2/**/_build
+_opam/.opam-switch/sources/gluten.0.5.2/**/.merlin
+_opam/.opam-switch/sources/gluten.0.5.2/**/*.install
+
+# flyctl launch added from _opam/.opam-switch/sources/graphql-lwt.0.14.0/.gitignore
+_opam/.opam-switch/sources/graphql-lwt.0.14.0/**/_build
+_opam/.opam-switch/sources/graphql-lwt.0.14.0/**/_tests
+_opam/.opam-switch/sources/graphql-lwt.0.14.0/**/*.native
+_opam/.opam-switch/sources/graphql-lwt.0.14.0/**/*.byte
+_opam/.opam-switch/sources/graphql-lwt.0.14.0/**/*.install
+_opam/.opam-switch/sources/graphql-lwt.0.14.0/**/.merlin
+
+# flyctl launch added from _opam/.opam-switch/sources/graphql.0.14.0/.gitignore
+_opam/.opam-switch/sources/graphql.0.14.0/**/_build
+_opam/.opam-switch/sources/graphql.0.14.0/**/_tests
+_opam/.opam-switch/sources/graphql.0.14.0/**/*.native
+_opam/.opam-switch/sources/graphql.0.14.0/**/*.byte
+_opam/.opam-switch/sources/graphql.0.14.0/**/*.install
+_opam/.opam-switch/sources/graphql.0.14.0/**/.merlin
+
+# flyctl launch added from _opam/.opam-switch/sources/graphql_parser.0.14.0/.gitignore
+_opam/.opam-switch/sources/graphql_parser.0.14.0/**/_build
+_opam/.opam-switch/sources/graphql_parser.0.14.0/**/_tests
+_opam/.opam-switch/sources/graphql_parser.0.14.0/**/*.native
+_opam/.opam-switch/sources/graphql_parser.0.14.0/**/*.byte
+_opam/.opam-switch/sources/graphql_parser.0.14.0/**/*.install
+_opam/.opam-switch/sources/graphql_parser.0.14.0/**/.merlin
+
+# flyctl launch added from _opam/.opam-switch/sources/h2-lwt-unix.0.10.0/.gitignore
+_opam/.opam-switch/sources/h2-lwt-unix.0.10.0/**/_esy
+_opam/.opam-switch/sources/h2-lwt-unix.0.10.0/**/_build
+_opam/.opam-switch/sources/h2-lwt-unix.0.10.0/**/*.install
+_opam/.opam-switch/sources/h2-lwt-unix.0.10.0/**/*.merlin
+
+# flyctl launch added from _opam/.opam-switch/sources/h2-lwt.0.10.0/.gitignore
+_opam/.opam-switch/sources/h2-lwt.0.10.0/**/_esy
+_opam/.opam-switch/sources/h2-lwt.0.10.0/**/_build
+_opam/.opam-switch/sources/h2-lwt.0.10.0/**/*.install
+_opam/.opam-switch/sources/h2-lwt.0.10.0/**/*.merlin
+
+# flyctl launch added from _opam/.opam-switch/sources/h2.0.10.0/.gitignore
+_opam/.opam-switch/sources/h2.0.10.0/**/_esy
+_opam/.opam-switch/sources/h2.0.10.0/**/_build
+_opam/.opam-switch/sources/h2.0.10.0/**/*.install
+_opam/.opam-switch/sources/h2.0.10.0/**/*.merlin
+
+# flyctl launch added from _opam/.opam-switch/sources/hpack.0.13.0/.gitignore
+_opam/.opam-switch/sources/hpack.0.13.0/**/_esy
+_opam/.opam-switch/sources/hpack.0.13.0/**/_build
+_opam/.opam-switch/sources/hpack.0.13.0/**/*.install
+_opam/.opam-switch/sources/hpack.0.13.0/**/*.merlin
+
+# flyctl launch added from _opam/.opam-switch/sources/http.6.1.1/.gitignore
+_opam/.opam-switch/sources/http.6.1.1/**/.*.swp
+_opam/.opam-switch/sources/http.6.1.1/**/_build
+_opam/.opam-switch/sources/http.6.1.1/**/*.install
+_opam/.opam-switch/sources/http.6.1.1/**/.merlin
+_opam/.opam-switch/sources/http.6.1.1/**/_opam
+_opam/.opam-switch/sources/http.6.1.1/**/node_modules
+_opam/.opam-switch/sources/http.6.1.1/**/dune.lock
+
+# flyctl launch added from _opam/.opam-switch/sources/httpaf.0.7.1/.gitignore
+_opam/.opam-switch/sources/httpaf.0.7.1/**/.*.sw[po]
+_opam/.opam-switch/sources/httpaf.0.7.1/**/_build
+_opam/.opam-switch/sources/httpaf.0.7.1/**/_tests
+_opam/.opam-switch/sources/httpaf.0.7.1/**/lib_test/tests_
+_opam/.opam-switch/sources/httpaf.0.7.1/**/*.native
+_opam/.opam-switch/sources/httpaf.0.7.1/**/*.byte
+_opam/.opam-switch/sources/httpaf.0.7.1/**/*.docdir
+_opam/.opam-switch/sources/httpaf.0.7.1/**/.merlin
+_opam/.opam-switch/sources/httpaf.0.7.1/**/*.install
+
+# flyctl launch added from _opam/.opam-switch/sources/httpun-lwt-unix.0.1.0/.gitignore
+_opam/.opam-switch/sources/httpun-lwt-unix.0.1.0/**/.*.sw[po]
+_opam/.opam-switch/sources/httpun-lwt-unix.0.1.0/**/_build
+_opam/.opam-switch/sources/httpun-lwt-unix.0.1.0/**/_tests
+_opam/.opam-switch/sources/httpun-lwt-unix.0.1.0/**/lib_test/tests_
+_opam/.opam-switch/sources/httpun-lwt-unix.0.1.0/**/*.native
+_opam/.opam-switch/sources/httpun-lwt-unix.0.1.0/**/*.byte
+_opam/.opam-switch/sources/httpun-lwt-unix.0.1.0/**/*.docdir
+_opam/.opam-switch/sources/httpun-lwt-unix.0.1.0/**/.merlin
+_opam/.opam-switch/sources/httpun-lwt-unix.0.1.0/**/*.install
+
+# flyctl launch added from _opam/.opam-switch/sources/httpun-lwt.0.1.0/.gitignore
+_opam/.opam-switch/sources/httpun-lwt.0.1.0/**/.*.sw[po]
+_opam/.opam-switch/sources/httpun-lwt.0.1.0/**/_build
+_opam/.opam-switch/sources/httpun-lwt.0.1.0/**/_tests
+_opam/.opam-switch/sources/httpun-lwt.0.1.0/**/lib_test/tests_
+_opam/.opam-switch/sources/httpun-lwt.0.1.0/**/*.native
+_opam/.opam-switch/sources/httpun-lwt.0.1.0/**/*.byte
+_opam/.opam-switch/sources/httpun-lwt.0.1.0/**/*.docdir
+_opam/.opam-switch/sources/httpun-lwt.0.1.0/**/.merlin
+_opam/.opam-switch/sources/httpun-lwt.0.1.0/**/*.install
+
+# flyctl launch added from _opam/.opam-switch/sources/httpun-types.0.1.0/.gitignore
+_opam/.opam-switch/sources/httpun-types.0.1.0/**/.*.sw[po]
+_opam/.opam-switch/sources/httpun-types.0.1.0/**/_build
+_opam/.opam-switch/sources/httpun-types.0.1.0/**/_tests
+_opam/.opam-switch/sources/httpun-types.0.1.0/**/lib_test/tests_
+_opam/.opam-switch/sources/httpun-types.0.1.0/**/*.native
+_opam/.opam-switch/sources/httpun-types.0.1.0/**/*.byte
+_opam/.opam-switch/sources/httpun-types.0.1.0/**/*.docdir
+_opam/.opam-switch/sources/httpun-types.0.1.0/**/.merlin
+_opam/.opam-switch/sources/httpun-types.0.1.0/**/*.install
+
+# flyctl launch added from _opam/.opam-switch/sources/httpun-ws.0.2.0/.gitignore
+_opam/.opam-switch/sources/httpun-ws.0.2.0/**/.*.sw[po]
+_opam/.opam-switch/sources/httpun-ws.0.2.0/**/_build
+_opam/.opam-switch/sources/httpun-ws.0.2.0/**/_tests
+_opam/.opam-switch/sources/httpun-ws.0.2.0/**/lib_test/tests_
+_opam/.opam-switch/sources/httpun-ws.0.2.0/**/*.native
+_opam/.opam-switch/sources/httpun-ws.0.2.0/**/*.byte
+_opam/.opam-switch/sources/httpun-ws.0.2.0/**/*.docdir
+_opam/.opam-switch/sources/httpun-ws.0.2.0/**/.merlin
+_opam/.opam-switch/sources/httpun-ws.0.2.0/**/*.install
+_opam/.opam-switch/sources/httpun-ws.0.2.0/**/node_modules
+_opam/.opam-switch/sources/httpun-ws.0.2.0/**/_esy
+
+# flyctl launch added from _opam/.opam-switch/sources/httpun.0.1.0/.gitignore
+_opam/.opam-switch/sources/httpun.0.1.0/**/.*.sw[po]
+_opam/.opam-switch/sources/httpun.0.1.0/**/_build
+_opam/.opam-switch/sources/httpun.0.1.0/**/_tests
+_opam/.opam-switch/sources/httpun.0.1.0/**/lib_test/tests_
+_opam/.opam-switch/sources/httpun.0.1.0/**/*.native
+_opam/.opam-switch/sources/httpun.0.1.0/**/*.byte
+_opam/.opam-switch/sources/httpun.0.1.0/**/*.docdir
+_opam/.opam-switch/sources/httpun.0.1.0/**/.merlin
+_opam/.opam-switch/sources/httpun.0.1.0/**/*.install
+
+# flyctl launch added from _opam/.opam-switch/sources/ipaddr-sexp.5.6.1/.gitignore
+_opam/.opam-switch/sources/ipaddr-sexp.5.6.1/**/_build
+_opam/.opam-switch/sources/ipaddr-sexp.5.6.1/**/*.install
+_opam/.opam-switch/sources/ipaddr-sexp.5.6.1/**/**/*.merlin
+_opam/.opam-switch/sources/ipaddr-sexp.5.6.1/**/.*.swp
+
+# flyctl launch added from _opam/.opam-switch/sources/ipaddr.5.6.1/.gitignore
+_opam/.opam-switch/sources/ipaddr.5.6.1/**/_build
+_opam/.opam-switch/sources/ipaddr.5.6.1/**/*.install
+_opam/.opam-switch/sources/ipaddr.5.6.1/**/**/*.merlin
+_opam/.opam-switch/sources/ipaddr.5.6.1/**/.*.swp
+
+# flyctl launch added from _opam/.opam-switch/sources/kdf.1.0.0/.gitignore
+_opam/.opam-switch/sources/kdf.1.0.0/**/_build
+_opam/.opam-switch/sources/kdf.1.0.0/**/_tests
+_opam/.opam-switch/sources/kdf.1.0.0/**/coverage
+_opam/.opam-switch/sources/kdf.1.0.0/**/*.install
+_opam/.opam-switch/sources/kdf.1.0.0/**/**/*.merlin
+_opam/.opam-switch/sources/kdf.1.0.0/**/*.byte
+_opam/.opam-switch/sources/kdf.1.0.0/**/*.native
+
+# flyctl launch added from _opam/.opam-switch/sources/ke.0.6/.gitignore
+_opam/.opam-switch/sources/ke.0.6/**/_build
+_opam/.opam-switch/sources/ke.0.6/**/setup.data
+_opam/.opam-switch/sources/ke.0.6/**/setup.log
+_opam/.opam-switch/sources/ke.0.6/**/doc/*.html
+_opam/.opam-switch/sources/ke.0.6/**/*.native
+_opam/.opam-switch/sources/ke.0.6/**/*.byte
+_opam/.opam-switch/sources/ke.0.6/**/*.so
+_opam/.opam-switch/sources/ke.0.6/**/lib/decompress_conf.ml
+_opam/.opam-switch/sources/ke.0.6/**/*.tar.gz
+_opam/.opam-switch/sources/ke.0.6/**/_tests
+_opam/.opam-switch/sources/ke.0.6/**/lib_test/files
+_opam/.opam-switch/sources/ke.0.6/**/zpipe
+_opam/.opam-switch/sources/ke.0.6/**/c/dpipe
+_opam/.opam-switch/sources/ke.0.6/**/*.merlin
+_opam/.opam-switch/sources/ke.0.6/**/*.install
+
+# flyctl launch added from _opam/.opam-switch/sources/lambdasoup.1.1.1/.gitignore
+_opam/.opam-switch/sources/lambdasoup.1.1.1/**/scratch
+_opam/.opam-switch/sources/lambdasoup.1.1.1/**/_build
+_opam/.opam-switch/sources/lambdasoup.1.1.1/**/*.install
+_opam/.opam-switch/sources/lambdasoup.1.1.1/**/.merlin
+_opam/.opam-switch/sources/lambdasoup.1.1.1/**/docs/html
+_opam/.opam-switch/sources/lambdasoup.1.1.1/**/docs/*.zip
+_opam/.opam-switch/sources/lambdasoup.1.1.1/**/_coverage
+_opam/.opam-switch/sources/lambdasoup.1.1.1/**/_opam
+_opam/.opam-switch/sources/lambdasoup.1.1.1/**/.vscode
+
+# flyctl launch added from _opam/.opam-switch/sources/lru.0.3.1/.gitignore
+_opam/.opam-switch/sources/lru.0.3.1/**/_build
+
+_opam/.opam-switch/sources/lru.0.3.1/**/tmp
+_opam/.opam-switch/sources/lru.0.3.1/**/*~
+_opam/.opam-switch/sources/lru.0.3.1/**/\.\#*
+_opam/.opam-switch/sources/lru.0.3.1/**/\#*#
+
+_opam/.opam-switch/sources/lru.0.3.1/**/gmon.out
+_opam/.opam-switch/sources/lru.0.3.1/**/rondom
+
+# flyctl launch added from _opam/.opam-switch/sources/lwt-dllist.1.1.0/.gitignore
+_opam/.opam-switch/sources/lwt-dllist.1.1.0/**/_build
+_opam/.opam-switch/sources/lwt-dllist.1.1.0/**/.merlin
+_opam/.opam-switch/sources/lwt-dllist.1.1.0/**/*.install
+_opam/.opam-switch/sources/lwt-dllist.1.1.0/**/.*.swp
+
+# flyctl launch added from _opam/.opam-switch/sources/lwt.5.9.1/.gitignore
+_opam/.opam-switch/sources/lwt.5.9.1/**/_build
+_opam/.opam-switch/sources/lwt.5.9.1/**/src/unix/discover_arguments
+_opam/.opam-switch/sources/lwt.5.9.1/**/*.flag
+
+# OPAM 2.0 local switches.
+_opam/.opam-switch/sources/lwt.5.9.1/**/_opam
+
+# NPM.
+_opam/.opam-switch/sources/lwt.5.9.1/**/node_modules
+_opam/.opam-switch/sources/lwt.5.9.1/**/package-lock.json
+# package-lock.json should probably be committed once we know what we're doing.
+
+# esy
+_opam/.opam-switch/sources/lwt.5.9.1/**/_esy
+_opam/.opam-switch/sources/lwt.5.9.1/**/esy.lock
+
+# Coverage analysis.
+_opam/.opam-switch/sources/lwt.5.9.1/**/bisect*.out
+_opam/.opam-switch/sources/lwt.5.9.1/**/_coverage
+
+# For local work, tests, etc.
+_opam/.opam-switch/sources/lwt.5.9.1/**/scratch
+
+# Autogenerated by jbuider
+_opam/.opam-switch/sources/lwt.5.9.1/**/.merlin
+_opam/.opam-switch/sources/lwt.5.9.1/**/*.install
+
+# BuckleScript output.
+_opam/.opam-switch/sources/lwt.5.9.1/**/lib
+
+# Wikidoc output.
+_opam/.opam-switch/sources/lwt.5.9.1/docs/api
+
+# flyctl launch added from _opam/.opam-switch/sources/lwt_ppx.5.9.1/.gitignore
+_opam/.opam-switch/sources/lwt_ppx.5.9.1/**/_build
+_opam/.opam-switch/sources/lwt_ppx.5.9.1/**/src/unix/discover_arguments
+_opam/.opam-switch/sources/lwt_ppx.5.9.1/**/*.flag
+
+# OPAM 2.0 local switches.
+_opam/.opam-switch/sources/lwt_ppx.5.9.1/**/_opam
+
+# NPM.
+_opam/.opam-switch/sources/lwt_ppx.5.9.1/**/node_modules
+_opam/.opam-switch/sources/lwt_ppx.5.9.1/**/package-lock.json
+# package-lock.json should probably be committed once we know what we're doing.
+
+# esy
+_opam/.opam-switch/sources/lwt_ppx.5.9.1/**/_esy
+_opam/.opam-switch/sources/lwt_ppx.5.9.1/**/esy.lock
+
+# Coverage analysis.
+_opam/.opam-switch/sources/lwt_ppx.5.9.1/**/bisect*.out
+_opam/.opam-switch/sources/lwt_ppx.5.9.1/**/_coverage
+
+# For local work, tests, etc.
+_opam/.opam-switch/sources/lwt_ppx.5.9.1/**/scratch
+
+# Autogenerated by jbuider
+_opam/.opam-switch/sources/lwt_ppx.5.9.1/**/.merlin
+_opam/.opam-switch/sources/lwt_ppx.5.9.1/**/*.install
+
+# BuckleScript output.
+_opam/.opam-switch/sources/lwt_ppx.5.9.1/**/lib
+
+# Wikidoc output.
+_opam/.opam-switch/sources/lwt_ppx.5.9.1/docs/api
+
+# flyctl launch added from _opam/.opam-switch/sources/lwt_ssl.1.2.0/.gitignore
+_opam/.opam-switch/sources/lwt_ssl.1.2.0/**/_build
+_opam/.opam-switch/sources/lwt_ssl.1.2.0/**/.merlin
+_opam/.opam-switch/sources/lwt_ssl.1.2.0/**/*.install
+_opam/.opam-switch/sources/lwt_ssl.1.2.0/**/_opam
+_opam/.opam-switch/sources/lwt_ssl.1.2.0/**/scratch
+
+# flyctl launch added from _opam/.opam-switch/sources/macaddr.5.6.1/.gitignore
+_opam/.opam-switch/sources/macaddr.5.6.1/**/_build
+_opam/.opam-switch/sources/macaddr.5.6.1/**/*.install
+_opam/.opam-switch/sources/macaddr.5.6.1/**/**/*.merlin
+_opam/.opam-switch/sources/macaddr.5.6.1/**/.*.swp
+
+# flyctl launch added from _opam/.opam-switch/sources/magic-mime.1.3.1/.gitignore
+_opam/.opam-switch/sources/magic-mime.1.3.1/**/_build
+_opam/.opam-switch/sources/magic-mime.1.3.1/**/.merlin
+_opam/.opam-switch/sources/magic-mime.1.3.1/**/*.install
+_opam/.opam-switch/sources/magic-mime.1.3.1/**/.*.swp
+
+# flyctl launch added from _opam/.opam-switch/sources/markup.1.0.3/.gitignore
+_opam/.opam-switch/sources/markup.1.0.3/**/scratch
+_opam/.opam-switch/sources/markup.1.0.3/**/_opam
+_opam/.opam-switch/sources/markup.1.0.3/**/_build
+_opam/.opam-switch/sources/markup.1.0.3/**/bisect*.out
+_opam/.opam-switch/sources/markup.1.0.3/**/_coverage
+_opam/.opam-switch/sources/markup.1.0.3/**/*.install
+_opam/.opam-switch/sources/markup.1.0.3/**/*.merlin
+_opam/.opam-switch/sources/markup.1.0.3/**/*.sexp
+_opam/.opam-switch/sources/markup.1.0.3/**/doc/markup.odocl
+_opam/.opam-switch/sources/markup.1.0.3/**/doc/html
+_opam/.opam-switch/sources/markup.1.0.3/**/doc/publish
+_opam/.opam-switch/sources/markup.1.0.3/**/doc/*.zip
+_opam/.opam-switch/sources/markup.1.0.3/**/.vscode
+
+# flyctl launch added from _opam/.opam-switch/sources/menhir.20240715/.gitignore
+_opam/.opam-switch/sources/menhir.20240715/**/*~
+_opam/.opam-switch/sources/menhir.20240715/**/.merlin
+_opam/.opam-switch/sources/menhir.20240715/**/_build
+_opam/.opam-switch/sources/menhir.20240715/**/analysis/data.csv
+_opam/.opam-switch/sources/menhir.20240715/**/analysis/*.pdf
+_opam/.opam-switch/sources/menhir.20240715/**/dune-workspace.versions
+_opam/.opam-switch/sources/menhir.20240715/**/benchmarks/build
+
+# flyctl launch added from _opam/.opam-switch/sources/menhir.20240715/coq-menhirlib/src/.gitignore
+_opam/.opam-switch/sources/menhir.20240715/coq-menhirlib/src/**/*.vo
+_opam/.opam-switch/sources/menhir.20240715/coq-menhirlib/src/**/*.glob
+_opam/.opam-switch/sources/menhir.20240715/coq-menhirlib/src/**/*.d
+_opam/.opam-switch/sources/menhir.20240715/coq-menhirlib/src/**/.*.aux
+_opam/.opam-switch/sources/menhir.20240715/coq-menhirlib/src/**/*.vok
+_opam/.opam-switch/sources/menhir.20240715/coq-menhirlib/src/**/*.vos
+_opam/.opam-switch/sources/menhir.20240715/coq-menhirlib/src/**/.lia.cache
+_opam/.opam-switch/sources/menhir.20240715/coq-menhirlib/src/**/CoqMakefile
+_opam/.opam-switch/sources/menhir.20240715/coq-menhirlib/src/**/CoqMakefile.conf
+_opam/.opam-switch/sources/menhir.20240715/coq-menhirlib/src/**/.coq-native
+
+# flyctl launch added from _opam/.opam-switch/sources/menhir.20240715/doc/.gitignore
+_opam/.opam-switch/sources/menhir.20240715/doc/**/*.bak
+_opam/.opam-switch/sources/menhir.20240715/doc/**/*.dvi
+_opam/.opam-switch/sources/menhir.20240715/doc/**/*.aux
+_opam/.opam-switch/sources/menhir.20240715/doc/**/*.bbl
+_opam/.opam-switch/sources/menhir.20240715/doc/**/*.blg
+_opam/.opam-switch/sources/menhir.20240715/doc/**/*.log
+_opam/.opam-switch/sources/menhir.20240715/doc/**/*.out
+_opam/.opam-switch/sources/menhir.20240715/doc/**/*.toc
+_opam/.opam-switch/sources/menhir.20240715/doc/**/*.fdb_latexmk
+_opam/.opam-switch/sources/menhir.20240715/doc/**/*.fls
+_opam/.opam-switch/sources/menhir.20240715/doc/**/manual.pdf
+_opam/.opam-switch/sources/menhir.20240715/doc/**/*.haux
+_opam/.opam-switch/sources/menhir.20240715/doc/**/*.htoc
+_opam/.opam-switch/sources/menhir.20240715/doc/**/manual.image.tex
+_opam/.opam-switch/sources/menhir.20240715/doc/**/manual[0-9][0-9][0-9].png
+_opam/.opam-switch/sources/menhir.20240715/doc/**/manual.html
+_opam/.opam-switch/sources/menhir.20240715/doc/**/*.synctex.gz
+
+# flyctl launch added from _opam/.opam-switch/sources/menhir.20240715/fix/.gitignore
+_opam/.opam-switch/sources/menhir.20240715/fix/**/_build
+_opam/.opam-switch/sources/menhir.20240715/fix/**/.merlin
+_opam/.opam-switch/sources/menhir.20240715/fix/**/*.install
+_opam/.opam-switch/sources/menhir.20240715/fix/**/*~
+_opam/.opam-switch/sources/menhir.20240715/fix/**/dune-workspace.versions
+
+# flyctl launch added from _opam/.opam-switch/sources/menhirCST.20240715/.gitignore
+_opam/.opam-switch/sources/menhirCST.20240715/**/*~
+_opam/.opam-switch/sources/menhirCST.20240715/**/.merlin
+_opam/.opam-switch/sources/menhirCST.20240715/**/_build
+_opam/.opam-switch/sources/menhirCST.20240715/**/analysis/data.csv
+_opam/.opam-switch/sources/menhirCST.20240715/**/analysis/*.pdf
+_opam/.opam-switch/sources/menhirCST.20240715/**/dune-workspace.versions
+_opam/.opam-switch/sources/menhirCST.20240715/**/benchmarks/build
+
+# flyctl launch added from _opam/.opam-switch/sources/menhirCST.20240715/coq-menhirlib/src/.gitignore
+_opam/.opam-switch/sources/menhirCST.20240715/coq-menhirlib/src/**/*.vo
+_opam/.opam-switch/sources/menhirCST.20240715/coq-menhirlib/src/**/*.glob
+_opam/.opam-switch/sources/menhirCST.20240715/coq-menhirlib/src/**/*.d
+_opam/.opam-switch/sources/menhirCST.20240715/coq-menhirlib/src/**/.*.aux
+_opam/.opam-switch/sources/menhirCST.20240715/coq-menhirlib/src/**/*.vok
+_opam/.opam-switch/sources/menhirCST.20240715/coq-menhirlib/src/**/*.vos
+_opam/.opam-switch/sources/menhirCST.20240715/coq-menhirlib/src/**/.lia.cache
+_opam/.opam-switch/sources/menhirCST.20240715/coq-menhirlib/src/**/CoqMakefile
+_opam/.opam-switch/sources/menhirCST.20240715/coq-menhirlib/src/**/CoqMakefile.conf
+_opam/.opam-switch/sources/menhirCST.20240715/coq-menhirlib/src/**/.coq-native
+
+# flyctl launch added from _opam/.opam-switch/sources/menhirCST.20240715/doc/.gitignore
+_opam/.opam-switch/sources/menhirCST.20240715/doc/**/*.bak
+_opam/.opam-switch/sources/menhirCST.20240715/doc/**/*.dvi
+_opam/.opam-switch/sources/menhirCST.20240715/doc/**/*.aux
+_opam/.opam-switch/sources/menhirCST.20240715/doc/**/*.bbl
+_opam/.opam-switch/sources/menhirCST.20240715/doc/**/*.blg
+_opam/.opam-switch/sources/menhirCST.20240715/doc/**/*.log
+_opam/.opam-switch/sources/menhirCST.20240715/doc/**/*.out
+_opam/.opam-switch/sources/menhirCST.20240715/doc/**/*.toc
+_opam/.opam-switch/sources/menhirCST.20240715/doc/**/*.fdb_latexmk
+_opam/.opam-switch/sources/menhirCST.20240715/doc/**/*.fls
+_opam/.opam-switch/sources/menhirCST.20240715/doc/**/manual.pdf
+_opam/.opam-switch/sources/menhirCST.20240715/doc/**/*.haux
+_opam/.opam-switch/sources/menhirCST.20240715/doc/**/*.htoc
+_opam/.opam-switch/sources/menhirCST.20240715/doc/**/manual.image.tex
+_opam/.opam-switch/sources/menhirCST.20240715/doc/**/manual[0-9][0-9][0-9].png
+_opam/.opam-switch/sources/menhirCST.20240715/doc/**/manual.html
+_opam/.opam-switch/sources/menhirCST.20240715/doc/**/*.synctex.gz
+
+# flyctl launch added from _opam/.opam-switch/sources/menhirCST.20240715/fix/.gitignore
+_opam/.opam-switch/sources/menhirCST.20240715/fix/**/_build
+_opam/.opam-switch/sources/menhirCST.20240715/fix/**/.merlin
+_opam/.opam-switch/sources/menhirCST.20240715/fix/**/*.install
+_opam/.opam-switch/sources/menhirCST.20240715/fix/**/*~
+_opam/.opam-switch/sources/menhirCST.20240715/fix/**/dune-workspace.versions
+
+# flyctl launch added from _opam/.opam-switch/sources/menhirLib.20240715/.gitignore
+_opam/.opam-switch/sources/menhirLib.20240715/**/*~
+_opam/.opam-switch/sources/menhirLib.20240715/**/.merlin
+_opam/.opam-switch/sources/menhirLib.20240715/**/_build
+_opam/.opam-switch/sources/menhirLib.20240715/**/analysis/data.csv
+_opam/.opam-switch/sources/menhirLib.20240715/**/analysis/*.pdf
+_opam/.opam-switch/sources/menhirLib.20240715/**/dune-workspace.versions
+_opam/.opam-switch/sources/menhirLib.20240715/**/benchmarks/build
+
+# flyctl launch added from _opam/.opam-switch/sources/menhirLib.20240715/coq-menhirlib/src/.gitignore
+_opam/.opam-switch/sources/menhirLib.20240715/coq-menhirlib/src/**/*.vo
+_opam/.opam-switch/sources/menhirLib.20240715/coq-menhirlib/src/**/*.glob
+_opam/.opam-switch/sources/menhirLib.20240715/coq-menhirlib/src/**/*.d
+_opam/.opam-switch/sources/menhirLib.20240715/coq-menhirlib/src/**/.*.aux
+_opam/.opam-switch/sources/menhirLib.20240715/coq-menhirlib/src/**/*.vok
+_opam/.opam-switch/sources/menhirLib.20240715/coq-menhirlib/src/**/*.vos
+_opam/.opam-switch/sources/menhirLib.20240715/coq-menhirlib/src/**/.lia.cache
+_opam/.opam-switch/sources/menhirLib.20240715/coq-menhirlib/src/**/CoqMakefile
+_opam/.opam-switch/sources/menhirLib.20240715/coq-menhirlib/src/**/CoqMakefile.conf
+_opam/.opam-switch/sources/menhirLib.20240715/coq-menhirlib/src/**/.coq-native
+
+# flyctl launch added from _opam/.opam-switch/sources/menhirLib.20240715/doc/.gitignore
+_opam/.opam-switch/sources/menhirLib.20240715/doc/**/*.bak
+_opam/.opam-switch/sources/menhirLib.20240715/doc/**/*.dvi
+_opam/.opam-switch/sources/menhirLib.20240715/doc/**/*.aux
+_opam/.opam-switch/sources/menhirLib.20240715/doc/**/*.bbl
+_opam/.opam-switch/sources/menhirLib.20240715/doc/**/*.blg
+_opam/.opam-switch/sources/menhirLib.20240715/doc/**/*.log
+_opam/.opam-switch/sources/menhirLib.20240715/doc/**/*.out
+_opam/.opam-switch/sources/menhirLib.20240715/doc/**/*.toc
+_opam/.opam-switch/sources/menhirLib.20240715/doc/**/*.fdb_latexmk
+_opam/.opam-switch/sources/menhirLib.20240715/doc/**/*.fls
+_opam/.opam-switch/sources/menhirLib.20240715/doc/**/manual.pdf
+_opam/.opam-switch/sources/menhirLib.20240715/doc/**/*.haux
+_opam/.opam-switch/sources/menhirLib.20240715/doc/**/*.htoc
+_opam/.opam-switch/sources/menhirLib.20240715/doc/**/manual.image.tex
+_opam/.opam-switch/sources/menhirLib.20240715/doc/**/manual[0-9][0-9][0-9].png
+_opam/.opam-switch/sources/menhirLib.20240715/doc/**/manual.html
+_opam/.opam-switch/sources/menhirLib.20240715/doc/**/*.synctex.gz
+
+# flyctl launch added from _opam/.opam-switch/sources/menhirLib.20240715/fix/.gitignore
+_opam/.opam-switch/sources/menhirLib.20240715/fix/**/_build
+_opam/.opam-switch/sources/menhirLib.20240715/fix/**/.merlin
+_opam/.opam-switch/sources/menhirLib.20240715/fix/**/*.install
+_opam/.opam-switch/sources/menhirLib.20240715/fix/**/*~
+_opam/.opam-switch/sources/menhirLib.20240715/fix/**/dune-workspace.versions
+
+# flyctl launch added from _opam/.opam-switch/sources/menhirSdk.20240715/.gitignore
+_opam/.opam-switch/sources/menhirSdk.20240715/**/*~
+_opam/.opam-switch/sources/menhirSdk.20240715/**/.merlin
+_opam/.opam-switch/sources/menhirSdk.20240715/**/_build
+_opam/.opam-switch/sources/menhirSdk.20240715/**/analysis/data.csv
+_opam/.opam-switch/sources/menhirSdk.20240715/**/analysis/*.pdf
+_opam/.opam-switch/sources/menhirSdk.20240715/**/dune-workspace.versions
+_opam/.opam-switch/sources/menhirSdk.20240715/**/benchmarks/build
+
+# flyctl launch added from _opam/.opam-switch/sources/menhirSdk.20240715/coq-menhirlib/src/.gitignore
+_opam/.opam-switch/sources/menhirSdk.20240715/coq-menhirlib/src/**/*.vo
+_opam/.opam-switch/sources/menhirSdk.20240715/coq-menhirlib/src/**/*.glob
+_opam/.opam-switch/sources/menhirSdk.20240715/coq-menhirlib/src/**/*.d
+_opam/.opam-switch/sources/menhirSdk.20240715/coq-menhirlib/src/**/.*.aux
+_opam/.opam-switch/sources/menhirSdk.20240715/coq-menhirlib/src/**/*.vok
+_opam/.opam-switch/sources/menhirSdk.20240715/coq-menhirlib/src/**/*.vos
+_opam/.opam-switch/sources/menhirSdk.20240715/coq-menhirlib/src/**/.lia.cache
+_opam/.opam-switch/sources/menhirSdk.20240715/coq-menhirlib/src/**/CoqMakefile
+_opam/.opam-switch/sources/menhirSdk.20240715/coq-menhirlib/src/**/CoqMakefile.conf
+_opam/.opam-switch/sources/menhirSdk.20240715/coq-menhirlib/src/**/.coq-native
+
+# flyctl launch added from _opam/.opam-switch/sources/menhirSdk.20240715/doc/.gitignore
+_opam/.opam-switch/sources/menhirSdk.20240715/doc/**/*.bak
+_opam/.opam-switch/sources/menhirSdk.20240715/doc/**/*.dvi
+_opam/.opam-switch/sources/menhirSdk.20240715/doc/**/*.aux
+_opam/.opam-switch/sources/menhirSdk.20240715/doc/**/*.bbl
+_opam/.opam-switch/sources/menhirSdk.20240715/doc/**/*.blg
+_opam/.opam-switch/sources/menhirSdk.20240715/doc/**/*.log
+_opam/.opam-switch/sources/menhirSdk.20240715/doc/**/*.out
+_opam/.opam-switch/sources/menhirSdk.20240715/doc/**/*.toc
+_opam/.opam-switch/sources/menhirSdk.20240715/doc/**/*.fdb_latexmk
+_opam/.opam-switch/sources/menhirSdk.20240715/doc/**/*.fls
+_opam/.opam-switch/sources/menhirSdk.20240715/doc/**/manual.pdf
+_opam/.opam-switch/sources/menhirSdk.20240715/doc/**/*.haux
+_opam/.opam-switch/sources/menhirSdk.20240715/doc/**/*.htoc
+_opam/.opam-switch/sources/menhirSdk.20240715/doc/**/manual.image.tex
+_opam/.opam-switch/sources/menhirSdk.20240715/doc/**/manual[0-9][0-9][0-9].png
+_opam/.opam-switch/sources/menhirSdk.20240715/doc/**/manual.html
+_opam/.opam-switch/sources/menhirSdk.20240715/doc/**/*.synctex.gz
+
+# flyctl launch added from _opam/.opam-switch/sources/menhirSdk.20240715/fix/.gitignore
+_opam/.opam-switch/sources/menhirSdk.20240715/fix/**/_build
+_opam/.opam-switch/sources/menhirSdk.20240715/fix/**/.merlin
+_opam/.opam-switch/sources/menhirSdk.20240715/fix/**/*.install
+_opam/.opam-switch/sources/menhirSdk.20240715/fix/**/*~
+_opam/.opam-switch/sources/menhirSdk.20240715/fix/**/dune-workspace.versions
+
+# flyctl launch added from _opam/.opam-switch/sources/mirage-clock.4.2.0/.gitignore
+_opam/.opam-switch/sources/mirage-clock.4.2.0/**/_build
+_opam/.opam-switch/sources/mirage-clock.4.2.0/**/*.install
+_opam/.opam-switch/sources/mirage-clock.4.2.0/**/.merlin
+_opam/.opam-switch/sources/mirage-clock.4.2.0/**/duniverse
+_opam/.opam-switch/sources/mirage-clock.4.2.0/**/*.locked
+_opam/.opam-switch/sources/mirage-clock.4.2.0/**/_esy
+
+# flyctl launch added from _opam/.opam-switch/sources/mirage-crypto-ec.1.2.0/.gitignore
+_opam/.opam-switch/sources/mirage-crypto-ec.1.2.0/**/_build
+_opam/.opam-switch/sources/mirage-crypto-ec.1.2.0/**/.merlin
+_opam/.opam-switch/sources/mirage-crypto-ec.1.2.0/**/.*.swp
+_opam/.opam-switch/sources/mirage-crypto-ec.1.2.0/**/mirage/Makefile
+_opam/.opam-switch/sources/mirage-crypto-ec.1.2.0/**/mirage/crypto_test*
+_opam/.opam-switch/sources/mirage-crypto-ec.1.2.0/**/mirage/dune
+_opam/.opam-switch/sources/mirage-crypto-ec.1.2.0/**/mirage/dune-project
+_opam/.opam-switch/sources/mirage-crypto-ec.1.2.0/**/mirage/dune.build
+_opam/.opam-switch/sources/mirage-crypto-ec.1.2.0/**/mirage/dune.config
+_opam/.opam-switch/sources/mirage-crypto-ec.1.2.0/**/mirage/key_gen.ml
+_opam/.opam-switch/sources/mirage-crypto-ec.1.2.0/**/mirage/main.ml
+_opam/.opam-switch/sources/mirage-crypto-ec.1.2.0/**/mirage/main.native
+_opam/.opam-switch/sources/mirage-crypto-ec.1.2.0/**/mirage/*opam
+_opam/.opam-switch/sources/mirage-crypto-ec.1.2.0/**/mirage/myocamlbuild.ml
+_opam/.opam-switch/sources/mirage-crypto-ec.1.2.0/**/mirage/.mirage.config
+_opam/.opam-switch/sources/mirage-crypto-ec.1.2.0/**/_opam
+_opam/.opam-switch/sources/mirage-crypto-ec.1.2.0/**/*.install
+
+# CI using dkml-workflows' DkML compilers.
+#   DkML compilers populate the .opam folder.
+_opam/.opam-switch/sources/mirage-crypto-ec.1.2.0/.opam
+#   GitHub, unlike GitLab, does not need its CI files to exist
+#   before referencing them. That means the GitHub scripts do not need
+#   to be checked in.
+_opam/.opam-switch/sources/mirage-crypto-ec.1.2.0/.ci/dkml-compilers/gh-*
+#   Desktop testing on Windows uses MSYS2.
+_opam/.opam-switch/sources/mirage-crypto-ec.1.2.0/msys64
+
+# flyctl launch added from _opam/.opam-switch/sources/mirage-crypto-pk.1.2.0/.gitignore
+_opam/.opam-switch/sources/mirage-crypto-pk.1.2.0/**/_build
+_opam/.opam-switch/sources/mirage-crypto-pk.1.2.0/**/.merlin
+_opam/.opam-switch/sources/mirage-crypto-pk.1.2.0/**/.*.swp
+_opam/.opam-switch/sources/mirage-crypto-pk.1.2.0/**/mirage/Makefile
+_opam/.opam-switch/sources/mirage-crypto-pk.1.2.0/**/mirage/crypto_test*
+_opam/.opam-switch/sources/mirage-crypto-pk.1.2.0/**/mirage/dune
+_opam/.opam-switch/sources/mirage-crypto-pk.1.2.0/**/mirage/dune-project
+_opam/.opam-switch/sources/mirage-crypto-pk.1.2.0/**/mirage/dune.build
+_opam/.opam-switch/sources/mirage-crypto-pk.1.2.0/**/mirage/dune.config
+_opam/.opam-switch/sources/mirage-crypto-pk.1.2.0/**/mirage/key_gen.ml
+_opam/.opam-switch/sources/mirage-crypto-pk.1.2.0/**/mirage/main.ml
+_opam/.opam-switch/sources/mirage-crypto-pk.1.2.0/**/mirage/main.native
+_opam/.opam-switch/sources/mirage-crypto-pk.1.2.0/**/mirage/*opam
+_opam/.opam-switch/sources/mirage-crypto-pk.1.2.0/**/mirage/myocamlbuild.ml
+_opam/.opam-switch/sources/mirage-crypto-pk.1.2.0/**/mirage/.mirage.config
+_opam/.opam-switch/sources/mirage-crypto-pk.1.2.0/**/_opam
+_opam/.opam-switch/sources/mirage-crypto-pk.1.2.0/**/*.install
+
+# CI using dkml-workflows' DkML compilers.
+#   DkML compilers populate the .opam folder.
+_opam/.opam-switch/sources/mirage-crypto-pk.1.2.0/.opam
+#   GitHub, unlike GitLab, does not need its CI files to exist
+#   before referencing them. That means the GitHub scripts do not need
+#   to be checked in.
+_opam/.opam-switch/sources/mirage-crypto-pk.1.2.0/.ci/dkml-compilers/gh-*
+#   Desktop testing on Windows uses MSYS2.
+_opam/.opam-switch/sources/mirage-crypto-pk.1.2.0/msys64
+
+# flyctl launch added from _opam/.opam-switch/sources/mirage-crypto-rng-lwt.1.2.0/.gitignore
+_opam/.opam-switch/sources/mirage-crypto-rng-lwt.1.2.0/**/_build
+_opam/.opam-switch/sources/mirage-crypto-rng-lwt.1.2.0/**/.merlin
+_opam/.opam-switch/sources/mirage-crypto-rng-lwt.1.2.0/**/.*.swp
+_opam/.opam-switch/sources/mirage-crypto-rng-lwt.1.2.0/**/mirage/Makefile
+_opam/.opam-switch/sources/mirage-crypto-rng-lwt.1.2.0/**/mirage/crypto_test*
+_opam/.opam-switch/sources/mirage-crypto-rng-lwt.1.2.0/**/mirage/dune
+_opam/.opam-switch/sources/mirage-crypto-rng-lwt.1.2.0/**/mirage/dune-project
+_opam/.opam-switch/sources/mirage-crypto-rng-lwt.1.2.0/**/mirage/dune.build
+_opam/.opam-switch/sources/mirage-crypto-rng-lwt.1.2.0/**/mirage/dune.config
+_opam/.opam-switch/sources/mirage-crypto-rng-lwt.1.2.0/**/mirage/key_gen.ml
+_opam/.opam-switch/sources/mirage-crypto-rng-lwt.1.2.0/**/mirage/main.ml
+_opam/.opam-switch/sources/mirage-crypto-rng-lwt.1.2.0/**/mirage/main.native
+_opam/.opam-switch/sources/mirage-crypto-rng-lwt.1.2.0/**/mirage/*opam
+_opam/.opam-switch/sources/mirage-crypto-rng-lwt.1.2.0/**/mirage/myocamlbuild.ml
+_opam/.opam-switch/sources/mirage-crypto-rng-lwt.1.2.0/**/mirage/.mirage.config
+_opam/.opam-switch/sources/mirage-crypto-rng-lwt.1.2.0/**/_opam
+_opam/.opam-switch/sources/mirage-crypto-rng-lwt.1.2.0/**/*.install
+
+# CI using dkml-workflows' DkML compilers.
+#   DkML compilers populate the .opam folder.
+_opam/.opam-switch/sources/mirage-crypto-rng-lwt.1.2.0/.opam
+#   GitHub, unlike GitLab, does not need its CI files to exist
+#   before referencing them. That means the GitHub scripts do not need
+#   to be checked in.
+_opam/.opam-switch/sources/mirage-crypto-rng-lwt.1.2.0/.ci/dkml-compilers/gh-*
+#   Desktop testing on Windows uses MSYS2.
+_opam/.opam-switch/sources/mirage-crypto-rng-lwt.1.2.0/msys64
+
+# flyctl launch added from _opam/.opam-switch/sources/mirage-crypto-rng.1.2.0/.gitignore
+_opam/.opam-switch/sources/mirage-crypto-rng.1.2.0/**/_build
+_opam/.opam-switch/sources/mirage-crypto-rng.1.2.0/**/.merlin
+_opam/.opam-switch/sources/mirage-crypto-rng.1.2.0/**/.*.swp
+_opam/.opam-switch/sources/mirage-crypto-rng.1.2.0/**/mirage/Makefile
+_opam/.opam-switch/sources/mirage-crypto-rng.1.2.0/**/mirage/crypto_test*
+_opam/.opam-switch/sources/mirage-crypto-rng.1.2.0/**/mirage/dune
+_opam/.opam-switch/sources/mirage-crypto-rng.1.2.0/**/mirage/dune-project
+_opam/.opam-switch/sources/mirage-crypto-rng.1.2.0/**/mirage/dune.build
+_opam/.opam-switch/sources/mirage-crypto-rng.1.2.0/**/mirage/dune.config
+_opam/.opam-switch/sources/mirage-crypto-rng.1.2.0/**/mirage/key_gen.ml
+_opam/.opam-switch/sources/mirage-crypto-rng.1.2.0/**/mirage/main.ml
+_opam/.opam-switch/sources/mirage-crypto-rng.1.2.0/**/mirage/main.native
+_opam/.opam-switch/sources/mirage-crypto-rng.1.2.0/**/mirage/*opam
+_opam/.opam-switch/sources/mirage-crypto-rng.1.2.0/**/mirage/myocamlbuild.ml
+_opam/.opam-switch/sources/mirage-crypto-rng.1.2.0/**/mirage/.mirage.config
+_opam/.opam-switch/sources/mirage-crypto-rng.1.2.0/**/_opam
+_opam/.opam-switch/sources/mirage-crypto-rng.1.2.0/**/*.install
+
+# CI using dkml-workflows' DkML compilers.
+#   DkML compilers populate the .opam folder.
+_opam/.opam-switch/sources/mirage-crypto-rng.1.2.0/.opam
+#   GitHub, unlike GitLab, does not need its CI files to exist
+#   before referencing them. That means the GitHub scripts do not need
+#   to be checked in.
+_opam/.opam-switch/sources/mirage-crypto-rng.1.2.0/.ci/dkml-compilers/gh-*
+#   Desktop testing on Windows uses MSYS2.
+_opam/.opam-switch/sources/mirage-crypto-rng.1.2.0/msys64
+
+# flyctl launch added from _opam/.opam-switch/sources/mirage-crypto.1.2.0/.gitignore
+_opam/.opam-switch/sources/mirage-crypto.1.2.0/**/_build
+_opam/.opam-switch/sources/mirage-crypto.1.2.0/**/.merlin
+_opam/.opam-switch/sources/mirage-crypto.1.2.0/**/.*.swp
+_opam/.opam-switch/sources/mirage-crypto.1.2.0/**/mirage/Makefile
+_opam/.opam-switch/sources/mirage-crypto.1.2.0/**/mirage/crypto_test*
+_opam/.opam-switch/sources/mirage-crypto.1.2.0/**/mirage/dune
+_opam/.opam-switch/sources/mirage-crypto.1.2.0/**/mirage/dune-project
+_opam/.opam-switch/sources/mirage-crypto.1.2.0/**/mirage/dune.build
+_opam/.opam-switch/sources/mirage-crypto.1.2.0/**/mirage/dune.config
+_opam/.opam-switch/sources/mirage-crypto.1.2.0/**/mirage/key_gen.ml
+_opam/.opam-switch/sources/mirage-crypto.1.2.0/**/mirage/main.ml
+_opam/.opam-switch/sources/mirage-crypto.1.2.0/**/mirage/main.native
+_opam/.opam-switch/sources/mirage-crypto.1.2.0/**/mirage/*opam
+_opam/.opam-switch/sources/mirage-crypto.1.2.0/**/mirage/myocamlbuild.ml
+_opam/.opam-switch/sources/mirage-crypto.1.2.0/**/mirage/.mirage.config
+_opam/.opam-switch/sources/mirage-crypto.1.2.0/**/_opam
+_opam/.opam-switch/sources/mirage-crypto.1.2.0/**/*.install
+
+# CI using dkml-workflows' DkML compilers.
+#   DkML compilers populate the .opam folder.
+_opam/.opam-switch/sources/mirage-crypto.1.2.0/.opam
+#   GitHub, unlike GitLab, does not need its CI files to exist
+#   before referencing them. That means the GitHub scripts do not need
+#   to be checked in.
+_opam/.opam-switch/sources/mirage-crypto.1.2.0/.ci/dkml-compilers/gh-*
+#   Desktop testing on Windows uses MSYS2.
+_opam/.opam-switch/sources/mirage-crypto.1.2.0/msys64
+
+# flyctl launch added from _opam/.opam-switch/sources/mlgmpidl.1.3.0/.gitignore
+_opam/.opam-switch/sources/mlgmpidl.1.3.0/**/Makefile.config
+_opam/.opam-switch/sources/mlgmpidl.1.3.0/**/gmp_random.ml
+_opam/.opam-switch/sources/mlgmpidl.1.3.0/**/gmp_random.mli
+_opam/.opam-switch/sources/mlgmpidl.1.3.0/**/mpf.ml
+_opam/.opam-switch/sources/mlgmpidl.1.3.0/**/mpf.mli
+_opam/.opam-switch/sources/mlgmpidl.1.3.0/**/mpfr.ml
+_opam/.opam-switch/sources/mlgmpidl.1.3.0/**/mpfr.mli
+_opam/.opam-switch/sources/mlgmpidl.1.3.0/**/mpq.ml
+_opam/.opam-switch/sources/mlgmpidl.1.3.0/**/mpq.mli
+_opam/.opam-switch/sources/mlgmpidl.1.3.0/**/mpz.ml
+_opam/.opam-switch/sources/mlgmpidl.1.3.0/**/mpz.mli
+_opam/.opam-switch/sources/mlgmpidl.1.3.0/**/*_caml.c
+_opam/.opam-switch/sources/mlgmpidl.1.3.0/**/opam-dist-config.mk
+_opam/.opam-switch/sources/mlgmpidl.1.3.0/**/tmp
+
+# flyctl launch added from _opam/.opam-switch/sources/mopsa.1.2/.gitignore
+_opam/.opam-switch/sources/mopsa.1.2/**/_opam
+_opam/.opam-switch/sources/mopsa.1.2/**/_build
+_opam/.opam-switch/sources/mopsa.1.2/**/*.install
+_opam/.opam-switch/sources/mopsa.1.2/autom4te.cache/**
+_opam/.opam-switch/sources/mopsa.1.2/config.log
+_opam/.opam-switch/sources/mopsa.1.2/config.status
+_opam/.opam-switch/sources/mopsa.1.2/META
+_opam/.opam-switch/sources/mopsa.1.2/utils/core/version.ml
+_opam/.opam-switch/sources/mopsa.1.2/parsers/c/lib/parser/dune
+
+_opam/.opam-switch/sources/mopsa.1.2/**/*.native
+_opam/.opam-switch/sources/mopsa.1.2/**/*.byte
+_opam/.opam-switch/sources/mopsa.1.2/**/*.merlin
+_opam/.opam-switch/sources/mopsa.1.2/**/*~
+_opam/.opam-switch/sources/mopsa.1.2/**/*#
+
+# flyctl launch added from _opam/.opam-switch/sources/mopsa.1.2/doc/.gitignore
+_opam/.opam-switch/sources/mopsa.1.2/doc/**/**/_build/**
+_opam/.opam-switch/sources/mopsa.1.2/doc/**/*~
+_opam/.opam-switch/sources/mopsa.1.2/doc/**/*.org
+
+# flyctl launch added from _opam/.opam-switch/sources/multipart_form-lwt.0.6.0/.gitignore
+_opam/.opam-switch/sources/multipart_form-lwt.0.6.0/**/_build
+_opam/.opam-switch/sources/multipart_form-lwt.0.6.0/**/setup.data
+_opam/.opam-switch/sources/multipart_form-lwt.0.6.0/**/setup.log
+_opam/.opam-switch/sources/multipart_form-lwt.0.6.0/**/doc/*.html
+_opam/.opam-switch/sources/multipart_form-lwt.0.6.0/**/*.native
+_opam/.opam-switch/sources/multipart_form-lwt.0.6.0/**/*.byte
+_opam/.opam-switch/sources/multipart_form-lwt.0.6.0/**/*.so
+_opam/.opam-switch/sources/multipart_form-lwt.0.6.0/**/lib/decompress_conf.ml
+_opam/.opam-switch/sources/multipart_form-lwt.0.6.0/**/*.tar.gz
+_opam/.opam-switch/sources/multipart_form-lwt.0.6.0/**/_tests
+_opam/.opam-switch/sources/multipart_form-lwt.0.6.0/**/lib_test/files
+_opam/.opam-switch/sources/multipart_form-lwt.0.6.0/**/zpipe
+_opam/.opam-switch/sources/multipart_form-lwt.0.6.0/**/c/dpipe
+_opam/.opam-switch/sources/multipart_form-lwt.0.6.0/**/*.merlin
+_opam/.opam-switch/sources/multipart_form-lwt.0.6.0/**/*.install
+
+# flyctl launch added from _opam/.opam-switch/sources/multipart_form.0.6.0/.gitignore
+_opam/.opam-switch/sources/multipart_form.0.6.0/**/_build
+_opam/.opam-switch/sources/multipart_form.0.6.0/**/setup.data
+_opam/.opam-switch/sources/multipart_form.0.6.0/**/setup.log
+_opam/.opam-switch/sources/multipart_form.0.6.0/**/doc/*.html
+_opam/.opam-switch/sources/multipart_form.0.6.0/**/*.native
+_opam/.opam-switch/sources/multipart_form.0.6.0/**/*.byte
+_opam/.opam-switch/sources/multipart_form.0.6.0/**/*.so
+_opam/.opam-switch/sources/multipart_form.0.6.0/**/lib/decompress_conf.ml
+_opam/.opam-switch/sources/multipart_form.0.6.0/**/*.tar.gz
+_opam/.opam-switch/sources/multipart_form.0.6.0/**/_tests
+_opam/.opam-switch/sources/multipart_form.0.6.0/**/lib_test/files
+_opam/.opam-switch/sources/multipart_form.0.6.0/**/zpipe
+_opam/.opam-switch/sources/multipart_form.0.6.0/**/c/dpipe
+_opam/.opam-switch/sources/multipart_form.0.6.0/**/*.merlin
+_opam/.opam-switch/sources/multipart_form.0.6.0/**/*.install
+
+# flyctl launch added from _opam/.opam-switch/sources/ocaml-compiler-libs.v0.17.0/.gitignore
+_opam/.opam-switch/sources/ocaml-compiler-libs.v0.17.0/**/_build
+_opam/.opam-switch/sources/ocaml-compiler-libs.v0.17.0/**/*.install
+_opam/.opam-switch/sources/ocaml-compiler-libs.v0.17.0/**/*.merlin
+
+
+# flyctl launch added from _opam/.opam-switch/sources/ocaml-compiler.5.3.0/.gitignore
+#**************************************************************************
+#*                                                                        *
+#*                                 OCaml                                  *
+#*                                                                        *
+#*                 Damien Doligez, projet Gallium, INRIA                  *
+#*                                                                        *
+#*   Copyright 2015 Institut National de Recherche en Informatique et     *
+#*     en Automatique.                                                    *
+#*                                                                        *
+#*   All rights reserved.  This file is distributed under the terms of    *
+#*   the GNU Lesser General Public License version 2.1, with the          *
+#*   special exception on linking described in the file LICENSE.          *
+#*                                                                        *
+#**************************************************************************
+
+# general patterns
+
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/**/*.o
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/**/*.a
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/**/*.so
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/**/*.obj
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/**/*.lib
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/**/*.dll
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/**/*.la
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/**/*.cm[ioxat]
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/**/*.cmx[as]
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/**/*.cmti
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/**/*.annot
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/**/*.exe
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/**/*.exe.manifest
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/**/.DS_Store
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/**/*.out
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/**/*.out.dSYM
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/**/*.swp
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/**/_ocamltest
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/**/_ocamltestd
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/**/*.odoc
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/**/.merlin
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/**/_build
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/**/META
+# Ignore foo.depend, but not .depend
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/**/?*.depend
+
+# local to root directory
+
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/.dep
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/Makefile.build_config
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/Makefile.config
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/autom4te.cache
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/ocamlc
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/config.cache
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/ocaml-*.cache
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/config.log
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/config.status
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/configure~
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/flexlink.opt
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/libtool
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/ocamlc.opt
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/expunge
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/ocaml
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/ocamlopt
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/ocamlopt.opt
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/ocamlnat
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/_opam
+
+# specific files and patterns in sub-directories
+
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/asmcomp/emit.ml
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/asmcomp/arch.mli
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/asmcomp/arch.ml
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/asmcomp/proc.ml
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/asmcomp/selection.ml
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/asmcomp/reload.ml
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/asmcomp/scheduling.ml
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/asmcomp/CSE.ml
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/asmcomp/stackframe.ml
+
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/boot/ocamlrun
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/boot/runtime-launch-info
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/boot/ocamlc.opt
+
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/byte/**
+
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/bytecomp/opcodes.ml
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/bytecomp/opcodes.mli
+
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/debugger/debugger_lexer.ml
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/debugger/debugger_parser.ml
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/debugger/debugger_parser.mli
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/debugger/debugger_parser.output
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/debugger/ocamldebug
+
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/emacs/ocamltags
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/emacs/*.elc
+
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/flexdll-sources
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/winpthreads-sources
+
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/lambda/runtimedef.ml
+
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/lex/parser.ml
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/lex/parser.mli
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/lex/lexer.ml
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/lex/ocamllex
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/lex/ocamllex.opt
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/lex/parser.output
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/allfiles.tex
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/biblio.tex
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/foreword.tex
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/version.tex
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/warnings.etex
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/warnings.tex
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/foreword.htex
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/manual.html
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/webman
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/ifocamldoc.tex
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/cmds/*.tex
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/cmds/*.htex
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/cmds/warnings.etex
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/cmds/warnings-help.etex
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/html_processing/.sass-cache
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/html_processing/camlp-streams
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/html_processing/dune
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/html_processing/markup.ml
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/html_processing/uchar
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/html_processing/uutf
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/html_processing/lambdasoup
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/html_processing/ocaml-re
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/html_processing/src/common.ml
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/htmlman/*.html
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/htmlman/*.haux
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/htmlman/*.hind
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/htmlman/compilerlibref
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/htmlman/highlight.pack.js
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/htmlman/katex.min.css
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/htmlman/katex.min.js
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/htmlman/libref
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/htmlman/fonts/KaTeX*
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/htmlman/manual.hmanual
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/htmlman/manual.hmanual.kwd
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/htmlman/manual.css
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/htmlman/odoc.css
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/htmlman/*.htoc
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/htmlman/*.svg
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/infoman/*.haux
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/infoman/*.hind
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/infoman/*.info*.gz
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/infoman/*.info.body*
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/infoman/ocaml.hocaml.kwd
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/library/*.tex
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/library/*.htex
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/library/ocamldoc.out
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/library/ocamldoc.sty
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/library/compiler_libs.txt
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/refman/*.tex
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/refman/*.htex
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/refman/extensions/*.tex
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/refman/extensions/*.htex
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/texstuff/*.aux
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/texstuff/*.dvi
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/texstuff/*.idx
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/texstuff/*.ilg
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/texstuff/*.ind
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/texstuff/*.log
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/texstuff/*.toc
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/texstuff/*.ipr
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/texstuff/*.txt
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/texstuff/*.pdf
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/texstuff/*.ps
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/texstuff/manual.out
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/textman/manual.txt
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/textman/manual.hmanual.kwd
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/textman/*.haux
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/textman/*.hind
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/textman/*.htoc
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/tutorials/*.tex
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/tutorials/*.htex
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/src/warnings-help.etex
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/tests/cross-reference-checker
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/tools/transf.ml
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/tools/texquote2
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/manual/tools/transf
+
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/api_docgen/build
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/api_docgen/odoc/build
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/api_docgen/ocamldoc/build
+
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/ocamldoc/ocamldoc
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/ocamldoc/ocamldoc.opt
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/ocamldoc/odoc
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/ocamldoc/odoc_crc.ml
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/ocamldoc/odoc_lexer.ml
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/ocamldoc/odoc_ocamlhtml.ml
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/ocamldoc/odoc_parser.ml
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/ocamldoc/odoc_parser.mli
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/ocamldoc/odoc_see_lexer.ml
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/ocamldoc/odoc_text_lexer.ml
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/ocamldoc/odoc_text_parser.ml
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/ocamldoc/odoc_text_parser.mli
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/ocamldoc/*.output
+
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/ocamltest/ocamltest
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/ocamltest/ocamltest.opt
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/ocamltest/ocamltest_config.ml
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/ocamltest/ocamltest_unix.ml
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/ocamltest/tsl_lexer.ml
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/ocamltest/tsl_parser.ml
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/ocamltest/tsl_parser.mli
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/ocamltest/tsl_parser.output
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/ocamltest/ocamltest.html
+
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/opt/**
+
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/otherlibs/*/.dep
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/otherlibs/dynlink/dynlink_config.ml
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/otherlibs/dynlink/dynlink_cmo_format.mli
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/otherlibs/dynlink/dynlink_cmxs_format.mli
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/otherlibs/dynlink/dynlink_platform_intf.mli
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/otherlibs/dynlink/byte/dynlink.mli
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/otherlibs/dynlink/native/dynlink.mli
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/otherlibs/unix/unix.ml
+
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/parsing/parser.ml
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/parsing/parser.mli
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/parsing/lexer.ml
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/parsing/lexer_tmp.mll
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/parsing/lexer_tmp.ml
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/parsing/linenum.ml
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/parsing/parser.output
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/parsing/parser.automaton
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/parsing/parser.conflicts
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/parsing/parser.auto.messages
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/parsing/camlinternalMenhirLib.ml
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/parsing/camlinternalMenhirLib.mli
+
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/runtime/domain_state.inc
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/runtime/caml/jumptbl.h
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/runtime/caml/m.h
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/runtime/caml/s.h
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/runtime/primitives
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/runtime/primitives*.new
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/runtime/prims.c
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/runtime/caml/exec.h
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/runtime/caml/opnames.h
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/runtime/caml/version.h
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/runtime/ocamlrun
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/runtime/ocamlrund
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/runtime/ocamlruni
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/runtime/ld.conf
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/runtime/.gdb_history
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/runtime/build_config.h
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/runtime/sak
+
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/stdlib/runtime.info
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/stdlib/runtime-launch-info
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/stdlib/labelled-*
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/stdlib/caml
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/stdlib/sys.ml
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/stdlib/target_runtime.info
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/stdlib/target_runtime-launch-info
+
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/testsuite/**/*.result
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/testsuite/**/*.opt_result
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/testsuite/**/*.corrected
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/testsuite/**/*.byte
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/testsuite/**/*.native
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/testsuite/**/program
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/testsuite/**/_log*
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/testsuite/failure.stamp
+
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/testsuite/_retries
+
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/testsuite/tools/codegen
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/testsuite/tools/expect
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/testsuite/tools/lexcmm.ml
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/testsuite/tools/parsecmm.ml
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/testsuite/tools/parsecmm.mli
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/testsuite/tools/parsecmm.output
+
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/tools/ocamldep
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/tools/ocamldep.opt
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/tools/ocamlprof
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/tools/ocamlprof.opt
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/tools/opnames.ml
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/tools/dumpobj
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/tools/dumpobj.opt
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/tools/ocamlobjinfo
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/tools/ocamlobjinfo.opt
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/tools/cvt_emit
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/tools/cvt_emit.opt
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/tools/cvt_emit.ml
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/tools/ocamlcp
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/tools/ocamlcp.opt
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/tools/ocamloptp
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/tools/ocamloptp.opt
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/tools/ocamlmktop
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/tools/ocamlmktop.opt
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/tools/primreq
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/tools/primreq.opt
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/tools/ocamlmklib
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/tools/ocamlmklib.opt
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/tools/ocamlcmt
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/tools/ocamlcmt.opt
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/tools/cmpbyt
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/tools/cmpbyt.opt
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/tools/stripdebug
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/tools/stripdebug.opt
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/tools/make_opcodes
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/tools/make_opcodes.ml
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/tools/ocamltex
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/tools/eventlog_metadata
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/tools/lintapidiff.opt
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/tools/sync_dynlink.opt
+
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/toplevel/byte/topeval.mli
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/toplevel/byte/trace.mli
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/toplevel/byte/topmain.mli
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/toplevel/native/topeval.mli
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/toplevel/native/trace.mli
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/toplevel/native/topmain.mli
+
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/utils/config_boot.ml
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/utils/config_boot.mli
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/utils/config.common.ml
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/utils/config.generated.ml
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/utils/config_main.ml
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/utils/config_main.mli
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/utils/config.ml
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/utils/domainstate.ml
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/utils/domainstate.mli
+
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/yacc/ocamlyacc
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/yacc/version.h
+_opam/.opam-switch/sources/ocaml-compiler.5.3.0/yacc/.gdb_history
+
+# flyctl launch added from _opam/.opam-switch/sources/ocaml_intrinsics_kernel.v0.17.1/.gitignore
+_opam/.opam-switch/sources/ocaml_intrinsics_kernel.v0.17.1/**/_build
+_opam/.opam-switch/sources/ocaml_intrinsics_kernel.v0.17.1/**/*.install
+_opam/.opam-switch/sources/ocaml_intrinsics_kernel.v0.17.1/**/*.merlin
+_opam/.opam-switch/sources/ocaml_intrinsics_kernel.v0.17.1/**/_opam
+
+
+# flyctl launch added from _opam/.opam-switch/sources/ocamlbuild.0.16.1/.gitignore
+# general patterns
+
+_opam/.opam-switch/sources/ocamlbuild.0.16.1/**/*.o
+_opam/.opam-switch/sources/ocamlbuild.0.16.1/**/*.a
+_opam/.opam-switch/sources/ocamlbuild.0.16.1/**/*.so
+_opam/.opam-switch/sources/ocamlbuild.0.16.1/**/*.obj
+_opam/.opam-switch/sources/ocamlbuild.0.16.1/**/*.lib
+_opam/.opam-switch/sources/ocamlbuild.0.16.1/**/*.dll
+_opam/.opam-switch/sources/ocamlbuild.0.16.1/**/*.cm[ioxat]
+_opam/.opam-switch/sources/ocamlbuild.0.16.1/**/*.cmx[as]
+_opam/.opam-switch/sources/ocamlbuild.0.16.1/**/*.cmti
+_opam/.opam-switch/sources/ocamlbuild.0.16.1/**/*.annot
+_opam/.opam-switch/sources/ocamlbuild.0.16.1/**/*.exe
+_opam/.opam-switch/sources/ocamlbuild.0.16.1/**/*.exe.manifest
+_opam/.opam-switch/sources/ocamlbuild.0.16.1/**/.depend
+_opam/.opam-switch/sources/ocamlbuild.0.16.1/**/.depend.nt
+_opam/.opam-switch/sources/ocamlbuild.0.16.1/**/.DS_Store
+_opam/.opam-switch/sources/ocamlbuild.0.16.1/**/*.out
+_opam/.opam-switch/sources/ocamlbuild.0.16.1/**/*.out.dSYM
+_opam/.opam-switch/sources/ocamlbuild.0.16.1/tmp
+_opam/.opam-switch/sources/ocamlbuild.0.16.1/tmp-nat
+_opam/.opam-switch/sources/ocamlbuild.0.16.1/tmp-byte
+
+# backup files
+_opam/.opam-switch/sources/ocamlbuild.0.16.1/**/*~
+_opam/.opam-switch/sources/ocamlbuild.0.16.1/**/*#
+_opam/.opam-switch/sources/ocamlbuild.0.16.1/**/.#*
+
+_opam/.opam-switch/sources/ocamlbuild.0.16.1/**/ocamlbuild.install
+_opam/.opam-switch/sources/ocamlbuild.0.16.1/**/Makefile.config
+
+_opam/.opam-switch/sources/ocamlbuild.0.16.1/bootstrap/src
+_opam/.opam-switch/sources/ocamlbuild.0.16.1/bootstrap/bin
+_opam/.opam-switch/sources/ocamlbuild.0.16.1/bootstrap/plugin-lib
+_opam/.opam-switch/sources/ocamlbuild.0.16.1/bootstrap/_build*
+
+_opam/.opam-switch/sources/ocamlbuild.0.16.1/src/ocamlbuild_config.ml
+_opam/.opam-switch/sources/ocamlbuild.0.16.1/src/lexers.ml
+_opam/.opam-switch/sources/ocamlbuild.0.16.1/src/glob_lexer.ml
+_opam/.opam-switch/sources/ocamlbuild.0.16.1/ocamlbuild.byte
+_opam/.opam-switch/sources/ocamlbuild.0.16.1/ocamlbuild.native
+
+_opam/.opam-switch/sources/ocamlbuild.0.16.1/man/ocamlbuild.1
+_opam/.opam-switch/sources/ocamlbuild.0.16.1/man/ocamlbuild.options.1
+_opam/.opam-switch/sources/ocamlbuild.0.16.1/man/options_man.byte
+
+# flyctl launch added from _opam/.opam-switch/sources/ocamlbuild.0.16.1/examples/.gitignore
+_opam/.opam-switch/sources/ocamlbuild.0.16.1/examples/**/*.byte
+_opam/.opam-switch/sources/ocamlbuild.0.16.1/examples/**/_build
+_opam/.opam-switch/sources/ocamlbuild.0.16.1/examples/**/*.native
+
+# flyctl launch added from _opam/.opam-switch/sources/ocamlbuild.0.16.1/testsuite/.gitignore
+_opam/.opam-switch/sources/ocamlbuild.0.16.1/testsuite/**/_test_internal
+_opam/.opam-switch/sources/ocamlbuild.0.16.1/testsuite/**/_test_findlibonly
+_opam/.opam-switch/sources/ocamlbuild.0.16.1/testsuite/**/_test_external
+
+# flyctl launch added from _opam/.opam-switch/sources/ocamlfind.1.9.8/.gitignore
+_opam/.opam-switch/sources/ocamlfind.1.9.8/**/*~
+_opam/.opam-switch/sources/ocamlfind.1.9.8/**/*.cmi
+_opam/.opam-switch/sources/ocamlfind.1.9.8/**/*.cmo
+_opam/.opam-switch/sources/ocamlfind.1.9.8/**/*.cma
+_opam/.opam-switch/sources/ocamlfind.1.9.8/**/*.cmx
+_opam/.opam-switch/sources/ocamlfind.1.9.8/**/*.o
+_opam/.opam-switch/sources/ocamlfind.1.9.8/**/*.cmxa
+_opam/.opam-switch/sources/ocamlfind.1.9.8/**/*.cmxs
+_opam/.opam-switch/sources/ocamlfind.1.9.8/**/*.a
+_opam/.opam-switch/sources/ocamlfind.1.9.8/**/*.so
+_opam/.opam-switch/sources/ocamlfind.1.9.8/**/META
+
+_opam/.opam-switch/sources/ocamlfind.1.9.8/**/Makefile.config
+_opam/.opam-switch/sources/ocamlfind.1.9.8/**/Makefile.packages
+_opam/.opam-switch/sources/ocamlfind.1.9.8/**/findlib.conf
+_opam/.opam-switch/sources/ocamlfind.1.9.8/**/ocargs.log
+_opam/.opam-switch/sources/ocamlfind.1.9.8/**/src/findlib/depend
+_opam/.opam-switch/sources/ocamlfind.1.9.8/**/src/findlib/findlib_config.ml
+_opam/.opam-switch/sources/ocamlfind.1.9.8/**/src/findlib/fl_meta.ml
+_opam/.opam-switch/sources/ocamlfind.1.9.8/**/src/findlib/ocaml_args.ml
+_opam/.opam-switch/sources/ocamlfind.1.9.8/**/src/findlib/ocamlfind
+_opam/.opam-switch/sources/ocamlfind.1.9.8/**/src/findlib/topfind
+_opam/.opam-switch/sources/ocamlfind.1.9.8/**/src/findlib/topfind.ml
+_opam/.opam-switch/sources/ocamlfind.1.9.8/**/src/findlib/topfind.compat.in
+_opam/.opam-switch/sources/ocamlfind.1.9.8/**/tools/extract_args/extract_args
+_opam/.opam-switch/sources/ocamlfind.1.9.8/**/tools/extract_args/extract_args.ml
+
+# flyctl launch added from _opam/.opam-switch/sources/ocplib-endian.1.2/.gitignore
+_opam/.opam-switch/sources/ocplib-endian.1.2/**/_build
+_opam/.opam-switch/sources/ocplib-endian.1.2/**/.merlin
+_opam/.opam-switch/sources/ocplib-endian.1.2/**/*.install
+
+# flyctl launch added from _opam/.opam-switch/sources/ordering.3.19.1/.gitignore
+_opam/.opam-switch/sources/ordering.3.19.1/**/_opam
+_opam/.opam-switch/sources/ordering.3.19.1/**/_build
+_opam/.opam-switch/sources/ordering.3.19.1/**/_boot
+_opam/.opam-switch/sources/ordering.3.19.1/**/_test_boot
+_opam/.opam-switch/sources/ordering.3.19.1/**/_perf
+_opam/.opam-switch/sources/ordering.3.19.1/**/_coverage
+_opam/.opam-switch/sources/ordering.3.19.1/**/__pycache__
+_opam/.opam-switch/sources/ordering.3.19.1/**/*.install
+
+# vim swap files
+_opam/.opam-switch/sources/ordering.3.19.1/**/*.swp
+_opam/.opam-switch/sources/ordering.3.19.1/**/*.swo
+
+# emacs lock files
+_opam/.opam-switch/sources/ordering.3.19.1/**/.#*
+
+# vscode settings
+_opam/.opam-switch/sources/ordering.3.19.1/**/.vscode
+
+# git-ps hooks
+_opam/.opam-switch/sources/ordering.3.19.1/**/.git-ps
+
+_opam/.opam-switch/sources/ordering.3.19.1/**/.duneboot.*
+_opam/.opam-switch/sources/ordering.3.19.1/**/Makefile.dev
+_opam/.opam-switch/sources/ordering.3.19.1/**/src/dune_rules/setup.ml
+_opam/.opam-switch/sources/ordering.3.19.1/**/result
+
+_opam/.opam-switch/sources/ordering.3.19.1/**/.DS_Store
+_opam/.opam-switch/sources/ordering.3.19.1/**/nix/profiles
+
+# flyctl launch added from _opam/.opam-switch/sources/ordering.3.19.1/doc/papers/.gitignore
+_opam/.opam-switch/sources/ordering.3.19.1/doc/papers/**/*.pdf
+
+# flyctl launch added from _opam/.opam-switch/sources/ordering.3.19.1/example/with-configure-step.t/.gitignore
+_opam/.opam-switch/sources/ordering.3.19.1/example/with-configure-step.t/**/config
+_opam/.opam-switch/sources/ordering.3.19.1/example/with-configure-step.t/**/config.full
+
+# flyctl launch added from _opam/.opam-switch/sources/pecu.0.7/.gitignore
+_opam/.opam-switch/sources/pecu.0.7/**/.merlin
+_opam/.opam-switch/sources/pecu.0.7/**/_build
+_opam/.opam-switch/sources/pecu.0.7/**/*~
+_opam/.opam-switch/sources/pecu.0.7/**/*#
+_opam/.opam-switch/sources/pecu.0.7/**/_opam*
+_opam/.opam-switch/sources/pecu.0.7/**/*.install
+
+# flyctl launch added from _opam/.opam-switch/sources/pp.2.0.0/.gitignore
+_opam/.opam-switch/sources/pp.2.0.0/**/_opam
+_opam/.opam-switch/sources/pp.2.0.0/**/_build
+_opam/.opam-switch/sources/pp.2.0.0/**/*.install
+_opam/.opam-switch/sources/pp.2.0.0/**/.merlin
+
+# flyctl launch added from _opam/.opam-switch/sources/ppx_derivers.1.2.1/.gitignore
+_opam/.opam-switch/sources/ppx_derivers.1.2.1/**/_build
+_opam/.opam-switch/sources/ppx_derivers.1.2.1/**/.merlin
+_opam/.opam-switch/sources/ppx_derivers.1.2.1/**/*.install
+_opam/.opam-switch/sources/ppx_derivers.1.2.1/**/_opam
+
+# flyctl launch added from _opam/.opam-switch/sources/ppx_sexp_conv.v0.17.0/.gitignore
+_opam/.opam-switch/sources/ppx_sexp_conv.v0.17.0/**/_build
+_opam/.opam-switch/sources/ppx_sexp_conv.v0.17.0/**/*.install
+_opam/.opam-switch/sources/ppx_sexp_conv.v0.17.0/**/*.merlin
+_opam/.opam-switch/sources/ppx_sexp_conv.v0.17.0/**/_opam
+
+
+# flyctl launch added from _opam/.opam-switch/sources/ppxlib.0.35.0/.gitignore
+_opam/.opam-switch/sources/ppxlib.0.35.0/**/_build
+_opam/.opam-switch/sources/ppxlib.0.35.0/**/*.install
+_opam/.opam-switch/sources/ppxlib.0.35.0/**/*.merlin
+_opam/.opam-switch/sources/ppxlib.0.35.0/**/_opam
+
+# flyctl launch added from _opam/.opam-switch/sources/ppxlib.0.35.0/bench/vendored/ppx_sexp_conv.v0.15.1/.gitignore
+_opam/.opam-switch/sources/ppxlib.0.35.0/bench/vendored/ppx_sexp_conv.v0.15.1/**/_build
+_opam/.opam-switch/sources/ppxlib.0.35.0/bench/vendored/ppx_sexp_conv.v0.15.1/**/*.install
+_opam/.opam-switch/sources/ppxlib.0.35.0/bench/vendored/ppx_sexp_conv.v0.15.1/**/*.merlin
+_opam/.opam-switch/sources/ppxlib.0.35.0/bench/vendored/ppx_sexp_conv.v0.15.1/**/_opam
+
+
+# flyctl launch added from _opam/.opam-switch/sources/ppxlib_jane.v0.17.2/.gitignore
+_opam/.opam-switch/sources/ppxlib_jane.v0.17.2/**/_build
+_opam/.opam-switch/sources/ppxlib_jane.v0.17.2/**/*.install
+_opam/.opam-switch/sources/ppxlib_jane.v0.17.2/**/*.merlin
+_opam/.opam-switch/sources/ppxlib_jane.v0.17.2/**/_opam
+
+
+# flyctl launch added from _opam/.opam-switch/sources/prettym.0.0.3/.gitignore
+_opam/.opam-switch/sources/prettym.0.0.3/**/_build
+_opam/.opam-switch/sources/prettym.0.0.3/**/*.merlin
+_opam/.opam-switch/sources/prettym.0.0.3/**/*.install
+_opam/.opam-switch/sources/prettym.0.0.3/**/.*.swp
+_opam/.opam-switch/sources/prettym.0.0.3/**/examples/*
+
+# flyctl launch added from _opam/.opam-switch/sources/psq.0.2.1/.gitignore
+_opam/.opam-switch/sources/psq.0.2.1/**/_build
+
+_opam/.opam-switch/sources/psq.0.2.1/**/tmp
+_opam/.opam-switch/sources/psq.0.2.1/**/*~
+_opam/.opam-switch/sources/psq.0.2.1/**/\.\#*
+_opam/.opam-switch/sources/psq.0.2.1/**/\#*#
+
+_opam/.opam-switch/sources/psq.0.2.1/**/gmon.out
+_opam/.opam-switch/sources/psq.0.2.1/**/perf.data*
+_opam/.opam-switch/sources/psq.0.2.1/**/rondom
+_opam/.opam-switch/sources/psq.0.2.1/**/*.json
+
+# flyctl launch added from _opam/.opam-switch/sources/qcheck-core.0.26/.gitignore
+_opam/.opam-switch/sources/qcheck-core.0.26/**/.*.swp
+_opam/.opam-switch/sources/qcheck-core.0.26/**/.*.swo
+_opam/.opam-switch/sources/qcheck-core.0.26/**/_build
+_opam/.opam-switch/sources/qcheck-core.0.26/**/*.native
+_opam/.opam-switch/sources/qcheck-core.0.26/**/.session
+_opam/.opam-switch/sources/qcheck-core.0.26/**/TAGS
+_opam/.opam-switch/sources/qcheck-core.0.26/**/*.docdir
+_opam/.opam-switch/sources/qcheck-core.0.26/**/man
+_opam/.opam-switch/sources/qcheck-core.0.26/**/*.install
+_opam/.opam-switch/sources/qcheck-core.0.26/**/*.tar.gz
+_opam/.opam-switch/sources/qcheck-core.0.26/**/*.byte
+_opam/.opam-switch/sources/qcheck-core.0.26/**/.merlin
+_opam/.opam-switch/sources/qcheck-core.0.26/**/_opam
+
+# flyctl launch added from _opam/.opam-switch/sources/re.1.13.2/.gitignore
+_opam/.opam-switch/sources/re.1.13.2/**/.*.swp
+_opam/.opam-switch/sources/re.1.13.2/**/_build
+_opam/.opam-switch/sources/re.1.13.2/**/*.bak
+_opam/.opam-switch/sources/re.1.13.2/**/setup.data
+_opam/.opam-switch/sources/re.1.13.2/**/setup.log
+_opam/.opam-switch/sources/re.1.13.2/**/setup.exe
+_opam/.opam-switch/sources/re.1.13.2/**/*.native
+_opam/.opam-switch/sources/re.1.13.2/**/*.byte
+_opam/.opam-switch/sources/re.1.13.2/**/*.docdir
+_opam/.opam-switch/sources/re.1.13.2/**/.merlin
+_opam/.opam-switch/sources/re.1.13.2/**/*.install
+_opam/.opam-switch/sources/re.1.13.2/**/perf.data
+_opam/.opam-switch/sources/re.1.13.2/**/*.old
+_opam/.opam-switch/sources/re.1.13.2/**/*.ctf
+_opam/.opam-switch/sources/re.1.13.2/**/*.bench.sexp
+_opam/.opam-switch/sources/re.1.13.2/**/*.trace
+
+# flyctl launch added from _opam/.opam-switch/sources/sexplib0.v0.17.0/.gitignore
+_opam/.opam-switch/sources/sexplib0.v0.17.0/**/_build
+_opam/.opam-switch/sources/sexplib0.v0.17.0/**/*.install
+_opam/.opam-switch/sources/sexplib0.v0.17.0/**/*.merlin
+_opam/.opam-switch/sources/sexplib0.v0.17.0/**/_opam
+
+
+# flyctl launch added from _opam/.opam-switch/sources/ssl.0.7.0/.gitignore
+_opam/.opam-switch/sources/ssl.0.7.0/**/.vscode
+_opam/.opam-switch/sources/ssl.0.7.0/**/*.install
+_opam/.opam-switch/sources/ssl.0.7.0/**/.merlin
+_opam/.opam-switch/sources/ssl.0.7.0/**/_build
+_opam/.opam-switch/sources/ssl.0.7.0/**/_coverage
+
+# flyctl launch added from _opam/.opam-switch/sources/stdune.3.19.1/.gitignore
+_opam/.opam-switch/sources/stdune.3.19.1/**/_opam
+_opam/.opam-switch/sources/stdune.3.19.1/**/_build
+_opam/.opam-switch/sources/stdune.3.19.1/**/_boot
+_opam/.opam-switch/sources/stdune.3.19.1/**/_test_boot
+_opam/.opam-switch/sources/stdune.3.19.1/**/_perf
+_opam/.opam-switch/sources/stdune.3.19.1/**/_coverage
+_opam/.opam-switch/sources/stdune.3.19.1/**/__pycache__
+_opam/.opam-switch/sources/stdune.3.19.1/**/*.install
+
+# vim swap files
+_opam/.opam-switch/sources/stdune.3.19.1/**/*.swp
+_opam/.opam-switch/sources/stdune.3.19.1/**/*.swo
+
+# emacs lock files
+_opam/.opam-switch/sources/stdune.3.19.1/**/.#*
+
+# vscode settings
+_opam/.opam-switch/sources/stdune.3.19.1/**/.vscode
+
+# git-ps hooks
+_opam/.opam-switch/sources/stdune.3.19.1/**/.git-ps
+
+_opam/.opam-switch/sources/stdune.3.19.1/**/.duneboot.*
+_opam/.opam-switch/sources/stdune.3.19.1/**/Makefile.dev
+_opam/.opam-switch/sources/stdune.3.19.1/**/src/dune_rules/setup.ml
+_opam/.opam-switch/sources/stdune.3.19.1/**/result
+
+_opam/.opam-switch/sources/stdune.3.19.1/**/.DS_Store
+_opam/.opam-switch/sources/stdune.3.19.1/**/nix/profiles
+
+# flyctl launch added from _opam/.opam-switch/sources/stdune.3.19.1/doc/papers/.gitignore
+_opam/.opam-switch/sources/stdune.3.19.1/doc/papers/**/*.pdf
+
+# flyctl launch added from _opam/.opam-switch/sources/stdune.3.19.1/example/with-configure-step.t/.gitignore
+_opam/.opam-switch/sources/stdune.3.19.1/example/with-configure-step.t/**/config
+_opam/.opam-switch/sources/stdune.3.19.1/example/with-configure-step.t/**/config.full
+
+# flyctl launch added from _opam/.opam-switch/sources/tls.2.0.1/.gitignore
+_opam/.opam-switch/sources/tls.2.0.1/**/_build
+_opam/.opam-switch/sources/tls.2.0.1/**/*.native
+_opam/.opam-switch/sources/tls.2.0.1/**/*.byte
+_opam/.opam-switch/sources/tls.2.0.1/**/*.install
+_opam/.opam-switch/sources/tls.2.0.1/**/.merlin
+
+_opam/.opam-switch/sources/tls.2.0.1/**/main.ml
+_opam/.opam-switch/sources/tls.2.0.1/**/.mirage.config
+_opam/.opam-switch/sources/tls.2.0.1/**/mirage-unikernel*opam
+_opam/.opam-switch/sources/tls.2.0.1/**/mirage/*/myocamlbuild.ml
+_opam/.opam-switch/sources/tls.2.0.1/**/mirage/*/*ukvm
+_opam/.opam-switch/sources/tls.2.0.1/**/mirage/*/tls_client
+_opam/.opam-switch/sources/tls.2.0.1/**/mirage/*/tls_server
+_opam/.opam-switch/sources/tls.2.0.1/**/Makefile
+_opam/.opam-switch/sources/tls.2.0.1/**/key_gen.ml
+
+_opam/.opam-switch/sources/tls.2.0.1/**/random
+
+# flyctl launch added from _opam/.opam-switch/sources/tls.2.0.1/mirage/example/.gitignore
+_opam/.opam-switch/sources/tls.2.0.1/mirage/example/static?.ml*
+
+# flyctl launch added from _opam/.opam-switch/sources/unstrctrd.0.4/.gitignore
+_opam/.opam-switch/sources/unstrctrd.0.4/**/_build
+_opam/.opam-switch/sources/unstrctrd.0.4/**/setup.data
+_opam/.opam-switch/sources/unstrctrd.0.4/**/setup.log
+_opam/.opam-switch/sources/unstrctrd.0.4/**/doc/*.html
+_opam/.opam-switch/sources/unstrctrd.0.4/**/*.native
+_opam/.opam-switch/sources/unstrctrd.0.4/**/*.byte
+_opam/.opam-switch/sources/unstrctrd.0.4/**/*.so
+_opam/.opam-switch/sources/unstrctrd.0.4/**/lib/decompress_conf.ml
+_opam/.opam-switch/sources/unstrctrd.0.4/**/*.tar.gz
+_opam/.opam-switch/sources/unstrctrd.0.4/**/_tests
+_opam/.opam-switch/sources/unstrctrd.0.4/**/lib_test/files
+_opam/.opam-switch/sources/unstrctrd.0.4/**/zpipe
+_opam/.opam-switch/sources/unstrctrd.0.4/**/c/dpipe
+_opam/.opam-switch/sources/unstrctrd.0.4/**/*.merlin
+_opam/.opam-switch/sources/unstrctrd.0.4/**/*.install
+
+# flyctl launch added from _opam/.opam-switch/sources/uri-sexp.4.4.0/.gitignore
+_opam/.opam-switch/sources/uri-sexp.4.4.0/**/*.install
+_opam/.opam-switch/sources/uri-sexp.4.4.0/**/.*.swp
+_opam/.opam-switch/sources/uri-sexp.4.4.0/**/.merlin
+_opam/.opam-switch/sources/uri-sexp.4.4.0/**/_build
+_opam/.opam-switch/sources/uri-sexp.4.4.0/**/_opam
+
+# flyctl launch added from _opam/.opam-switch/sources/uri.4.4.0/.gitignore
+_opam/.opam-switch/sources/uri.4.4.0/**/*.install
+_opam/.opam-switch/sources/uri.4.4.0/**/.*.swp
+_opam/.opam-switch/sources/uri.4.4.0/**/.merlin
+_opam/.opam-switch/sources/uri.4.4.0/**/_build
+_opam/.opam-switch/sources/uri.4.4.0/**/_opam
+
+# flyctl launch added from _opam/.opam-switch/sources/x509.1.0.6/.gitignore
+_opam/.opam-switch/sources/x509.1.0.6/**/_build
+_opam/.opam-switch/sources/x509.1.0.6/**/*.install
+_opam/.opam-switch/sources/x509.1.0.6/**/.merlin
+
+_opam/.opam-switch/sources/x509.1.0.6/**/random
+
+# flyctl launch added from _opam/.opam-switch/sources/yojson.3.0.0/.gitignore
+_opam/.opam-switch/sources/yojson.3.0.0/_build
+_opam/.opam-switch/sources/yojson.3.0.0/_opam
+_opam/.opam-switch/sources/yojson.3.0.0/**/.merlin
+_opam/.opam-switch/sources/yojson.3.0.0/*.install
+
+# flyctl launch added from _opam/.opam-switch/sources/zarith.1.14/.gitignore
+_opam/.opam-switch/sources/zarith.1.14/**/*.a
+_opam/.opam-switch/sources/zarith.1.14/**/*.cm?
+_opam/.opam-switch/sources/zarith.1.14/**/*.cmxa
+_opam/.opam-switch/sources/zarith.1.14/**/*.cmxs
+_opam/.opam-switch/sources/zarith.1.14/**/*.cmti
+_opam/.opam-switch/sources/zarith.1.14/**/*.exe
+_opam/.opam-switch/sources/zarith.1.14/**/*.byt
+_opam/.opam-switch/sources/zarith.1.14/**/*.o
+_opam/.opam-switch/sources/zarith.1.14/**/*.so
+_opam/.opam-switch/sources/zarith.1.14/**/Makefile
+_opam/.opam-switch/sources/zarith.1.14/**/depend
+_opam/.opam-switch/sources/zarith.1.14/**/zarith_version.ml
+fly.toml

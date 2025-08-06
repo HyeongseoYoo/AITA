@@ -1,5 +1,4 @@
 let capture_analysis_output_to_string f =
-  
   let tmp_output_file = Filename.temp_file "mopsa_output_" ".txt" in
   let oc = open_out tmp_output_file in
   let fd = Unix.descr_of_out_channel oc in
@@ -25,33 +24,28 @@ let capture_analysis_output_to_string f =
 
   (output, result, tmp_output_file)
 
-
 let run_analysis code_text =
-
   (* create .py file *)
   let tmp_filename = Filename.temp_file "mopsa_input_" ".py" in
   let channel = open_out tmp_filename in
   output_string channel code_text;
   close_out channel;
 
-  let argv = [|
-    "./_build/default/bin/main.exe";
-    "-config"; "./values.json";
-    "-share-dir=share/mopsa";
-    tmp_filename
-  |] in
+  let argv =
+    [|
+      "./_build/default/bin/main.exe";
+      "-config";
+      "./values.json";
+      "-share-dir=share/mopsa";
+      tmp_filename;
+    |]
+  in
 
-  let (captured_output, result_code, tmp_output_file) =
-  (*
-  let run () =
-  exit @@ parse_options Sys.argv analyze_files ()
-  *)
+  let captured_output, result_code, tmp_output_file =
+    (* let run () = exit @@ parse_options Sys.argv analyze_files () *)
     capture_analysis_output_to_string (fun () ->
-      Mopsa_analyzer.Framework.Runner.parse_options
-        argv
-        Mopsa_analyzer.Framework.Runner.analyze_files
-        ()
-    )
+        Mopsa_analyzer.Framework.Runner.parse_options argv
+          Mopsa_analyzer.Framework.Runner.analyze_files ())
   in
   Printf.printf "Captured (exit %d): %s\n" result_code captured_output;
 
@@ -62,6 +56,3 @@ let run_analysis code_text =
 
   (* return *)
   (result_code, captured_output)
-
-
-  
