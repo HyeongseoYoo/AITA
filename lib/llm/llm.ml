@@ -1,16 +1,22 @@
 open Lwt.Infix
 
-(* !!!! *)
-let api_key = ""
-let model = "claude-sonnet-4-20250514"
-let endpoint = Uri.of_string "https://api.anthropic.com/v1/messages"
+let api_key =
+  match Sys.getenv_opt "OPENROUTER_API_KEY" with
+  | Some k when String.trim k <> "" -> k
+  | _ -> ""
+
+let model =
+  match Sys.getenv_opt "OPENROUTER_MODEL" with
+  | Some m when String.trim m <> "" -> m
+  | _ -> "meta-llama/llama-4-scout"
+
+let endpoint = Uri.of_string "https://openrouter.ai/api/v1/chat/completions"
 
 let headers =
   Cohttp.Header.of_list
     [
       ("Content-Type", "application/json");
-      ("x-api-key", api_key);
-      ("anthropic-version", "2023-06-01");
+      ("Authorization", "Bearer " ^ api_key);
     ]
 
 let make_request_json user_input =
@@ -37,7 +43,7 @@ let prompt ?(code = "") ?(error = "") ?(mopsa = "") () =
   ^ "TypeError에서 이와 같은 실수는 i in dict에서 꺼내는 값이 value 값이 아닌 key 값이라는 것 인지하지 못하기 \
      때문에 발생해. 학생은 value가 나올줄 알고 비교를 한거지. 하지만 key가 나온다는 점을 알려줘야해."
 
-let call_claude user_input =
+let call_openrouter user_input =
   let body_json = make_request_json user_input |> Yojson.Safe.to_string in
   Cohttp_lwt_unix.Client.post ~headers
     ~body:(Cohttp_lwt.Body.of_string body_json)
@@ -53,5 +59,5 @@ let call_claude user_input =
 
 let response code error mopsa =
   let message = prompt ~code ~error ~mopsa () in
-  call_claude message
-(* Lwt_main.run (call_claude message) *)
+  call_openrouter message
+(* Lwt_main.run (call_openrouter message) *)

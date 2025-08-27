@@ -37,12 +37,49 @@ let extract (json_str : string) : string =
     let json = Yojson.Safe.from_string json_str in
     match json with
     | `Assoc fields -> (
-        match List.assoc_opt "content" fields with
-        | Some (`List (`Assoc item :: _)) -> (
-            (* content[0] 항목 *)
-            match List.assoc_opt "text" item with
-            | Some (`String text) -> text
+        (* Prefer OpenRouter/OpenAI chat-completions shape: choices[0].message.content *)
+        match List.assoc_opt "choices" fields with
+        | Some (`List (choice :: _)) -> (
+            match choice with
+            | `Assoc choice_fields -> (
+                match List.assoc_opt "message" choice_fields with
+                | Some (`Assoc msg_fields) -> (
+                    match List.assoc_opt "content" msg_fields with
+                    | Some (`String text) -> text
+                    | Some (`List parts) ->
+                        (* Join any string parts if present; fallback to failure *)
+                        let collect acc part =
+                          match part with
+                          | `String s -> acc ^ s
+                          | `Assoc assoc -> (
+                              match List.assoc_opt "text" assoc with
+                              | Some (`String s) -> acc ^ s
+                              | _ -> acc)
+                          | _ -> acc
+                        in
+                        let text = List.fold_left collect "" parts in
+                        if String.trim text = "" then "분석 실패" else text
+                    | _ -> "분석 실패")
+                | _ -> (
+                    (* Some providers may return choices[0].text *)
+                    match List.assoc_opt "text" choice_fields with
+                    | Some (`String text) -> text
+                    | _ -> "분석 실패"))
             | _ -> "분석 실패")
-        | _ -> "분석 실패")
+        | _ -> (
+            (* Backward-compat: Anthropic messages shape used previously *)
+            match List.assoc_opt "content" fields with
+            | Some (`List (`Assoc item :: _)) -> (
+                match List.assoc_opt "text" item with
+                | Some (`String text) -> text
+                | _ -> "분석 실패")
+            | _ -> (
+                (* Fallback to error message if present *)
+                match List.assoc_opt "error" fields with
+                | Some (`Assoc err_fields) -> (
+                    match List.assoc_opt "message" err_fields with
+                    | Some (`String msg) -> msg
+                    | _ -> "분석 실패")
+                | _ -> "분석 실패")))
     | _ -> "분석 실패"
   with _ -> "분석 실패"
