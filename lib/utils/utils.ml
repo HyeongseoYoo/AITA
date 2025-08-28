@@ -14,6 +14,21 @@ print(high_scorer)
   in
   clean text
 
+let code_full =
+  let text =
+    {|
+scores = {"타블로": 73, "미쓰라": 90, "윤하": 99, "투컷": 82}
+
+high_scorer = [i for i in scores if i >= 90 ]
+print(high_scorer)
+|}
+  in
+  let clean s =
+    String.to_seq s |> Seq.filter (fun c -> c <> '\r') |> String.of_seq
+  in
+  clean text
+
+
 let code_simple =
   let text =
     {|high_scorer = [i for i in scores if i >= 90 ]

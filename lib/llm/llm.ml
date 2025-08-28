@@ -23,7 +23,8 @@ let make_request_json user_input =
   `Assoc
     [
       ("model", `String model);
-      ("max_tokens", `Int 1024);
+      ("max_tokens", `Int 10000);
+      ("reasoning", `Assoc [ ("exclude", `Bool true)]);
       ( "messages",
         `List
           [
@@ -31,17 +32,28 @@ let make_request_json user_input =
           ] );
     ]
 
-let prompt ?(code = "") ?(error = "") ?(mopsa = "") () =
+let prompt ?(code = "") ?(code_full = "") ?(error = "") ?(mopsa = "") () =
   let normalize s = if String.trim s = "" then "없음" else s in
   let code = normalize code in
+  let code_full = normalize code_full in
   let error = normalize error in
   let mopsa = normalize mopsa in
-  "Python 기초 수업을 듣는 학생이 colab에서 짠 코드와 그 블록 실행 시 발생하는 에러야.\n\n\
-  \  이거에 추가적으로 전체코드를 MOPSA 정적분석기로 돌려서 나온 결과까지 함께 알려줄테니까 어디를 고쳐야되는지 알려줘.\n\n\
-  \  MOPSA 에러에 있는 코드 line number와 실제 내가 전달하는 Code의 line number는 다를 수 있으니 유의해."
-  ^ "Code: " ^ code ^ "Python Error: " ^ error ^ "mopsa 정적분석 결과: " ^ mopsa
-  ^ "TypeError에서 이와 같은 실수는 i in dict에서 꺼내는 값이 value 값이 아닌 key 값이라는 것 인지하지 못하기 \
-     때문에 발생해. 학생은 value가 나올줄 알고 비교를 한거지. 하지만 key가 나온다는 점을 알려줘야해."
+  "Python 기초 수업을 듣는 학생이 작성한 코드와 그에 대한 정보를 줄게.\n
+  Code (에러가 발생한 코드 블럭), Full Code (전체 코드), Python Error (발생한 에러), Analysis (정적분석 결과) 이렇게 4개 정보와 학생들이 Error 별로 자주 실수하는 실수 유형을 알려줄게.
+  에러가 발생한 코드 블럭을 수정하는 방법을 쉽게 설명해줘.\n\  "
+  ^ "TypeError 실수 유형
+  1. 모듈 내 함수 이름 혼동: 함수 이름을 string등 callable하지 않은 타입으로 사용하거나, 그러한 타입의 값을 가진 변수명을 함수명 자리에 사용
+  2. 내장함수 덮어쓰기: 함수 이름을 callable하지 않은 타입의 변수명으로 지정
+  3. 모듈의 함수 호출 방법 오류
+  - 함수 이름만 쓰고 `(인자)`를 붙이지 않아 의도한 연산이 불가능한 function 타입을 가짐
+  - 함수의 인자 개수와 타입을 잘못 입력
+  4. lambda 함수 사용법 오류: 정의한 람다 함수의 인자 개수 또는 타입을 잘못 입력
+  5. dict 자료형 사용법 오류
+  - `for ... in dict` 구문에서 꺼내는 값이 key가 아니라 value인 것으로 착각함
+  - values()로 만든 dict_values 전체에 `int()`를 취하는 등 잘못된 자료형을 대상으로 타입 캐스팅
+  - dict_keys나 dict_values, list 등을 int와 하나하나 비교하지 않고 직접 비교를 수행
+  - key에 대응하는 value를 `[]`가 아닌 `()`로 찾으려고 시도함"
+  ^ "Code: " ^ code ^ "\n Full Code:" ^ code_full ^ "\n Python Error: " ^ error ^ "\n Analysis: " ^ mopsa
 
 let call_openrouter user_input =
   let body_json = make_request_json user_input |> Yojson.Safe.to_string in
@@ -57,7 +69,7 @@ let call_openrouter user_input =
         (Cohttp.Code.string_of_status status)
         body_str
 
-let response code error mopsa =
-  let message = prompt ~code ~error ~mopsa () in
+let response code code_full error mopsa =
+  let message = prompt ~code ~code_full ~error ~mopsa () in
   call_openrouter message
 (* Lwt_main.run (call_openrouter message) *)
