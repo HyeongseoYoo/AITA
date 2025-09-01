@@ -1,9 +1,8 @@
-let server_secret_key = 
-  match Sys.getenv_opt "AITA_PASSWD" with
-  | Some k when String.trim k <> "" -> k
-  | _ -> "R8jFYKKT4zDRQeizmLRh"
+let server_secret_key =
+  match Sys.getenv "AITA_PASSWD" |> String.trim with
+  | k when k <> "" -> k
+  | _ | (exception Not_found) -> failwith "AITA_PASSWD is not set"
 
-  
 let login_page error_message =
   <html>
   <body>
