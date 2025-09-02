@@ -28,6 +28,53 @@ let make_request_json user_input =
           [
             `Assoc [ ("role", `String "user"); ("content", `String user_input) ];
           ] );
+      ( "response_format",
+        `Assoc
+          [
+            ("type", `String "json_schema");
+            ( "json_schema",
+              `Assoc
+                [
+                  ("name", `String "code_fix_feedback");
+                  ("strict", `Bool true);
+                  ( "schema",
+                    `Assoc
+                      [
+                        ("type", `String "object");
+                        ( "properties",
+                          `Assoc
+                            [
+                              ( "fix",
+                                `Assoc
+                                  [
+                                    ("type", `String "string");
+                                    ("description", `String "학생에게 보여줄 고쳐진 코드");
+                                  ] );
+                              ( "reason",
+                                `Assoc
+                                  [
+                                    ("type", `String "string");
+                                    ( "description",
+                                      `String "학생에게 보여줄 고쳐진 코드에 대한 쉽고 교육적인 설명"
+                                    );
+                                  ] );
+                              ( "example",
+                                `Assoc
+                                  [
+                                    ("type", `String "string");
+                                    ( "description",
+                                      `String "학생이 일으킨 실수를 보여줄 수 있는 간결한 예시" );
+                                  ] );
+                            ] );
+                        ( "required",
+                          `List
+                            [
+                              `String "fix"; `String "reason"; `String "example";
+                            ] );
+                        ("additionalProperties", `Bool false);
+                      ] );
+                ] );
+          ] );
     ]
 
 let prompt code code_full error mopsa =
