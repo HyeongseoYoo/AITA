@@ -1,5 +1,3 @@
-open Lwt.Infix
-
 let api_key =
   match Sys.getenv "OPENROUTER_API_KEY" |> String.trim with
   | k when k <> "" -> k
@@ -32,7 +30,7 @@ let make_request_json user_input =
           ] );
     ]
 
-let prompt ?(code = "") ?(code_full = "") ?(error = "") ?(mopsa = "") () =
+let prompt code code_full error mopsa =
   let normalize s = if String.trim s = "" then "없음" else s in
   let code = normalize code in
   let code_full = normalize code_full in
@@ -61,19 +59,20 @@ let prompt ?(code = "") ?(code_full = "") ?(error = "") ?(mopsa = "") () =
 
 let call_openrouter user_input =
   let body_json = make_request_json user_input |> Yojson.Safe.to_string in
-  Cohttp_lwt_unix.Client.post ~headers
-    ~body:(Cohttp_lwt.Body.of_string body_json)
-    endpoint
-  >>= fun (resp, body_stream) ->
-  Cohttp_lwt.Body.to_string body_stream >|= fun body_str ->
-  match resp.Cohttp.Response.status with
-  | `OK -> body_str
-  | status ->
-      Printf.sprintf "Error: %s\nResponse: %s"
-        (Cohttp.Code.string_of_status status)
-        body_str
+  let%lwt resp, body_stream =
+    Cohttp_lwt_unix.Client.post ~headers
+      ~body:(Cohttp_lwt.Body.of_string body_json)
+      endpoint
+  in
+  let%lwt body_str = Cohttp_lwt.Body.to_string body_stream in
+  Lwt.return
+    (match resp.status with
+    | `OK -> body_str
+    | status ->
+        Printf.sprintf "Error: %s\nResponse: %s"
+          (Cohttp.Code.string_of_status status)
+          body_str)
 
 let response code code_full error mopsa =
-  let message = prompt ~code ~code_full ~error ~mopsa () in
+  let message = prompt code code_full error mopsa in
   call_openrouter message
-(* Lwt_main.run (call_openrouter message) *)

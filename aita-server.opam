@@ -17,6 +17,9 @@ depends: [
   "dune" {>= "3.7"}
   "dream"
   "cohttp-lwt-unix"
+  "yojson"
+  "lwt_ppx"
+  "ppx_yojson_conv"
   "odoc" {with-doc}
 ]
 build: [

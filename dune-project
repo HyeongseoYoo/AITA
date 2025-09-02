@@ -27,6 +27,7 @@
   dream
   cohttp-lwt-unix
   yojson
+  lwt_ppx
   ppx_yojson_conv)
  (tags
   ("static analysis" LLM)))

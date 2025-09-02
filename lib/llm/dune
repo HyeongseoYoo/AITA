@@ -1,3 +1,5 @@
 (library
  (name llm)
- (libraries cohttp-lwt-unix yojson lwt.unix))
+ (libraries cohttp-lwt-unix yojson lwt.unix)
+ (preprocess
+  (pps lwt_ppx)))
