@@ -28,7 +28,7 @@
   cohttp-lwt-unix
   yojson
   lwt_ppx
-  ppx_yojson_conv)
+  ppx_deriving_yojson)
  (tags
   ("static analysis" LLM)))
 

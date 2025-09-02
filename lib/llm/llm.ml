@@ -17,65 +17,50 @@ let headers =
       ("Authorization", "Bearer " ^ api_key);
     ]
 
+type message = { role : string; content : string } [@@deriving yojson]
+type reasoning = { exclude : bool } [@@deriving yojson]
+
+type response_format = {
+  typ : string; [@key "type"]
+  json_schema : Yojson.Safe.t;
+}
+[@@deriving yojson]
+
+type request = {
+  model : string;
+  max_tokens : int;
+  reasoning : reasoning;
+  messages : message list;
+  response_format : response_format;
+}
+[@@deriving yojson]
+
+let json_schema =
+  Yojson.Safe.from_string
+    {|{
+  "name": "code_fix_feedback",
+  "strict": true,
+  "schema": {
+    "type": "object",
+    "properties": {
+      "fix": {"type": "string", "description": "학생에게 보여줄 고쳐진 코드"},
+      "reason": {"type": "string", "description": "학생에게 보여줄 고쳐진 코드에 대한 쉽고 교육적인 설명"},
+      "example": {"type": "string", "description": "학생이 일으킨 실수를 보여줄 수 있는 간결한 예시"}
+    },
+    "required": ["fix", "reason", "example"],
+    "additionalProperties": false
+  }
+}|}
+
 let make_request_json user_input =
-  `Assoc
-    [
-      ("model", `String model);
-      ("max_tokens", `Int 10000);
-      ("reasoning", `Assoc [ ("exclude", `Bool true) ]);
-      ( "messages",
-        `List
-          [
-            `Assoc [ ("role", `String "user"); ("content", `String user_input) ];
-          ] );
-      ( "response_format",
-        `Assoc
-          [
-            ("type", `String "json_schema");
-            ( "json_schema",
-              `Assoc
-                [
-                  ("name", `String "code_fix_feedback");
-                  ("strict", `Bool true);
-                  ( "schema",
-                    `Assoc
-                      [
-                        ("type", `String "object");
-                        ( "properties",
-                          `Assoc
-                            [
-                              ( "fix",
-                                `Assoc
-                                  [
-                                    ("type", `String "string");
-                                    ("description", `String "학생에게 보여줄 고쳐진 코드");
-                                  ] );
-                              ( "reason",
-                                `Assoc
-                                  [
-                                    ("type", `String "string");
-                                    ( "description",
-                                      `String "학생에게 보여줄 고쳐진 코드에 대한 쉽고 교육적인 설명"
-                                    );
-                                  ] );
-                              ( "example",
-                                `Assoc
-                                  [
-                                    ("type", `String "string");
-                                    ( "description",
-                                      `String "학생이 일으킨 실수를 보여줄 수 있는 간결한 예시" );
-                                  ] );
-                            ] );
-                        ( "required",
-                          `List
-                            [
-                              `String "fix"; `String "reason"; `String "example";
-                            ] );
-                        ("additionalProperties", `Bool false);
-                      ] );
-                ] );
-          ] );
-    ]
+  request_to_yojson
+    {
+      model;
+      max_tokens = 10000;
+      reasoning = { exclude = true };
+      messages = [ { role = "user"; content = user_input } ];
+      response_format = { typ = "json_schema"; json_schema };
+    }
 
 let prompt code code_full error mopsa =
   let normalize s = if String.trim s = "" then "없음" else s in

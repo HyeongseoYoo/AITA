@@ -1,5 +1,5 @@
 (library
  (name llm)
- (libraries cohttp-lwt-unix yojson lwt.unix)
+ (libraries cohttp-lwt-unix yojson lwt.unix ppx_deriving_yojson.runtime)
  (preprocess
-  (pps lwt_ppx)))
+  (pps lwt_ppx ppx_deriving_yojson)))
