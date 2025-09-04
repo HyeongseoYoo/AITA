@@ -1,14 +1,14 @@
-open Lwt.Infix
+open Lwt.Syntax
 
 let api_key =
-  match Sys.getenv_opt "OPENROUTER_API_KEY" with
-  | Some k when String.trim k <> "" -> k
-  | _ -> ""
+  match Sys.getenv "OPENROUTER_API_KEY" |> String.trim with
+  | k when k <> "" -> k
+  | _ | (exception Not_found) -> failwith "OPENROUTER_API_KEY is not set"
 
 let model =
-  match Sys.getenv_opt "OPENROUTER_MODEL" with
-  | Some m when String.trim m <> "" -> m
-  | _ -> "meta-llama/llama-4-scout"
+  match Sys.getenv "OPENROUTER_MODEL" |> String.trim with
+  | m when m <> "" -> m
+  | _ | (exception Not_found) -> "@preset/aita"
 
 let endpoint = Uri.of_string "https://openrouter.ai/api/v1/chat/completions"
 
@@ -19,19 +19,52 @@ let headers =
       ("Authorization", "Bearer " ^ api_key);
     ]
 
+type message = { role : string; content : string } [@@deriving yojson]
+type reasoning = { exclude : bool } [@@deriving yojson]
+
+type response_format = {
+  typ : string; [@key "type"]
+  json_schema : Yojson.Safe.t;
+}
+[@@deriving yojson]
+
+type request = {
+  model : string;
+  max_tokens : int;
+  stream : bool;
+  reasoning : reasoning;
+  messages : message list;
+  response_format : response_format;
+}
+[@@deriving yojson]
+
+let json_schema =
+  Yojson.Safe.from_string
+    {|{
+  "name": "code_fix_feedback",
+  "strict": true,
+  "schema": {
+    "type": "object",
+    "properties": {
+      "fix": {"type": "string", "description": "학생에게 보여줄 고쳐진 코드"},
+      "reason": {"type": "string", "description": "학생에게 보여줄 고쳐진 코드에 대한 쉽고 교육적인 설명"},
+      "example": {"type": "string", "description": "학생이 일으킨 실수를 보여줄 수 있는 간결한 예시"}
+    },
+    "required": ["fix", "reason", "example"],
+    "additionalProperties": false
+  }
+}|}
+
 let make_request_json user_input =
-  `Assoc
-    [
-      ("model", `String model);
-      ("max_tokens", `Int 10000);
-      ("stream", `Bool true);
-      ("reasoning", `Assoc [ ("exclude", `Bool true)]);
-      ( "messages",
-        `List
-          [
-            `Assoc [ ("role", `String "user"); ("content", `String user_input) ];
-          ] );
-    ]
+  request_to_yojson
+    {
+      model;
+      max_tokens = 10000;
+      reasoning = { exclude = true };
+      stream = true;
+      messages = [ { role = "user"; content = user_input } ];
+      response_format = { typ = "json_schema"; json_schema };
+    }
 
 let prompt ?(code = "") ?(code_full = "") ?(error = "") ?(mopsa = "") ?(hint = "") () =
   let normalize s = if String.trim s = "" then "없음" else s in
@@ -86,13 +119,13 @@ let stream_response
   in
   let body_json = make_request_json user_input |> Yojson.Safe.to_string in
   let body = Cohttp_lwt.Body.of_string body_json in
-  Cohttp_lwt_unix.Client.post ~headers ~body endpoint
-  >>= fun (_resp, body_stream) ->
+  let* (_resp, body_stream) = Cohttp_lwt_unix.Client.post ~headers ~body endpoint in
   let stream = Cohttp_lwt.Body.to_stream body_stream in
 
   (* Buffer -> SSE Events *)
   let rec pump (buf : string) =
-    Lwt_stream.get stream >>= function
+    let* next = Lwt_stream.get stream in
+    match next with
     | None ->
         (* Stream Done *)
         Lwt.return_unit
@@ -136,29 +169,9 @@ let stream_response
                    (fun exn -> on_error (Printexc.to_string exn)))
             data_lines
         in
-        Lwt_list.iter_s handle_event completed >>= fun () ->
+        let* () = Lwt_list.iter_s handle_event completed in
         pump rest
   in
   Lwt.catch
     (fun () -> pump "")
     (fun exn -> on_error (Printexc.to_string exn))
-
-
-    (* let call_openrouter user_input =
-  let body_json = make_request_json user_input |> Yojson.Safe.to_string in
-  Cohttp_lwt_unix.Client.post ~headers
-    ~body:(Cohttp_lwt.Body.of_string body_json)
-    endpoint
-  >>= fun (resp, body_stream) ->
-  Cohttp_lwt.Body.to_string body_stream >|= fun body_str ->
-  match resp.Cohttp.Response.status with
-  | `OK -> body_str
-  | status ->
-      Printf.sprintf "Error: %s\nResponse: %s"
-        (Cohttp.Code.string_of_status status)
-        body_str
-
-let response code code_full error mopsa =
-  let message = prompt ~code ~code_full ~error ~mopsa () in
-  call_openrouter message *)
-(* Lwt_main.run (call_openrouter message) *)

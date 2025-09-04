@@ -31,7 +31,6 @@ print(high_scorer)
   in
   clean text
 
-
 let code_simple =
   let text =
     {|high_scorer = [i for i in scores if i >= 90 ]
@@ -73,7 +72,8 @@ let hint =
     let json = Yojson.Safe.from_string json_str in
     match json with
     | `Assoc fields -> (
-        (* Prefer OpenRouter/OpenAI chat-completions shape: choices[0].message.content *)
+        (* Prefer OpenRouter/OpenAI chat-completions shape:
+           choices[0].message.content *)
         match List.assoc_opt "choices" fields with
         | Some (`List (choice :: _)) -> (
             match choice with
@@ -83,7 +83,8 @@ let hint =
                     match List.assoc_opt "content" msg_fields with
                     | Some (`String text) -> text
                     | Some (`List parts) ->
-                        (* Join any string parts if present; fallback to failure *)
+                        (* Join any string parts if present; fallback to
+                           failure *)
                         let collect acc part =
                           match part with
                           | `String s -> acc ^ s

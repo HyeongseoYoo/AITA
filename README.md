@@ -12,7 +12,8 @@ This project integrates:
 Environment variables:
 
 - `OPENROUTER_API_KEY`: Your OpenRouter API key
-- `OPENROUTER_MODEL` (optional): Model id (default: `anthropic/claude-3.5-sonnet`)
+- `OPENROUTER_MODEL` (optional): Model id (default: `meta-llama/llama-4-scout`)
+- `AITA_PASSWD`: Own password
 
 Run the server:
 
