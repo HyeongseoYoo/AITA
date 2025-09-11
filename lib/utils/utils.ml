@@ -67,57 +67,209 @@ let hint =
   |} in
   clean text
 
-(* let extract (json_str : string) : string =
+type res_state = Waiting of string | Explanation | FollowUps
+
+let user_chat_table : (string, int) Hashtbl.t = Hashtbl.create 40 (* session_id |-> num_of_chats *)
+let chat_history_table : (string, string) Hashtbl.t = Hashtbl.create 40 (* chat_id |-> chat_history *)
+
+let add_try cell =
+  let lines = String.split_on_char '\n' cell in
+  let lines = List.map (fun l -> "  " ^ l) lines in
+  "try:\n" ^ (String.concat "\n" lines) ^ "\nexcept: pass\n"
+
+let get_error_and_hints output_type output_list =
+  let error_message =
+    if output_type <> "stderr" then
+      "no error: result:" ^ (String.concat "\n" output_list)
+    else
+      List.hd (List.rev output_list)
+  in
+  let error_name =
+    match String.index_opt error_message ':' with
+    | Some i -> String.trim (String.sub error_message 0 i)
+    | None -> "no error"
+  in
+  let parse_section content =
+    let rec find_section head lines =
+      match lines with
+      | line :: rest when (String.trim line) = head -> rest
+      | _ :: rest -> find_section head rest
+      | [] -> ["- 힌트를 찾을 수 없음"]
+    in
+    let rec add_section acc lines =
+      match lines with
+      | line :: rest when line <> "" -> add_section (line :: acc) rest
+      | _ -> acc
+    in
+    let lines = String.split_on_char '\n' content in
+    find_section error_name lines |> add_section []
+  in
+  let filename = "lib/data/mistakes.txt" in
+  let content =
+    try
+      In_channel.with_open_text filename In_channel.input_all
+    with
+    | Sys_error _ -> "error raised while reading text file" in
+  error_message, String.concat "\n" (parse_section content)
+
+let chat_id_of session_id =
+  let num_of_chats = Hashtbl.find user_chat_table session_id in
+  let _ = Hashtbl.replace user_chat_table session_id (num_of_chats + 1) in
+  session_id ^ "-" ^ (string_of_int (num_of_chats + 1))
+
+type parser_state =
+  | Idle
+  | InExplanation
+  | SeekingFollowUps
+  | InFollowUps
+
+type streaming_parser = {
+  mutable buffer: string;
+  mutable state: parser_state;
+  mutable explanation_value: string;
+  mutable followup_value: string list;
+  mutable last_processed_pos: int;
+}
+
+let chat_parser_table : (string, streaming_parser) Hashtbl.t = Hashtbl.create 40
+
+let create_streaming_parser () = {
+  buffer = "";
+  state = Idle;
+  explanation_value = "";
+  followup_value = [];
+  last_processed_pos = 0;
+}
+
+(* 필드 이름이 field인 객체의 값이 시작하는 위치를 찾아 반환 *)
+let find_field_start s field pos = 
+  let pattern = "\"" ^ field ^ "\"" ^ "[ 	
+]*:" in
   try
-    let json = Yojson.Safe.from_string json_str in
-    match json with
-    | `Assoc fields -> (
-        (* Prefer OpenRouter/OpenAI chat-completions shape:
-           choices[0].message.content *)
-        match List.assoc_opt "choices" fields with
-        | Some (`List (choice :: _)) -> (
-            match choice with
-            | `Assoc choice_fields -> (
-                match List.assoc_opt "message" choice_fields with
-                | Some (`Assoc msg_fields) -> (
-                    match List.assoc_opt "content" msg_fields with
-                    | Some (`String text) -> text
-                    | Some (`List parts) ->
-                        (* Join any string parts if present; fallback to
-                           failure *)
-                        let collect acc part =
-                          match part with
-                          | `String s -> acc ^ s
-                          | `Assoc assoc -> (
-                              match List.assoc_opt "text" assoc with
-                              | Some (`String s) -> acc ^ s
-                              | _ -> acc)
-                          | _ -> acc
-                        in
-                        let text = List.fold_left collect "" parts in
-                        if String.trim text = "" then "분석 실패" else text
-                    | _ -> "분석 실패")
-                | _ -> (
-                    (* Some providers may return choices[0].text *)
-                    match List.assoc_opt "text" choice_fields with
-                    | Some (`String text) -> text
-                    | _ -> "분석 실패"))
-            | _ -> "분석 실패")
-        | _ -> (
-            (* Backward-compat: Anthropic messages shape used previously *)
-            match List.assoc_opt "content" fields with
-            | Some (`List (`Assoc item :: _)) -> (
-                match List.assoc_opt "text" item with
-                | Some (`String text) -> text
-                | _ -> "분석 실패")
-            | _ -> (
-                (* Fallback to error message if present *)
-                match List.assoc_opt "error" fields with
-                | Some (`Assoc err_fields) -> (
-                    match List.assoc_opt "message" err_fields with
-                    | Some (`String msg) -> msg
-                    | _ -> "분석 실패")
-                | _ -> "분석 실패")))
-    | _ -> "분석 실패"
-  with _ -> "분석 실패"
- *)
+    let re = Str.regexp pattern in
+    let _start_pos = Str.search_forward re s pos in
+    Some (Str.match_end ())
+  with Not_found -> None
+
+let rec skip_whitespace s i = 
+  if i >= String.length s then i
+  else match s.[i] with 
+  | ' ' | '\t' | '\n' | '\r' -> skip_whitespace s (i + 1)
+  | _ -> i
+
+(* s를 start_pos 위치부터 탐색하여 처음으로 오는 ""로 묶인 텍스트와 바로 다음 위치를 반환 *)
+let parse_string s start_pos = 
+  let len = String.length s in
+  let p = skip_whitespace s start_pos in
+  if p >= len || s.[p] <> '"' then None
+  else
+    let buf = Buffer.create (len - p) in
+    let rec loop i = 
+      if i >= len then None (* String not terminated *)
+      else match s.[i] with
+      | '\\' -> 
+          if i + 1 < len then (
+            (match s.[i+1] with
+            | 'n' -> Buffer.add_char buf '\n'
+            | 'r' -> Buffer.add_char buf '\r'
+            | 't' -> Buffer.add_char buf '\t'
+            | c -> Buffer.add_char buf c);
+            loop (i + 2)
+          ) else None (* Trailing backslash *)
+      | '"' -> Some (Buffer.contents buf, i + 1)
+      | c -> 
+          Buffer.add_char buf c;
+          loop (i + 1)
+    in 
+    loop (p + 1)
+
+let extract_streaming_chunk parser chunk = 
+  parser.buffer <- parser.buffer ^ chunk;
+  let len = String.length parser.buffer in
+  let output = ref "" in
+
+  let rec process_buffer () = 
+    if parser.last_processed_pos >= len then () 
+    else match parser.state with
+    | Idle -> 
+        (match find_field_start parser.buffer "explanation" parser.last_processed_pos with
+        | Some pos -> 
+            parser.state <- InExplanation;
+            parser.last_processed_pos <- pos;
+            process_buffer ()
+        | None -> ())
+    | InExplanation -> 
+        (match parse_string parser.buffer parser.last_processed_pos with 
+        | Some (value, next_pos) -> 
+            if value <> parser.explanation_value then
+              output := Yojson.Safe.to_string (`Assoc ["explanation", `String value]);
+              parser.explanation_value <- value;
+            
+            parser.last_processed_pos <- next_pos;
+            parser.state <- SeekingFollowUps;
+            process_buffer ()
+        | None -> 
+            let p = skip_whitespace parser.buffer parser.last_processed_pos in
+            if p < len && parser.buffer.[p] = '"' then
+              let partial_content_escaped = String.sub parser.buffer (p + 1) (len - (p + 1)) in
+              let partial_content_unescaped = 
+                let temp_buf = Buffer.create (String.length partial_content_escaped) in
+                let rec loop i = 
+                  if i < String.length partial_content_escaped then
+                    match partial_content_escaped.[i] with 
+                    | '\\' -> 
+                        if i + 1 < String.length partial_content_escaped then (
+                          (match partial_content_escaped.[i+1] with
+                          | 'n' -> Buffer.add_char temp_buf '\n'
+                          | 'r' -> Buffer.add_char temp_buf '\r'
+                          | 't' -> Buffer.add_char temp_buf '\t'
+                          | c -> Buffer.add_char temp_buf c);
+                          loop (i + 2)
+                        ) else () 
+                    | c -> Buffer.add_char temp_buf c; loop (i + 1)
+                in loop 0;
+                Buffer.contents temp_buf
+              in
+              if partial_content_unescaped <> parser.explanation_value then
+                output := Yojson.Safe.to_string (`Assoc ["explanation", `String partial_content_unescaped]);
+                parser.explanation_value <- partial_content_unescaped
+        )
+    | SeekingFollowUps -> 
+        (match find_field_start parser.buffer "followUps" parser.last_processed_pos with
+        | Some pos -> 
+            parser.state <- InFollowUps;
+            parser.last_processed_pos <- pos;
+            process_buffer ()
+        | None -> ())
+    | InFollowUps -> 
+        let p = skip_whitespace parser.buffer parser.last_processed_pos in
+        if p < len && parser.buffer.[p] = '[' then 
+          let rec parse_items pos = 
+            let current_pos = skip_whitespace parser.buffer pos in 
+            if current_pos < len then 
+              match parser.buffer.[current_pos] with 
+              | ']' -> parser.last_processed_pos <- current_pos + 1
+              | ',' -> parse_items (current_pos + 1)
+              | '"' -> 
+                  (match parse_string parser.buffer current_pos with 
+                  | Some (item, next_pos) -> 
+                      if not (List.mem item parser.followup_value) then (
+                        parser.followup_value <- parser.followup_value @ [item];
+                        output := Yojson.Safe.to_string
+                          (`Assoc [("followUps", `List (List.map (fun s -> `String s) parser.followup_value))])
+                      );
+                      parse_items next_pos
+                  | None -> ())
+              | _ -> () 
+            else () 
+          in 
+          parse_items (p + 1)
+  in 
+
+  process_buffer ();
+  !output
+
+let response_to_json chunk chat_id = 
+  let parser = Hashtbl.find chat_parser_table chat_id in
+  let result = extract_streaming_chunk parser chunk in
+  if result = "" then "{}\n" else result ^ "\n"

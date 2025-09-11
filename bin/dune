@@ -3,18 +3,14 @@
  (name main)
  (libraries
   dream
+  ppx_dream_eml
   aita_server
   analysis
   llm
   utils
   cohttp-lwt-unix
   yojson
-  lwt.unix)
+  lwt.unix
+  dto)
  (preprocess
-  (pps lwt_ppx)))
-
-
-(rule
- (targets main.ml)
- (deps main.eml.ml)
- (action (run dream_eml %{deps} --workspace %{workspace_root})))
+  (pps lwt_ppx ppx_dream_eml ppx_deriving_yojson)))

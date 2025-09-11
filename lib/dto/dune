@@ -1,0 +1,4 @@
+(library
+ (name dto)
+ (libraries yojson)
+ (preprocess (pps ppx_deriving_yojson)))

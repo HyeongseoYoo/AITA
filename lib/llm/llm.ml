@@ -46,11 +46,10 @@ let json_schema =
   "schema": {
     "type": "object",
     "properties": {
-      "fix": {"type": "string", "description": "학생에게 보여줄 고쳐진 코드"},
-      "reason": {"type": "string", "description": "학생에게 보여줄 고쳐진 코드에 대한 쉽고 교육적인 설명"},
-      "example": {"type": "string", "description": "학생이 일으킨 실수를 보여줄 수 있는 간결한 예시"}
+      "explanation": {"type": "string", "description": "학생에게 보여줄 코드 분석 및 원인 설명"},
+      "followUps": {"type": "array", "items": {"type": "string"}, "description": "학생에게 제공할 후속 질문 목록"}
     },
-    "required": ["fix", "reason", "example"],
+    "required": ["explanation", "followUps"],
     "additionalProperties": false
   }
 }|}
@@ -73,11 +72,12 @@ let prompt ?(code = "") ?(code_full = "") ?(error = "") ?(mopsa = "") ?(hint = "
   let error = normalize error in
   let mopsa = normalize mopsa in
   let hint = normalize hint in
-  "Python 기초 수업을 듣는 학생이 작성한 코드와 그에 대한 정보를 줄게.\n
-  Code (에러가 발생한 코드 블럭), Full Code (전체 코드), Python Error (발생한 에러), Analysis (정적분석 결과) 이렇게 4개 정보와 Hint (학생들이 해당 error 발생 시 자주 실수하는 실수 유형)를 알려줄게.
-  에러가 발생한 코드 블럭을 수정하는 방법을 쉽게 설명해줘.\n\  "
-  ^ "Hint: " ^ hint 
-  ^ "Code: " ^ code ^ "\n Full Code:" ^ code_full ^ "\n Python Error: " ^ error ^ "\n Analysis: " ^ mopsa
+  "Python 기초 수업을 듣는 학생이 작성한 코드와 그에 대한 정보를 줄게.\n"
+  ^ "  Code (에러가 발생한 코드 블럭), Full Code (전체 코드), Python Error (발생한 에러), Analysis (정적분석 결과) 이렇게 4개 정보와 Hint (학생들이 해당 error 발생 시 자주 실수하는 실수 유형)를 알려줄게."
+  ^ "  내가 학생이고, 네가 나에게 Python을 알려주는 튜터라고 하자."
+  ^ "  학생의 코드에서 무엇이 문제인지, 왜 그런 문제가 발생했는지 한국어로 친절하고 상세하게 설명(explanation)해주고, 학생이 추가로 물어볼 수 있는 질문 몇 가지(followUps)를 주어진 JSON 형식에 맞게 작성해줘.\n\n  "
+  ^ "  Hint: " ^ hint 
+  ^ "  Code: " ^ code ^ "\n Full Code:" ^ code_full ^ "\n Python Error: " ^ error ^ "\n Analysis: " ^ mopsa
 
 let yo_get_opt k = function
   | `Assoc kv -> List.assoc_opt k kv
@@ -111,6 +111,7 @@ let stream_response
     ~(on_chunk : string -> unit Lwt.t)
     ~(on_error : string -> unit Lwt.t)
     (code : string) (code_full : string) (error : string) (mopsa : string) (hint : string)
+    (session_id : string)
   =
 
   (* Call API *)
@@ -145,6 +146,7 @@ let stream_response
                 fold_lines acc (line :: cur) tl
         in
         let completed, rest = fold_lines [] [] events in
+        let _ = print_endline ("completed: " ^ (String.concat " " completed)) in
 
         let handle_event (ev : string) =
           (* "data: ..." -> json parsing *)

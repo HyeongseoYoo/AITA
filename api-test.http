@@ -1,0 +1,77 @@
+### 1. 로그인 API - 세션 ID 생성
+# @name login
+POST http://localhost:8080/login
+Content-Type: application/json
+
+###
+
+### 2. 코드 분석 API - 기본 요청
+POST http://localhost:8080/analysis
+Content-Type: application/json
+
+{
+    "session_id": "{{login.response.body.session_id}}",
+    "cell_id": "42",
+    "context": [
+        {
+        "cell_id": "12",
+        "code": "scores = {\"타블로\": 73, \"미쓰라\": 90, \"윤하\": 99, \"투컷\": 82}"
+        },
+        {
+        "cell_id": "23",
+        "code": "print(scores)"
+        }
+    ],
+    "code": "# 노래방 점수가 90점 이상인 멤버의 이름을 리스트 함축 표현으로 구하기\nhigh_scorer = [i for i in scores if i >= 90 ]\n\n# 결과 출력하기\nprint(high_scorer)",
+    "output": {
+        "output_type": "stderr",
+        "text": [
+            "Traceback (most recent call last):",
+            "  File \"C:\\Workspace\\AITA\\materials2025\\test.py\", line 5, in <module>",
+            "    high_scorer = [i for i in scores if i >= 90 ]",
+            "                                        ^^^^^^^",
+            "TypeError: '>=' not supported between instances of 'str' and 'int'"
+        ]
+    }
+}
+
+###
+
+POST http://localhost:8080/analysis
+Content-Type: application/json
+
+{
+    "session_id": "{{login.response.body.session_id}}",
+    "cell_id": "42",
+    "context": [
+        {
+        "cell_id": "12",
+        "code": "scores = [-20, -10, 0, 10, 20]"
+        },
+        {
+        "cell_id": "23",
+        "code": "print(scores)"
+        }
+    ],
+    "code": "def sign(i):\n  x = scores[i]\n  if x > 0:\n      print(\"positive\")\n  elif x == 0:\n      print(\"zero\")\n  else x < 0:\n      print(\"negative\")\n\nsign(2)",
+    "output": {
+        "output_type": "stderr",
+        "text": [
+            "  File \"/Users/kiminho/snu/ropas/ai-ta-scratch/scratch.py\", line 15",
+            "    else x < 0:",
+            "         ^",
+            "SyntaxError: expected ':'"
+        ]
+    }
+}
+
+###
+
+### 3. 채팅 API
+POST http://localhost:8080/chat
+Content-Type: application/json
+
+{
+  "prompt": "이 코드에서 발생하는 오류를 설명해주세요",
+  "chat_id": "chat_123"
+}
