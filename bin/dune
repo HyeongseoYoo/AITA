@@ -3,7 +3,6 @@
  (name main)
  (libraries
   dream
-  ppx_dream_eml
   aita_server
   analysis
   llm
