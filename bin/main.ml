@@ -52,7 +52,7 @@ let () =
                     Dream.write s
                       (Yojson.Basic.to_string (`Assoc [("code", `String "INTERNAL SERVER ERROR"); ("message", `String msg)]))
                   in
-                  Llm.stream_response ~on_chunk ~on_error code code_full error mopsa hint req.session_id
+                  Llm.stream_response ~on_chunk ~on_error code code_full error mopsa hint
                 )
              | Error err -> Dream.json ~status:`Bad_Request err);
          Dream.post "/chat" (fun request ->

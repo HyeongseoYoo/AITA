@@ -111,7 +111,6 @@ let stream_response
     ~(on_chunk : string -> unit Lwt.t)
     ~(on_error : string -> unit Lwt.t)
     (code : string) (code_full : string) (error : string) (mopsa : string) (hint : string)
-    (session_id : string)
   =
 
   (* Call API *)
