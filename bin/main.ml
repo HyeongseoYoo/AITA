@@ -1,8 +1,15 @@
 open Lwt.Syntax
 
+let set_cors handler request =
+  let%lwt response = handler request in
+  Dream.add_header response "Access-Control-Allow-Origin" "*";
+  Dream.add_header response "Access-Control-Allow-Headers" "Content-Type";
+  Lwt.return response
+
 let () =
   Dream.run ~interface:"0.0.0.0"
   @@ Dream.logger
+  @@ set_cors
   @@ Dream.router
        [
          Dream.post "/login" (fun _request ->
