@@ -1,16 +1,24 @@
 open Lwt.Syntax
 
-let set_cors handler request =
-  let%lwt response = handler request in
-  Dream.add_header response "Access-Control-Allow-Origin" "*";
-  Dream.add_header response "Access-Control-Allow-Headers" "Content-Type";
-  Dream.add_header response "Access-Control-Allow-Methods" "GET, POST, PUT, DELETE, OPTIONS";
-  Lwt.return response
+let cors_filter hander request =
+  match Dream.method_ request with
+  | `OPTIONS -> 
+      Dream.respond ~headers:[
+        ("Access-Control-Allow-Origin", "*");
+        ("Access-Control-Allow-Headers", "Content-Type");
+        ("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS")
+      ] ~status:`No_Content ""
+  | _ ->
+      let%lwt response = hander request in
+      Dream.add_header response "Access-Control-Allow-Origin" "*";
+      Dream.add_header response "Access-Control-Allow-Headers" "Content-Type";
+      Lwt.return response
+
 
 let () =
   Dream.run ~interface:"0.0.0.0"
   @@ Dream.logger
-  @@ set_cors
+  @@ cors_filter
   @@ Dream.router
        [
          Dream.options "/login" (fun _ -> Dream.empty `OK);
@@ -22,6 +30,7 @@ let () =
                res |> Dto.login_response_body_to_yojson |> Yojson.Safe.to_string
              in
              Dream.json body);
+         Dream.options "/analysus" (fun _ -> Dream.empty `OK);
          Dream.post "/analysis" (fun request ->
              let* body = Dream.body request in
              let req = body |> Yojson.Safe.from_string |> Dto.analysis_request_body_of_yojson in
