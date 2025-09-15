@@ -4,6 +4,7 @@ let set_cors handler request =
   let%lwt response = handler request in
   Dream.add_header response "Access-Control-Allow-Origin" "*";
   Dream.add_header response "Access-Control-Allow-Headers" "Content-Type";
+  Dream.add_header response "Access-Control-Allow-Methods" "GET, POST, PUT, DELETE, OPTIONS";
   Lwt.return response
 
 let () =
@@ -12,6 +13,7 @@ let () =
   @@ set_cors
   @@ Dream.router
        [
+         Dream.options "/login" (fun _ -> Dream.empty `OK);
          Dream.post "/login" (fun _request ->
              let session_id = Dream.random 32 |> Dream.to_base64url in
              let () = Hashtbl.add Utils.user_chat_table session_id 0 in
