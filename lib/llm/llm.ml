@@ -86,13 +86,14 @@ let prompt_user ?(code = "") ?(code_full = "") ?(stderr = "") ?(stdout = "") ?(m
   let stdout = normalize stdout in
   let mopsa = normalize mopsa in
   let hint = normalize hint in
-  "입력 데이터 형식:\n"
+  "다음의 데이터가 주어집니다.\n"
   ^ "- Code: 에러가 발생한 코드 블럭\n"
   ^ "- Full Code: 전체 코드\n"
   ^ "- Python Error: 발생한 에러\n"
   ^ "- Python Output: 에러 발생 전까지의 출력\n"
   ^ "- Analysis: 정적분석 결과\n"
-  ^ "- Hint: 학생들이 자주 하는 실수 유형" ^ "\n\n"
+  ^ "- Hint: 학생들이 자주 하는 실수 유형\n\n"
+  ^ "학생의 코드에 대한 설명(explanation)과 후속 질문(followUps)을 작성해 주세요.\n----\n"
   ^ "Code: " ^ code ^ "\n\n"
   ^ "Full Code: " ^ code_full ^ "\n\n"
   ^ "Python Error: " ^ stderr ^ "\n\n"
@@ -167,7 +168,6 @@ let stream_response
                 fold_lines acc (line :: cur) tl
         in
         let completed, rest = fold_lines [] [] events in
-        let _ = print_endline ("completed: " ^ (String.concat " " completed)) in
 
         let handle_event (ev : string) =
           (* "data: ..." -> json parsing *)

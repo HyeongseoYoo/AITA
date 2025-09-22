@@ -67,6 +67,11 @@ let hint =
   |} in
   clean text
 
+let error_names = [
+  "SyntaxError"; "IndentationError"; "TypeError"; "IndexError"; "AttributeError"; "KeyError";
+  "ValueError"; "NameError"; "UnboundLocalError"; "ZeroDivisionError"
+]
+
 type res_state = Waiting of string | Explanation | FollowUps
 
 let user_chat_table : (string, int) Hashtbl.t = Hashtbl.create 40 (* session_id |-> num_of_chats *)
@@ -83,9 +88,18 @@ let get_error_and_hints (output : Dto.output) =
     | Some e ->
         let error_message = String.concat "\n" e in
         let error_name =
-          match String.index_opt (List.hd e) ':' with
-          | Some i -> String.trim (String.sub error_message 0 i)
-          | None -> "no error"
+          let rec find_name e_list =
+            match e_list with
+            | [] -> "no error"
+            | line :: rest -> (
+              match String.index_opt line ':' with
+              | Some i ->
+                  let name = String.sub line 0 i in
+                  if List.mem name error_names then name else find_name rest
+              | None -> find_name rest
+            )
+          in
+          find_name e
         in
         let parse_section content =
           let rec find_section head lines =
@@ -97,7 +111,7 @@ let get_error_and_hints (output : Dto.output) =
           let rec add_section acc lines =
             match lines with
             | line :: rest when line <> "" -> add_section (line :: acc) rest
-            | _ -> acc
+            | _ -> List.rev acc
           in
           let lines = String.split_on_char '\n' content in
           find_section error_name lines |> add_section []

@@ -55,8 +55,7 @@ Content-Type: application/json
     ],
     "code": "def sign(i):\n  x = scores[i]\n  if x > 0:\n      print(\"positive\")\n  elif x == 0:\n      print(\"zero\")\n  else x < 0:\n      print(\"negative\")\n\nsign(2)",
     "output": {
-        "output_type": "stderr",
-        "text": [
+        "stderr": [
             "  File \"/Users/kiminho/snu/ropas/ai-ta-scratch/scratch.py\", line 15",
             "    else x < 0:",
             "         ^",
