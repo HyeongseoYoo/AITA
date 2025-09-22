@@ -54,30 +54,52 @@ let json_schema =
   }
 }|}
 
-let make_request_json user_input =
+let make_request_json system_input user_input =
   request_to_yojson
     {
       model;
       max_tokens = 10000;
       reasoning = { exclude = true };
       stream = true;
-      messages = [ { role = "user"; content = user_input } ];
+      messages = [ { role = "system"; content = system_input } ; { role = "user"; content = user_input } ];
       response_format = { typ = "json_schema"; json_schema };
     }
 
-let prompt ?(code = "") ?(code_full = "") ?(error = "") ?(mopsa = "") ?(hint = "") () =
+let system_input =
+  "당신은 Python 기초 수업을 듣는 학생들을 도와주는 친절한 튜터입니다.\n\n"
+  ^ "역할:\n"
+  ^ "- 학생의 코드에서 발생한 문제를 분석하고 설명합니다\n"
+  ^ "- 문제의 원인을 이해하기 쉽게 설명합니다\n"
+  ^ "- 학생이 추가로 궁금해할 만한 질문들을 제안합니다\n\n"
+  ^ "응답 규칙:\n"
+  ^ "- 인사말은 생략하고 바로 문제 분석부터 시작하세요\n"
+  ^ "- 한국어로 친절하고 상세하게 설명하세요\n"
+  ^ "- followUps에는 질문만 간략하게 작성하고, 답변은 미리 제공하지 마세요\n"
+  ^ "- 주어진 JSON 형식에 맞게 응답하세요\n\n"
+
+
+let prompt_user ?(code = "") ?(code_full = "") ?(stderr = "") ?(stdout = "") ?(mopsa = "") ?(hint = "") () =
   let normalize s = if String.trim s = "" then "없음" else s in
   let code = normalize code in
   let code_full = normalize code_full in
-  let error = normalize error in
+  let stderr = normalize stderr in
+  let stdout = normalize stdout in
   let mopsa = normalize mopsa in
   let hint = normalize hint in
-  "Python 기초 수업을 듣는 학생이 작성한 코드와 그에 대한 정보를 줄게.\n"
-  ^ "  Code (에러가 발생한 코드 블럭), Full Code (전체 코드), Python Error (발생한 에러), Analysis (정적분석 결과) 이렇게 4개 정보와 Hint (학생들이 해당 error 발생 시 자주 실수하는 실수 유형)를 알려줄게."
-  ^ "  내가 학생이고, 네가 나에게 Python을 알려주는 튜터라고 하자."
-  ^ "  학생의 코드에서 무엇이 문제인지, 왜 그런 문제가 발생했는지 한국어로 친절하고 상세하게 설명(explanation)해주고, 학생이 추가로 물어볼 수 있는 질문 몇 가지(followUps)를 주어진 JSON 형식에 맞게 작성해줘.\n\n  "
-  ^ "  Hint: " ^ hint 
-  ^ "  Code: " ^ code ^ "\n Full Code:" ^ code_full ^ "\n Python Error: " ^ error ^ "\n Analysis: " ^ mopsa
+  "입력 데이터 형식:\n"
+  ^ "- Code: 에러가 발생한 코드 블럭\n"
+  ^ "- Full Code: 전체 코드\n"
+  ^ "- Python Error: 발생한 에러\n"
+  ^ "- Python Output: 에러 발생 전까지의 출력\n"
+  ^ "- Analysis: 정적분석 결과\n"
+  ^ "- Hint: 학생들이 자주 하는 실수 유형"
+  ^ "Code: " ^ code ^ "\n\n"
+  ^ "Full Code: " ^ code_full ^ "\n\n"
+  ^ "Python Error: " ^ stderr ^ "\n\n"
+  ^ "Python Output: " ^ stdout ^ "\n\n"
+  ^ "Analysis: " ^ mopsa
+  ^ "Hint: " ^ hint ^ "\n\n"
+
 
 let yo_get_opt k = function
   | `Assoc kv -> List.assoc_opt k kv
@@ -110,14 +132,14 @@ let extract_delta_content (json : Yojson.Safe.t) : string option =
 let stream_response
     ~(on_chunk : string -> unit Lwt.t)
     ~(on_error : string -> unit Lwt.t)
-    (code : string) (code_full : string) (error : string) (mopsa : string) (hint : string)
+    (code : string) (code_full : string) (stderr : string) (mopsa : string) (hint : string)
   =
 
   (* Call API *)
   let user_input =
-    prompt ~code ~code_full ~error ~mopsa ~hint ()
+    prompt_user ~code ~code_full ~stderr ~mopsa ~hint ()
   in
-  let body_json = make_request_json user_input |> Yojson.Safe.to_string in
+  let body_json = make_request_json system_input user_input |> Yojson.Safe.to_string in
   let body = Cohttp_lwt.Body.of_string body_json in
   let* (_resp, body_stream) = Cohttp_lwt_unix.Client.post ~headers ~body endpoint in
   let stream = Cohttp_lwt.Body.to_stream body_stream in
