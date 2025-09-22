@@ -92,13 +92,13 @@ let prompt_user ?(code = "") ?(code_full = "") ?(stderr = "") ?(stdout = "") ?(m
   ^ "- Python Error: 발생한 에러\n"
   ^ "- Python Output: 에러 발생 전까지의 출력\n"
   ^ "- Analysis: 정적분석 결과\n"
-  ^ "- Hint: 학생들이 자주 하는 실수 유형"
+  ^ "- Hint: 학생들이 자주 하는 실수 유형" ^ "\n\n"
   ^ "Code: " ^ code ^ "\n\n"
   ^ "Full Code: " ^ code_full ^ "\n\n"
   ^ "Python Error: " ^ stderr ^ "\n\n"
   ^ "Python Output: " ^ stdout ^ "\n\n"
-  ^ "Analysis: " ^ mopsa
-  ^ "Hint: " ^ hint ^ "\n\n"
+  ^ "Analysis: " ^ mopsa ^ "\n\n"
+  ^ "Hint: " ^ hint
 
 
 let yo_get_opt k = function
