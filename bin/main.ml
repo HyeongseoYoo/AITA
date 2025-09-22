@@ -48,13 +48,14 @@ let () =
                 in
                 let exitcode, output = Analysis.run_analysis mopsa_code in
                 let mopsa = if exitcode = 1 then output else "" in
-                let error, hint = 
+                let stderr, hint, stdout = 
                   match req.output with
                   | Some o -> 
-                      Utils.get_error_and_hints o.output_type o.text
-                  | None -> "", "" 
+                      Utils.get_error_and_hints o
+                  | None -> "", "", ""
                 in 
-                Dream.log "\n[LOG] ==== code ====\n%s\n[LOG] ==== mopsa ====\n%s\n[LOG] ==== hint ====\n%s" code mopsa hint;
+                Dream.log "\n[LOG] ==== code ====\n%s\n[LOG] ==== mopsa ====\n%s\n" code mopsa;
+                Dream.log "\n[LOG] stderr: %s\n[LOG] stdout: %s\n[LOG] ==== hint ====\n%s\n" stderr stdout hint;
                 Dream.stream ~headers:[("Content-Type", "application/x-ndjson; charset=utf-8")] (fun s ->
                   let chat_id = Utils.chat_id_of req.session_id in
                   let _ = Hashtbl.add Utils.chat_parser_table chat_id (Utils.create_streaming_parser ()) in
@@ -70,7 +71,7 @@ let () =
                     Dream.write s
                       (Yojson.Basic.to_string (`Assoc [("code", `String "INTERNAL SERVER ERROR"); ("message", `String msg)]))
                   in
-                  Llm.stream_response ~on_chunk ~on_error code code_full error mopsa hint
+                  Llm.stream_response ~on_chunk ~on_error code code_full stderr mopsa hint stdout
                 )
              | Error err -> Dream.json ~status:`Bad_Request err);
          Dream.post "/chat" (fun request ->

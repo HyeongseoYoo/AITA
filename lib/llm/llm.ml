@@ -65,11 +65,11 @@ let make_request_json user_input =
       response_format = { typ = "json_schema"; json_schema };
     }
 
-let prompt ?(code = "") ?(code_full = "") ?(error = "") ?(mopsa = "") ?(hint = "") () =
+let prompt ?(code = "") ?(code_full = "") ?(stderr = "") ?(mopsa = "") ?(hint = "") ?(stdout = "") () =
   let normalize s = if String.trim s = "" then "없음" else s in
   let code = normalize code in
   let code_full = normalize code_full in
-  let error = normalize error in
+  let stderr = normalize stderr in
   let mopsa = normalize mopsa in
   let hint = normalize hint in
   "Python 기초 수업을 듣는 학생이 작성한 코드와 그에 대한 정보를 줄게.\n"
@@ -77,7 +77,7 @@ let prompt ?(code = "") ?(code_full = "") ?(error = "") ?(mopsa = "") ?(hint = "
   ^ "  내가 학생이고, 네가 나에게 Python을 알려주는 튜터라고 하자."
   ^ "  학생의 코드에서 무엇이 문제인지, 왜 그런 문제가 발생했는지 한국어로 친절하고 상세하게 설명(explanation)해주고, 학생이 추가로 물어볼 수 있는 질문 몇 가지(followUps)를 주어진 JSON 형식에 맞게 작성해줘.\n\n  "
   ^ "  Hint: " ^ hint 
-  ^ "  Code: " ^ code ^ "\n Full Code:" ^ code_full ^ "\n Python Error: " ^ error ^ "\n Analysis: " ^ mopsa
+  ^ "  Code: " ^ code ^ "\n Full Code:" ^ code_full ^ "\n Python Error: " ^ stderr ^ "\n Analysis: " ^ mopsa
 
 let yo_get_opt k = function
   | `Assoc kv -> List.assoc_opt k kv
@@ -110,12 +110,12 @@ let extract_delta_content (json : Yojson.Safe.t) : string option =
 let stream_response
     ~(on_chunk : string -> unit Lwt.t)
     ~(on_error : string -> unit Lwt.t)
-    (code : string) (code_full : string) (error : string) (mopsa : string) (hint : string)
+    (code : string) (code_full : string) (stderr : string) (mopsa : string) (hint : string) (stdout : string)
   =
 
   (* Call API *)
   let user_input =
-    prompt ~code ~code_full ~error ~mopsa ~hint ()
+    prompt ~code ~code_full ~stderr ~mopsa ~hint ~stdout ()
   in
   let body_json = make_request_json user_input |> Yojson.Safe.to_string in
   let body = Cohttp_lwt.Body.of_string body_json in

@@ -9,8 +9,9 @@ type context_cell = {
 [@@deriving yojson]
 
 type output = {
-  output_type : string;
-  text : string list;
+  stdout : string list option; [@default None]
+  result : string list option; [@default None]
+  stderr : string list option; [@default None]
 }
 [@@deriving yojson]
 
