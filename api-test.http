@@ -22,10 +22,10 @@ Content-Type: application/json
         "code": "print(scores)"
         }
     ],
-    "code": "# 노래방 점수가 90점 이상인 멤버의 이름을 리스트 함축 표현으로 구하기\nhigh_scorer = [i for i in scores if i >= 90 ]\n\n# 결과 출력하기\nprint(high_scorer)",
+    "code": "# 특정 key에 대응하는 value 출력해보기\nprint(scores[\"타블로\"])\n\nhigh_scorer = [i for i in scores if i >= 90 ]\n\n# 결과 출력하기\nprint(high_scorer)",
     "output": {
-        "output_type": "stderr",
-        "text": [
+        "stdout": ["73"],
+        "stderr": [
             "Traceback (most recent call last):",
             "  File \"C:\\Workspace\\AITA\\materials2025\\test.py\", line 5, in <module>",
             "    high_scorer = [i for i in scores if i >= 90 ]",

@@ -77,40 +77,52 @@ let add_try cell =
   let lines = List.map (fun l -> "  " ^ l) lines in
   "try:\n" ^ (String.concat "\n" lines) ^ "\nexcept: pass\n"
 
-let get_error_and_hints output_type output_list =
-  let error_message =
-    if output_type <> "stderr" then
-      "no error: result:" ^ (String.concat "\n" output_list)
-    else
-      List.hd (List.rev output_list)
-  in
-  let error_name =
-    match String.index_opt error_message ':' with
-    | Some i -> String.trim (String.sub error_message 0 i)
-    | None -> "no error"
-  in
-  let parse_section content =
-    let rec find_section head lines =
-      match lines with
-      | line :: rest when (String.trim line) = head -> rest
-      | _ :: rest -> find_section head rest
-      | [] -> ["- 힌트를 찾을 수 없음"]
-    in
-    let rec add_section acc lines =
-      match lines with
-      | line :: rest when line <> "" -> add_section (line :: acc) rest
-      | _ -> acc
-    in
-    let lines = String.split_on_char '\n' content in
-    find_section error_name lines |> add_section []
-  in
-  let filename = "lib/data/mistakes.txt" in
-  let content =
-    try
-      In_channel.with_open_text filename In_channel.input_all
-    with
-    | Sys_error _ -> "error raised while reading text file" in
-  error_message, String.concat "\n" (parse_section content)
+let get_error_and_hints (output : Dto.output) =
+  let stderr, hint = (
+    match output.stderr with
+    | Some e ->
+        let error_message = String.concat "\n" e in
+        let error_name =
+          match String.index_opt (List.hd e) ':' with
+          | Some i -> String.trim (String.sub error_message 0 i)
+          | None -> "no error"
+        in
+        let parse_section content =
+          let rec find_section head lines =
+            match lines with
+            | line :: rest when (String.trim line) = head -> rest
+            | _ :: rest -> find_section head rest
+            | [] -> ["- 힌트를 찾을 수 없음"]
+          in
+          let rec add_section acc lines =
+            match lines with
+            | line :: rest when line <> "" -> add_section (line :: acc) rest
+            | _ -> acc
+          in
+          let lines = String.split_on_char '\n' content in
+          find_section error_name lines |> add_section []
+        in
+        let filename = "lib/data/mistakes.txt" in
+        let content =
+          try
+            In_channel.with_open_text filename In_channel.input_all
+          with
+          | Sys_error _ -> "error raised while reading text file" in
+        error_message, String.concat "\n" (parse_section content)
+    | None -> "", ""
+  ) in
+  let stdout = (
+    match output.stdout with
+    | Some o -> String.concat "\n" o
+    | None -> ""
+  ) in
+  let result = (
+    match output.result with
+    | Some r -> String.concat "\n" r
+    | None -> ""
+  ) in
+  stderr, hint, ("stdout: " ^ stdout ^ "\nresult: " ^ result)
+  
 
 let chat_id_of session_id =
   let num_of_chats = Hashtbl.find user_chat_table session_id in

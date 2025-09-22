@@ -132,12 +132,12 @@ let extract_delta_content (json : Yojson.Safe.t) : string option =
 let stream_response
     ~(on_chunk : string -> unit Lwt.t)
     ~(on_error : string -> unit Lwt.t)
-    (code : string) (code_full : string) (stderr : string) (mopsa : string) (hint : string)
+    (code : string) (code_full : string) (stderr : string) (mopsa : string) (hint : string) (stdout : string)
   =
 
   (* Call API *)
   let user_input =
-    prompt_user ~code ~code_full ~stderr ~mopsa ~hint ()
+    prompt_user ~code ~code_full ~stderr ~mopsa ~hint ~stdout ()
   in
   let body_json = make_request_json system_input user_input |> Yojson.Safe.to_string in
   let body = Cohttp_lwt.Body.of_string body_json in
