@@ -74,8 +74,10 @@ let error_names = [
 
 type res_state = Waiting of string | Explanation | FollowUps
 
-let user_chat_table : (string, int) Hashtbl.t = Hashtbl.create 40 (* session_id |-> num_of_chats *)
-let chat_history_table : (string, string) Hashtbl.t = Hashtbl.create 40 (* chat_id |-> chat_history *)
+(* session_id |-> num_of_chats *)
+let user_chat_table : (string, int) Hashtbl.t = Hashtbl.create 40
+(* chat_id |-> chat_history, chat_history = [("user", "question"); ("assistant", "answer"); ...] *)
+let chat_history_table : (string, (string * string) list) Hashtbl.t = Hashtbl.create 40
 
 let add_try cell =
   let lines = String.split_on_char '\n' cell in
@@ -299,3 +301,17 @@ let response_to_json chunk chat_id =
   let parser = Hashtbl.find chat_parser_table chat_id in
   let result = extract_streaming_chunk parser chunk in
   if result = "" then "{}\n" else result ^ "\n"
+
+
+let get_history_for_request chat_id = 
+  let parser = Hashtbl.find chat_parser_table chat_id in
+  let assistant = "[explanation]\n" ^ parser.explanation_value
+    ^ "\n\n[followUps]\n" ^ (String.concat "\n" parser.followup_value) in
+  let history = Hashtbl.find chat_history_table chat_id in
+  history @ [("assistant", assistant)]
+
+let update_chat_state chat_id prompt =
+  let history = Hashtbl.find chat_history_table chat_id in
+  let new_history = history @ [("user", prompt)] in
+  Hashtbl.replace chat_history_table chat_id new_history;
+  Hashtbl.replace chat_parser_table chat_id (create_streaming_parser ())

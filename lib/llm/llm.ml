@@ -38,33 +38,6 @@ type request = {
 }
 [@@deriving yojson]
 
-let json_schema =
-  Yojson.Safe.from_string
-    {|{
-  "name": "code_fix_feedback",
-  "strict": true,
-  "schema": {
-    "type": "object",
-    "properties": {
-      "explanation": {"type": "string", "description": "학생에게 보여줄 코드 분석 및 원인 설명"},
-      "followUps": {"type": "array", "items": {"type": "string"}, "description": "학생에게 제공할 후속 질문 목록"}
-    },
-    "required": ["explanation", "followUps"],
-    "additionalProperties": false
-  }
-}|}
-
-let make_request_json system_input user_input =
-  request_to_yojson
-    {
-      model;
-      max_tokens = 10000;
-      reasoning = { exclude = true };
-      stream = true;
-      messages = [ { role = "system"; content = system_input } ; { role = "user"; content = user_input } ];
-      response_format = { typ = "json_schema"; json_schema };
-    }
-
 let system_input =
   "당신은 Python 기초 수업을 듣는 학생들을 도와주는 친절한 튜터입니다.\n\n"
   ^ "역할:\n"
@@ -101,6 +74,68 @@ let prompt_user ?(code = "") ?(code_full = "") ?(stderr = "") ?(stdout = "") ?(m
   ^ "Analysis: " ^ mopsa ^ "\n\n"
   ^ "Hint: " ^ hint
 
+let make_analysis_request
+    (code : string) (code_full : string) (stderr : string) (stdout : string) (mopsa : string) (hint : string) =
+  let json_schema =
+    Yojson.Safe.from_string
+      {|{
+    "name": "code_fix_feedback",
+    "strict": true,
+    "schema": {
+      "type": "object",
+      "properties": {
+        "explanation": {"type": "string", "description": "학생에게 보여줄 코드 분석 및 원인 설명"},
+        "followUps": {"type": "array", "items": {"type": "string"}, "description": "학생에게 제공할 후속 질문 목록"}
+      },
+      "required": ["explanation", "followUps"],
+      "additionalProperties": false
+    }
+  }|}
+  in
+  let make_request_json system_input user_input =
+    request_to_yojson
+      {
+        model;
+        max_tokens = 10000;
+        reasoning = { exclude = true };
+        stream = true;
+        messages = [ { role = "system"; content = system_input } ; { role = "user"; content = user_input } ];
+        response_format = { typ = "json_schema"; json_schema };
+      }
+  in
+  let prompt = prompt_user ~code ~code_full ~stderr ~mopsa ~hint () in
+  make_request_json system_input prompt |> Yojson.Safe.to_string
+
+let make_chat_request (history : (string * string) list) (prompt : string) =
+  let json_schema =
+    Yojson.Safe.from_string
+      {|{
+    "name": "explanation_chat",
+    "strict": true,
+    "schema": {
+      "type": "object",
+      "properties": {
+        "explanation": {"type": "string", "description": "학생의 질문에 대한 답변"},
+        "followUps": {"type": "array", "items": {"type": "string"}, "description": "학생에게 제공할 후속 질문 목록"}
+      },
+      "required": ["explanation", "followUps"],
+      "additionalProperties": false
+    }
+  }|}
+  in
+  let make_request_json system_input chat_history user_input =
+    request_to_yojson
+      {
+        model;
+        max_tokens = 10000;
+        reasoning = { exclude = true };
+        stream = true;
+        messages = [ { role = "system"; content = system_input } ] @ chat_history @ [ { role = "user"; content = user_input } ];
+        response_format = { typ = "json_schema"; json_schema };
+      }
+  in
+  let chat_history = List.map (fun (role, content) -> {role; content}) history in
+  make_request_json system_input chat_history prompt |> Yojson.Safe.to_string
 
 let yo_get_opt k = function
   | `Assoc kv -> List.assoc_opt k kv
@@ -133,14 +168,10 @@ let extract_delta_content (json : Yojson.Safe.t) : string option =
 let stream_response
     ~(on_chunk : string -> unit Lwt.t)
     ~(on_error : string -> unit Lwt.t)
-    (code : string) (code_full : string) (stderr : string) (mopsa : string) (hint : string) (stdout : string)
+    (body_json : string)
   =
 
   (* Call API *)
-  let user_input =
-    prompt_user ~code ~code_full ~stderr ~mopsa ~hint ~stdout ()
-  in
-  let body_json = make_request_json system_input user_input |> Yojson.Safe.to_string in
   let body = Cohttp_lwt.Body.of_string body_json in
   let* (_resp, body_stream) = Cohttp_lwt_unix.Client.post ~headers ~body endpoint in
   let stream = Cohttp_lwt.Body.to_stream body_stream in

@@ -71,6 +71,6 @@ POST http://localhost:8080/chat
 Content-Type: application/json
 
 {
-  "prompt": "이 코드에서 발생하는 오류를 설명해주세요",
-  "chat_id": "chat_123"
+  "prompt": "scores의 키와 값을 어떻게 구분할 수 있을까요?",
+  "chat_id": "{{login.response.body.session_id}}-1"
 }
