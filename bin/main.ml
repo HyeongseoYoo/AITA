@@ -83,6 +83,8 @@ let () =
                   Llm.stream_response ~on_chunk ~on_error request_json
                 )
              | Error err -> Dream.json ~status:`Bad_Request err);
+         
+         Dream.options "/chat" (fun _ -> Dream.empty `OK);
          Dream.post "/chat" (fun request ->
              let* body = Dream.body request in
              let req = body |> Yojson.Safe.from_string |> Dto.chat_request_body_of_yojson in
