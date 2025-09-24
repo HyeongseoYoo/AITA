@@ -2,11 +2,7 @@
 type login_response_body = { session_id : string } [@@deriving yojson]
 
 (* POST /analysis *)
-type context_cell = {
-  cell_id : string;
-  code : string;
-}
-[@@deriving yojson]
+type context_cell = { cell_id : string; code : string } [@@deriving yojson]
 
 type output = {
   stdout : string list option; [@default None]
@@ -31,10 +27,7 @@ type analysis_response_body = {
 [@@deriving yojson]
 
 (* POST /chat *)
-type chat_request_body = {
-  chat_id : string;
-  prompt : string;
-}
+type chat_request_body = { chat_id : string; prompt : string }
 [@@deriving yojson]
 
 type chat_response_body = {
@@ -44,8 +37,4 @@ type chat_response_body = {
 [@@deriving yojson]
 
 (* Common *)
-type error = {
-  code : string;
-  message : string;
-}
-[@@deriving yojson]
+type error = { code : string; message : string } [@@deriving yojson]
