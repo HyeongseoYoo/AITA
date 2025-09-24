@@ -103,7 +103,7 @@ let make_analysis_request
         response_format = { typ = "json_schema"; json_schema };
       }
   in
-  let prompt = prompt_user ~code ~code_full ~stderr ~mopsa ~hint () in
+  let prompt = prompt_user ~code ~code_full ~stderr ~stdout ~mopsa ~hint () in
   make_request_json system_input prompt |> Yojson.Safe.to_string
 
 let make_chat_request (history : (string * string) list) (prompt : string) =
