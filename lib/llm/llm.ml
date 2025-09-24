@@ -81,7 +81,7 @@ let make_analysis_request (code : string) (code_full : string) (stderr : string)
     }
   }|}
   in
-  let make_request_json system_input user_input =
+  let make_request_json user_input =
     request_to_yojson
       {
         model;
@@ -97,7 +97,7 @@ let make_analysis_request (code : string) (code_full : string) (stderr : string)
       }
   in
   let prompt = prompt_user ~code ~code_full ~stderr ~stdout ~mopsa ~hint () in
-  make_request_json system_input prompt |> Yojson.Safe.to_string
+  make_request_json prompt |> Yojson.Safe.to_string
 
 let make_chat_request (history : (string * string) list) (prompt : string) =
   let json_schema =
@@ -116,7 +116,7 @@ let make_chat_request (history : (string * string) list) (prompt : string) =
     }
   }|}
   in
-  let make_request_json system_input chat_history user_input =
+  let make_request_json chat_history user_input =
     request_to_yojson
       {
         model;
@@ -124,8 +124,7 @@ let make_chat_request (history : (string * string) list) (prompt : string) =
         reasoning = { exclude = true };
         stream = true;
         messages =
-          [ { role = "system"; content = system_input } ]
-          @ chat_history
+          ({ role = "system"; content = system_input } :: chat_history)
           @ [ { role = "user"; content = user_input } ];
         response_format = { typ = "json_schema"; json_schema };
       }
@@ -133,7 +132,7 @@ let make_chat_request (history : (string * string) list) (prompt : string) =
   let chat_history =
     List.map (fun (role, content) -> { role; content }) history
   in
-  make_request_json system_input chat_history prompt |> Yojson.Safe.to_string
+  make_request_json chat_history prompt |> Yojson.Safe.to_string
 
 let yo_get_opt k = function `Assoc kv -> List.assoc_opt k kv | _ -> None
 
