@@ -4,19 +4,11 @@ type login_response_body = { session_id : string } [@@deriving yojson]
 (* POST /analysis *)
 type context_cell = { cell_id : string; code : string } [@@deriving yojson]
 
-type output = {
-  stdout : string list option; [@default None]
-  result : string list option; [@default None]
-  stderr : string list option; [@default None]
-}
-[@@deriving yojson]
-
 type analysis_request_body = {
   session_id : string;
   cell_id : string;
   context : context_cell list;
   code : string;
-  output : output option;
 }
 [@@deriving yojson]
 

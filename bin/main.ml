@@ -66,26 +66,8 @@ let () =
                  let exitcode, output = Analysis.run_analysis mopsa_code in
                  let mopsa = if exitcode = 1 then output else "" in
 
-                 let stderr, hint, stdout =
-                   match req.output with
-                   | Some o -> Utils.get_error_and_hints o
-                   | None -> ("", "", "")
-                 in
-
-                 Dream.log
-                   "\n[LOG] ==== code ====\n%s\n[LOG] ==== mopsa ====\n%s\n"
-                   code mopsa;
-                 Dream.log
-                   "\n\
-                    [LOG] stderr: %s\n\
-                    [LOG] stdout: %s\n\
-                    [LOG] ==== hint ====\n\
-                    %s\n"
-                   stderr stdout hint;
-
                  let request_json =
-                   Llm.make_analysis_request code code_full stderr stdout mopsa
-                     hint
+                   Llm.make_analysis_request code code_full mopsa
                  in
 
                  Dream.stream

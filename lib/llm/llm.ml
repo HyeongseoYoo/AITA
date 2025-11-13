@@ -46,25 +46,20 @@ let system_input =
   ^ "- followUps에는 질문만 간략하게 작성하고, 답변은 미리 제공하지 마세요\n"
   ^ "- 주어진 JSON 형식에 맞게 응답하세요\n\n"
 
-let prompt_user ?(code = "") ?(code_full = "") ?(stderr = "") ?(stdout = "")
-    ?(mopsa = "") ?(hint = "") () =
+let prompt_user ?(code = "") ?(code_full = "") ?(mopsa = "") ?(hint = "") () =
   let normalize s = if String.trim s = "" then "없음" else s in
   let code = normalize code in
   let code_full = normalize code_full in
-  let stderr = normalize stderr in
-  let stdout = normalize stdout in
   let mopsa = normalize mopsa in
   let hint = normalize hint in
   "다음의 데이터가 주어집니다.\n" ^ "- Code: 에러가 발생한 코드 블럭\n" ^ "- Full Code: 전체 코드\n"
-  ^ "- Python Error: 발생한 에러\n" ^ "- Python Output: 에러 발생 전까지의 출력\n"
   ^ "- Analysis: 정적분석 결과\n" ^ "- Hint: 학생들이 자주 하는 실수 유형\n\n"
   ^ "학생의 코드에 대한 설명(explanation)과 후속 질문(followUps)을 작성해 주세요.\n----\n" ^ "Code: "
-  ^ code ^ "\n\n" ^ "Full Code: " ^ code_full ^ "\n\n" ^ "Python Error: "
-  ^ stderr ^ "\n\n" ^ "Python Output: " ^ stdout ^ "\n\n" ^ "Analysis: " ^ mopsa
+  ^ code ^ "\n\n" ^ "Full Code: " ^ code_full ^ "\n\n" ^ "Analysis: " ^ mopsa
   ^ "\n\n" ^ "Hint: " ^ hint
 
-let make_analysis_request (code : string) (code_full : string) (stderr : string)
-    (stdout : string) (mopsa : string) (hint : string) =
+let make_analysis_request (code : string) (code_full : string) (mopsa : string)
+    =
   let json_schema =
     Yojson.Safe.from_string
       {|{
@@ -96,7 +91,8 @@ let make_analysis_request (code : string) (code_full : string) (stderr : string)
         response_format = { typ = "json_schema"; json_schema };
       }
   in
-  let prompt = prompt_user ~code ~code_full ~stderr ~stdout ~mopsa ~hint () in
+  let hint = Utils.get_hints mopsa in
+  let prompt = prompt_user ~code ~code_full ~mopsa ~hint () in
   make_request_json prompt |> Yojson.Safe.to_string
 
 let make_chat_request (history : (string * string) list) (prompt : string) =
